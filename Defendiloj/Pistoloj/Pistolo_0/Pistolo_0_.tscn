@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Defendiloj/Pistoloj/Pistolo_0/Pistolo_0_.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Pistoloj/Pistolo_0/pistolo_0.png" type="Texture" id=2]
@@ -6,22 +6,27 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 1490.73
+radius = 124.772
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.1087, 49.3278 )
 
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 661.054
+
 [node name="Pistolo_0_" type="Node2D"]
 
 transform/rot = -90.0
-transform/scale = Vector2( 0.1, 0.1 )
+transform/scale = Vector2( 0.3, 0.3 )
 script/script = ExtResource( 1 )
 
 [node name="Pistolo_0" type="StaticBody2D" parent="."]
 
-input/pickable = false
+input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
@@ -55,25 +60,30 @@ texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
-input/pickable = true
-shapes/0/shape = SubResource( 1 )
+transform/rot = 8.14222e-13
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 0 )
+gravity = 0.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision/layers = 2
 collision/mask = 4
 
-[node name="CollisionShape2D1" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
-shape = SubResource( 1 )
-trigger = false
+shape = SubResource( 3 )
+trigger = true
 _update_shape_index = 0
 
 [node name="Fiksata" type="Node2D" parent="."]
 
+[connection signal="input_event" from="Pistolo_0" to="." method="_on_Pistolo_0_input_event"]
+
 [connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
+
+[connection signal="body_exit" from="Area2D" to="." method="_on_Area2D_body_exit"]
 
 
