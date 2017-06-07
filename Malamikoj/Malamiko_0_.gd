@@ -8,3 +8,7 @@ func _ready():
 func _process(delta):
 	if vivo <= 0:
 		free()
+
+
+func _on_Area2D_input_event( viewport, event, shape_idx ):
+	get_tree().get_root().get_node("Radiko").kaptitajxo = null

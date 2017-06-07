@@ -1,83 +1,162 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
 [ext_resource path="res://Bazo/bazo.png" type="Texture" id=2]
-[ext_resource path="res://Defendiloj/Pistoloj/Pistolo_0/Pistolo_0_.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Malamikoj/Malamiko_0_.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Defendiloj/Fortikajxoj/Fortikajxo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Defendiloj/Pistoloj/Kanono/Kanono.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Defendiloj/Pistoloj/Lasero/Lasero.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Malamikoj/Malamiko_0_.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 259.423
+radius = 237.801
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 239.546
 
 [node name="Radiko" type="Node2D"]
 
 script/script = ExtResource( 1 )
 
-[node name="Bazo" type="Sprite" parent="."]
+[node name="Bazo" type="Node2D" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( 484.353, 292.282 )
+transform/pos = Vector2( 512, 350 )
 transform/scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="Bazo"]
+
 texture = ExtResource( 2 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Bazo"]
+[node name="Area2D" type="Area2D" parent="Bazo"]
 
-input/pickable = false
+input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+gravity_vec = Vector2( 0, 0 )
+gravity = 0.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/mask = 4102
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bazo/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bazo/Area2D"]
 
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Pistolo_0_" parent="." instance=ExtResource( 3 )]
+[node name="RigidBody2D" type="RigidBody2D" parent="Bazo"]
 
-transform/pos = Vector2( 796.951, 319.683 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 2
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = true
+continuous_cd = 2
+contacts_reported = 5
+contact_monitor = true
+sleeping = false
+can_sleep = false
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
 
-[node name="Pistolo_0_1" parent="." instance=ExtResource( 3 )]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bazo/RigidBody2D"]
 
-transform/pos = Vector2( 953.714, 268.433 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
 
-[node name="Malamiko_0_" parent="." instance=ExtResource( 4 )]
+[node name="Fortikajxo" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 826.772, 225.514 )
+transform/pos = Vector2( 512, 350 )
 
-[node name="Malamiko_0_2" parent="." instance=ExtResource( 4 )]
+[node name="Fortikajxo1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 691.111, 116.986 )
+transform/pos = Vector2( 512, 350 )
+transform/rot = 90.0
 
-[node name="Malamiko_0_4" parent="." instance=ExtResource( 4 )]
+[node name="Fortikajxo2" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 257.145, 146.522 )
+transform/pos = Vector2( 512, 350 )
+transform/rot = 180.0
 
-[node name="Malamiko_0_5" parent="." instance=ExtResource( 4 )]
+[node name="Fortikajxo3" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 150.358, 398.723 )
+transform/pos = Vector2( 512, 350 )
+transform/rot = 270.0
 
-[node name="Malamiko_0_6" parent="." instance=ExtResource( 4 )]
+[node name="Pistoloj" type="YSort" parent="."]
 
-transform/pos = Vector2( 325.308, 516.87 )
+sort/enabled = true
 
-[node name="Malamiko_0_7" parent="." instance=ExtResource( 4 )]
+[node name="Kanono" parent="Pistoloj" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 91.2841, 96.5369 )
+transform/pos = Vector2( 867.932, 358.988 )
 
-[node name="Malamiko_0_3" parent="." instance=ExtResource( 4 )]
+[node name="Kanono1" parent="Pistoloj" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 774.015, 412.424 )
+transform/pos = Vector2( 180.014, 221.705 )
 
-[node name="Malamiko_0_1" parent="." instance=ExtResource( 4 )]
+[node name="Kanono2" parent="Pistoloj" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 903.646, 315.954 )
+transform/pos = Vector2( 213.176, 545.783 )
+
+[node name="Kanono3" parent="Pistoloj" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 445.306, 616.628 )
+
+[node name="Lasero" parent="Pistoloj" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 894.308, 493.003 )
+
+[node name="Lasero1" parent="Pistoloj" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 196.368, 324.762 )
+
+[node name="Lasero2" parent="Pistoloj" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 692.011, 256.748 )
+
+[node name="Malamikoj" type="Node2D" parent="."]
+
+[node name="Malamiko_0_2" parent="Malamikoj" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 512.714, 104.683 )
+
+[node name="Malamiko_0_4" parent="Malamikoj" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 290.294, 24.9759 )
+
+[node name="Malamiko_0_5" parent="Malamikoj" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 24.8944, 440.197 )
+
+[node name="Malamiko_0_7" parent="Malamikoj" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 50.7687, 70.7544 )
+
+[node name="Malamiko_0_3" parent="Malamikoj" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 886.993, 115.866 )
+
+[node name="Malamiko_0_1" parent="Malamikoj" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 742.806, 633.891 )
+
+[connection signal="body_enter" from="Bazo/Area2D" to="." method="_on_Area2D_body_enter"]
+
+[connection signal="body_exit" from="Bazo/Area2D" to="." method="_on_Area2D_body_exit"]
 
 
