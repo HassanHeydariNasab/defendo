@@ -4,7 +4,7 @@
 [ext_resource path="res://Bazo/bazo.png" type="Texture" id=2]
 [ext_resource path="res://Defendiloj/Fortikajxoj/Fortikajxo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/Kanono.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Defendiloj/Pistoloj/Lasero/Lasero.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/Ondilo.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Malamikoj/Malamiko_0_.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -23,7 +23,7 @@ script/script = ExtResource( 1 )
 
 [node name="Bazo" type="Node2D" parent="."]
 
-transform/pos = Vector2( 512, 350 )
+transform/pos = Vector2( 322, 965 )
 transform/scale = Vector2( 0.5, 0.5 )
 
 [node name="Sprite" type="Sprite" parent="Bazo"]
@@ -80,30 +80,16 @@ _update_shape_index = 0
 
 [node name="Fortikajxo" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 512, 350 )
+transform/pos = Vector2( 322, 965 )
 
 [node name="Fortikajxo1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 512, 350 )
+transform/pos = Vector2( 322, 965 )
 transform/rot = 90.0
-
-[node name="Fortikajxo2" parent="." instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 512, 350 )
-transform/rot = 180.0
-
-[node name="Fortikajxo3" parent="." instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 512, 350 )
-transform/rot = 270.0
 
 [node name="Pistoloj" type="YSort" parent="."]
 
 sort/enabled = true
-
-[node name="Kanono" parent="Pistoloj" instance=ExtResource( 4 )]
-
-transform/pos = Vector2( 867.932, 358.988 )
 
 [node name="Kanono1" parent="Pistoloj" instance=ExtResource( 4 )]
 
@@ -117,17 +103,25 @@ transform/pos = Vector2( 213.176, 545.783 )
 
 transform/pos = Vector2( 445.306, 616.628 )
 
-[node name="Lasero" parent="Pistoloj" instance=ExtResource( 5 )]
+[node name="Ondilo" parent="Pistoloj" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 894.308, 493.003 )
+transform/pos = Vector2( 415.876, 317.335 )
 
-[node name="Lasero1" parent="Pistoloj" instance=ExtResource( 5 )]
+[node name="Ondilo1" parent="Pistoloj" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 196.368, 324.762 )
+transform/pos = Vector2( 537.799, 470.992 )
 
-[node name="Lasero2" parent="Pistoloj" instance=ExtResource( 5 )]
+[node name="Ondilo2" parent="Pistoloj" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 692.011, 256.748 )
+transform/pos = Vector2( 172.029, 400.844 )
+
+[node name="Ondilo3" parent="Pistoloj" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 362.43, 487.694 )
+
+[node name="Ondilo4" parent="Pistoloj" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 123.594, 686.446 )
 
 [node name="Malamikoj" type="Node2D" parent="."]
 
@@ -137,23 +131,15 @@ transform/pos = Vector2( 512.714, 104.683 )
 
 [node name="Malamiko_0_4" parent="Malamikoj" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 290.294, 24.9759 )
+transform/pos = Vector2( 388.478, 67.774 )
 
 [node name="Malamiko_0_5" parent="Malamikoj" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 24.8944, 440.197 )
+transform/pos = Vector2( 150.771, 29.8391 )
 
 [node name="Malamiko_0_7" parent="Malamikoj" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 50.7687, 70.7544 )
-
-[node name="Malamiko_0_3" parent="Malamikoj" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 886.993, 115.866 )
-
-[node name="Malamiko_0_1" parent="Malamikoj" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 742.806, 633.891 )
 
 [connection signal="body_enter" from="Bazo/Area2D" to="." method="_on_Area2D_body_enter"]
 

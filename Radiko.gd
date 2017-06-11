@@ -13,6 +13,9 @@ func _on_Area2D_body_enter( korpo ):
 		if Pistoloj[0].get_name() == "Kanono" and Pistoloj[1].get_name() == "Kanono":
 			Pistoloj[0].get_parent().nivelo += Pistoloj[1].get_parent().nivelo
 			Pistoloj[1].get_parent().queue_free()
+		elif Pistoloj[0].get_name() == "Ondilo" and Pistoloj[1].get_name() == "Ondilo":
+			Pistoloj[0].get_parent().nivelo += Pistoloj[1].get_parent().nivelo
+			Pistoloj[1].get_parent().queue_free()
 		elif Pistoloj[0].get_name() == "Lasero" and Pistoloj[1].get_name() == "Lasero":
 			Pistoloj[0].get_parent().nivelo += Pistoloj[1].get_parent().nivelo
 			Pistoloj[1].get_parent().queue_free()
