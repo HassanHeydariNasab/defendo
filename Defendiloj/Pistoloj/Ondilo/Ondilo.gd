@@ -7,7 +7,8 @@ onready var P = get_node("Ondilo")
 onready var Elektumo = get_node("Ondilo/Elektumo")
 onready var Ondo = get_node("Ondo")
 onready var Nivelo = get_node("Nivelo")
-#onready var K = preload("res://Defendiloj/Kugloj/Kuglo/Kuglo.tscn")
+onready var Areo = get_node("Area2D")
+onready var Limo = get_node("Area2D/Limo")
 var atendado_nova_K = 0
 var nivelo = 1
 
@@ -32,9 +33,9 @@ func _process(delta):
 			#PORFARI sxangxu gxin laux la strategio
 			var Malamiko = Malamikoj[0]
 			atendado_nova_K += 1
-			if atendado_nova_K < nivelo*10+80:
+			if atendado_nova_K < nivelo*5+80:
 				Ondo.set_scale(Vector2(atendado_nova_K/20.0, atendado_nova_K/20.0))
-				Ondo.set_opacity(Ondo.get_opacity()-0.008)
+				Ondo.set_opacity(Ondo.get_opacity()-0.007)
 				if Ondo.get_opacity() < 0:
 					Ondo.set_opacity(0)
 			else:
@@ -48,10 +49,13 @@ func _process(delta):
 	if get_tree().get_root().get_node("Radiko").kaptitajxo == self:
 		set_global_pos(get_global_mouse_pos())
 		Elektumo.show()
+		Limo.show()
 	else:
 		Elektumo.hide()
+		Limo.hide()
 	
 	Nivelo.set_text(str(nivelo))
+	Areo.set_scale(Vector2(log(nivelo)/5.0+1,log(nivelo)/5.0+1))
 	
 func _on_Kanono_input_event( viewport, event, shape_idx ):
 	if event.type == InputEvent.SCREEN_TOUCH:
@@ -67,4 +71,4 @@ func _on_Kanono_input_event( viewport, event, shape_idx ):
 
 func _on_Ondo_body_enter( korpo ):
 	if korpo.get_name() == "Malamiko_0":
-		korpo.get_parent().vivo -= nivelo*5
+		korpo.get_parent().vivo -= nivelo*3

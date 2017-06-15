@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 32.4376
+radius = 22.0167
 
 [node name="Kuglo" type="Node2D"]
 

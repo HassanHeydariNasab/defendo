@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/Kanono.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono_elektajxo.png" type="Texture" id=2]
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=3]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://Defendiloj/Pistoloj/Kanono/gamo.png" type="Texture" id=4]
+[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -88,6 +89,12 @@ shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
 
+[node name="Limo" type="Sprite" parent="Area2D"]
+
+visibility/behind_parent = true
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+
 [node name="Fiksata" type="Node2D" parent="."]
 
 [node name="Nivelo" type="Label" parent="."]
@@ -101,7 +108,7 @@ margin/left = -38.0
 margin/top = 17.0
 margin/right = 2.0
 margin/bottom = 94.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0

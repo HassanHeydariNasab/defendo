@@ -11,7 +11,7 @@ func _ready():
 		set_fixed_process(true)
 
 func _fixed_process(delta):
-	get_node("Kuglo").move((Vector2(5*cos(angulo), -5*sin(angulo))))
+	get_node("Kuglo").move((Vector2(4.0*(log(nivelo)+1.0)*cos(angulo), -4.0*(log(nivelo)+1.0)*sin(angulo))))
 
 func _process(delta):
 	if get_node("Kuglo").is_colliding():
