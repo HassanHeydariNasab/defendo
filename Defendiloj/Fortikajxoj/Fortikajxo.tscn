@@ -63,6 +63,8 @@ transform/scale = Vector2( 0.9, 0.9 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
+transform/pos = Vector2( -31.1113, 31.1109 )
+transform/scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

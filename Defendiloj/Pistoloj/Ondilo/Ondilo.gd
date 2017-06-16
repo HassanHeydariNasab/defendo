@@ -71,4 +71,4 @@ func _on_Kanono_input_event( viewport, event, shape_idx ):
 
 func _on_Ondo_body_enter( korpo ):
 	if korpo.get_name() == "Malamiko_0":
-		korpo.get_parent().vivo -= nivelo*3
+		korpo.get_parent().vivo -= nivelo*10

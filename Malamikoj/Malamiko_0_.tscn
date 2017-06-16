@@ -7,45 +7,47 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 128.479, 110.837, -128.905, 110.837, -0.212601, -109.895 )
+points = Vector2Array( 97.9167, 95.8333, -97.9167, 95.8333, 6.55671e-06, -75 )
 
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 487.549
+radius = 200.016
 
 [node name="Malamiko_0_" type="Node2D"]
 
-transform/scale = Vector2( 0.3, 0.3 )
+transform/scale = Vector2( 0.4, 0.4 )
 script/script = ExtResource( 1 )
 
-[node name="Malamiko_0" type="StaticBody2D" parent="."]
+[node name="Malamiko_0" type="KinematicBody2D" parent="."]
 
-transform/scale = Vector2( 1.2, 1.2 )
+transform/rot = -4.07111e-13
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 1.2, 7.10543e-15, -7.10543e-15, 1.2, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 4
-collision/mask = 2051
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+collision/mask = 4097
+collision/margin = 0.08
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Malamiko_0"]
 
+transform/rot = -3.39259e-13
+transform/scale = Vector2( 1.2, 1.2 )
 build_mode = 0
-polygon = Vector2Array( -0.212601, -109.895, -128.905, 110.837, 128.479, 110.837 )
+polygon = Vector2Array( 6.55671e-06, -75, -97.9167, 95.8333, 97.9167, 95.8333 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
 [node name="Sprite" type="Sprite" parent="Malamiko_0"]
 
+transform/rot = -3.39259e-13
+transform/scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Malamiko_0"]
 
+transform/rot = 8.14222e-13
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -57,28 +59,47 @@ angular_damp = 1.0
 collision/layers = 4
 collision/mask = 2051
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Malamiko_0/Area2D"]
 
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Vivo" type="Label" parent="."]
+[node name="Vivo" type="Label" parent="Malamiko_0"]
 
+visibility/visible = false
+rect/rotation = 180.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -36.0
-margin/top = 9.0
-margin/right = 36.0
-margin/bottom = 86.0
+margin/left = 42.0
+margin/top = 67.0
+margin/right = 114.0
+margin/bottom = 144.0
 custom_fonts/font = ExtResource( 3 )
 text = "-1"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[node name="Vivo_P" type="Polygon2D" parent="Malamiko_0"]
+
+transform/pos = Vector2( 2.27374e-13, 32.4999 )
+transform/rot = 8.14222e-13
+polygon = Vector2Array( -166.667, 166.667, -166.667, 133.333, 166.667, 133.333, 166.667, 166.667 )
+uv = Vector2Array(  )
+color = Color( 1, 0.4, 0, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[connection signal="input_event" from="Malamiko_0/Area2D" to="." method="_on_Area2D_input_event"]
 
 

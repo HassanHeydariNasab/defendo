@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/Kanono.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono_elektajxo.png" type="Texture" id=2]
@@ -21,6 +21,11 @@ extents = Vector2( 32.1087, 49.3278 )
 custom_solver_bias = 0.0
 radius = 661.054
 
+[sub_resource type="CircleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 266.667
+
 [node name="Kanono" type="Node2D"]
 
 transform/rot = -90.0
@@ -32,10 +37,10 @@ script/script = ExtResource( 1 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
+shapes/0/trigger = true
 shapes/1/shape = SubResource( 2 )
 shapes/1/transform = Matrix32( 1, 0, 0, 0.916071, 0, -176.608 )
-shapes/1/trigger = false
+shapes/1/trigger = true
 collision/layers = 2
 collision/mask = 1
 collision/margin = 0.08
@@ -43,7 +48,7 @@ collision/margin = 0.08
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kanono"]
 
 shape = SubResource( 1 )
-trigger = false
+trigger = true
 _update_shape_index = 0
 
 [node name="CollisionShape2D 2" type="CollisionShape2D" parent="Kanono"]
@@ -51,7 +56,7 @@ _update_shape_index = 0
 transform/pos = Vector2( 0, -176.608 )
 transform/scale = Vector2( 1, 0.916071 )
 shape = SubResource( 2 )
-trigger = false
+trigger = true
 _update_shape_index = 1
 
 [node name="Elektumo" type="Sprite" parent="Kanono"]
@@ -95,6 +100,25 @@ visibility/behind_parent = true
 transform/scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 
+[node name="Area2D 2" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 0 )
+gravity = 0.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 2
+collision/mask = 4100
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D 2"]
+
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
+
 [node name="Fiksata" type="Node2D" parent="."]
 
 [node name="Nivelo" type="Label" parent="."]
@@ -114,10 +138,104 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="Strategio" type="Node2D" parent="."]
+
+transform/pos = Vector2( -396.925, 225.292 )
+transform/rot = 90.0
+
+[node name="Nova" type="Button" parent="Strategio"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -8.0
+margin/top = -203.0
+margin/right = 459.0
+margin/bottom = -43.0
+custom_fonts/font = ExtResource( 5 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Nova"
+flat = false
+
+[node name="MalNova" type="Button" parent="Strategio"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -8.0
+margin/top = -3.0
+margin/right = 459.0
+margin/bottom = 157.0
+custom_fonts/font = ExtResource( 5 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "MalNova"
+flat = false
+
+[node name="Forta" type="Button" parent="Strategio"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -8.0
+margin/top = 630.0
+margin/right = 459.0
+margin/bottom = 790.0
+custom_fonts/font = ExtResource( 5 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Forta"
+flat = false
+
+[node name="MalForta" type="Button" parent="Strategio"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -8.0
+margin/top = 830.0
+margin/right = 459.0
+margin/bottom = 990.0
+custom_fonts/font = ExtResource( 5 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "MalForta"
+flat = false
+
+[node name="DuoblaKlako" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 0.4
+one_shot = true
+autostart = false
+
 [connection signal="input_event" from="Kanono" to="." method="_on_Kanono_input_event"]
 
 [connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
 
 [connection signal="body_exit" from="Area2D" to="." method="_on_Area2D_body_exit"]
+
+[connection signal="body_enter" from="Area2D 2" to="." method="_on_Area2D_2_body_enter"]
+
+[connection signal="body_exit" from="Area2D 2" to="." method="_on_Area2D_2_body_exit"]
+
+[connection signal="button_up" from="Strategio/Nova" to="." method="_on_Nova_button_up"]
+
+[connection signal="button_up" from="Strategio/MalNova" to="." method="_on_MalNova_button_up"]
+
+[connection signal="button_up" from="Strategio/Forta" to="." method="_on_Forta_button_up"]
+
+[connection signal="button_up" from="Strategio/MalForta" to="." method="_on_MalForta_button_up"]
+
+[connection signal="timeout" from="DuoblaKlako" to="." method="_on_DuoblaKlako_timeout"]
 
 

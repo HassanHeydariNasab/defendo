@@ -15,7 +15,10 @@ func _fixed_process(delta):
 
 func _process(delta):
 	if get_node("Kuglo").is_colliding():
-		get_node("Kuglo").get_collider().get_parent().vivo -= nivelo
+		var kolizio = get_node("Kuglo").get_collider()
+		if kolizio != null:
+			if weakref(kolizio).get_ref():
+				kolizio.get_parent().vivo -= nivelo*2
 		queue_free()
 		t += 10
 	t += 1

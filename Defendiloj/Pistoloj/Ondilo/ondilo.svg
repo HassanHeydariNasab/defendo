@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="ondilo.svg"
-   inkscape:export-filename="/home/hsn6/defendo/Defendiloj/Pistoloj/Pistolo_0/pistolo_0.png"
+   inkscape:export-filename="/home/hsn6/defendo/Defendiloj/Pistoloj/Ondilo/ondilo.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -42,9 +42,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-75.16843"
-     inkscape:cy="230.21727"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="255.97851"
+     inkscape:cy="255.6774"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -62,7 +62,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -84,5 +84,17 @@
        cx="256"
        cy="796.36218"
        r="128" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path4157"
+       d="m 365.04981,726.20905 c 34.27976,79.51555 21.60864,91.03264 0,139.5272 l -45.32055,-25.64674 0,-88.23372 z"
+       style="fill:#3366cc;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:#3366cc;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 146.95019,726.20905 c -34.27976,79.51555 -21.60864,91.03264 0,139.5272 l 45.32055,-25.64674 0,-88.23372 z"
+       id="path4159"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
   </g>
 </svg>

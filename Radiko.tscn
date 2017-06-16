@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
 [ext_resource path="res://Bazo/bazo.png" type="Texture" id=2]
-[ext_resource path="res://Defendiloj/Fortikajxoj/Fortikajxo.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Malamikoj/Malamiko_0_.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=5]
-[ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=6]
-[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=7]
+[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=4]
+[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=5]
+[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=6]
+[ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=7]
+[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -16,7 +17,7 @@ radius = 237.801
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 239.546
+radius = 216.231
 
 [sub_resource type="Curve2D" id=3]
 
@@ -72,7 +73,7 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="RigidBody2D" type="RigidBody2D" parent="Bazo"]
+[node name="Bazo" type="RigidBody2D" parent="Bazo"]
 
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
@@ -96,20 +97,27 @@ velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bazo/RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bazo/Bazo"]
 
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Fortikajxo" parent="." instance=ExtResource( 3 )]
+[node name="Vivo" type="Label" parent="Bazo"]
 
-transform/pos = Vector2( 322, 965 )
-
-[node name="Fortikajxo1" parent="." instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 322, 965 )
-transform/rot = 90.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -46.0
+margin/top = -92.0
+margin/right = 8.0
+margin/bottom = -15.0
+custom_fonts/font = ExtResource( 3 )
+text = "-1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="Pistoloj" type="YSort" parent="."]
 
@@ -119,17 +127,9 @@ sort/enabled = true
 
 sort/enabled = true
 
-[node name="Malamiko_0_2" parent="Malamikoj" instance=ExtResource( 4 )]
+[node name="Kugloj" type="YSort" parent="."]
 
-transform/pos = Vector2( 328.994, -226.013 )
-
-[node name="Malamiko_0_5" parent="Malamikoj" instance=ExtResource( 4 )]
-
-transform/pos = Vector2( 322.8, -372.675 )
-
-[node name="Malamiko_0_7" parent="Malamikoj" instance=ExtResource( 4 )]
-
-transform/pos = Vector2( 326.349, -507.129 )
+sort/enabled = true
 
 [node name="Mono" type="Label" parent="."]
 
@@ -138,13 +138,32 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 300.0
+margin/left = 275.0
 margin/top = 12.0
-margin/right = 354.0
+margin/right = 329.0
 margin/bottom = 89.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"
 align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label" type="Label" parent="Mono"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -24.0
+margin/top = 26.0
+margin/right = 16.0
+margin/bottom = 103.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "$"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -160,9 +179,28 @@ margin/left = 40.0
 margin/top = 12.0
 margin/right = 94.0
 margin/bottom = 89.0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"
 align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label" type="Label" parent="Ondo"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -10.0
+margin/top = 66.0
+margin/right = 140.0
+margin/bottom = 143.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Ondo"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -174,14 +212,17 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 526.0
-margin/top = 331.0
-margin/right = 1050.0
-margin/bottom = 849.0
+margin/left = 536.0
+margin/top = 860.0
+margin/right = 1060.0
+margin/bottom = 1379.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 6 )
+icon = ExtResource( 7 )
 flat = false
 
 [node name="Aldoni_Ondilo" type="Button" parent="."]
@@ -191,14 +232,17 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 526.0
-margin/top = 461.0
-margin/right = 1050.0
-margin/bottom = 979.0
+margin/left = 0.0
+margin/top = 860.0
+margin/right = 524.0
+margin/bottom = 1379.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 7 )
+icon = ExtResource( 8 )
 flat = false
 
 [node name="Path2D" type="Path2D" parent="."]
