@@ -13,13 +13,14 @@ onready var Limo = get_node("Area2D/Limo")
 onready var K = preload("res://Defendiloj/Kugloj/Kuglo/Kuglo.tscn")
 onready var Strategio = get_node("Strategio")
 onready var DK = get_node("DuoblaKlako")
+onready var Radiko = get_tree().get_root().get_node("Radiko")
 
 
 var nk = 0
 var atendado_nova_K = 0
 var nivelo = 1
 var strategio = 'nova'
-var aktiva = true
+var enreta = false
 
 func _ready():
 	Strategio.hide()
@@ -43,7 +44,7 @@ func _process(delta):
 		for Malamiko in Malamikoj:
 			if not weakref(Malamiko).get_ref():
 				Malamikoj.erase(Malamiko)
-		if Malamikoj.size() > 0 and Malamikoj_kolizitaj.size() == 0:
+		if Malamikoj.size() > 0 and Malamikoj_kolizitaj.size() == 0 and enreta:
 			var Malamiko = Malamikoj[0]
 			if strategio == 'nova':
 				Malamiko = Malamikoj[-1]
@@ -74,7 +75,7 @@ func _process(delta):
 				get_tree().get_root().get_node("Radiko/Kugloj").add_child(K_)
 			elif atendado_nova_K >= 100:
 				atendado_nova_K = 0
-	if get_tree().get_root().get_node("Radiko").kaptitajxo == self:
+	if Radiko.kaptitajxo == self:
 		set_global_pos(get_global_mouse_pos())
 		Elektumo.show()
 		Limo.show()
@@ -90,9 +91,9 @@ func _on_Kanono_input_event( viewport, event, shape_idx ):
 		if event.pressed:
 			nk += 1
 			DK.start()
-			get_tree().get_root().get_node("Radiko").kaptitajxo = self
+			Radiko.kaptitajxo = self
 		else:
-			get_tree().get_root().get_node("Radiko").kaptitajxo = null
+			Radiko.kaptitajxo = null
 		if nk >= 2:
 			if Strategio.is_hidden():
 				Strategio.show()
@@ -108,9 +109,9 @@ func _on_Kanono_input_event( viewport, event, shape_idx ):
 			else:
 				Strategio.hide()
 		if event.button_mask == 0:
-			get_tree().get_root().get_node("Radiko").kaptitajxo = self
+			Radiko.kaptitajxo = self
 		else:
-			get_tree().get_root().get_node("Radiko").kaptitajxo = null
+			Radiko.kaptitajxo = null
 
 func _on_DuoblaKlako_timeout():
 	nk = 0
@@ -129,7 +130,7 @@ func _on_MalNova_button_up():
 
 func _on_Forta_button_up():
 	Strategio.hide()
-	strategio = 'forta'	
+	strategio = 'forta'
 
 func _on_Area2D_2_body_enter( korpo ):
 	#if korpo.get_name() == 'Malamiko_0':

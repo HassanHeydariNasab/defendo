@@ -1,13 +1,15 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
-[ext_resource path="res://Bazo/bazo.png" type="Texture" id=2]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=3]
-[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=4]
-[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=5]
-[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=6]
-[ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=7]
-[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=8]
+[ext_resource path="res://Defendiloj/Sunpaneloj/reto.png" type="Texture" id=2]
+[ext_resource path="res://Defendiloj/Sunpaneloj/Kontaktoskatolo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Bazo/bazo.png" type="Texture" id=4]
+[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=6]
+[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=7]
+[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=8]
+[ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=9]
+[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -46,14 +48,42 @@ func _fixed_process(delta):
 
 script/script = ExtResource( 1 )
 
+[node name="Reto" type="Node2D" parent="."]
+
+[node name="Reto" type="Sprite" parent="Reto"]
+
+transform/pos = Vector2( 320, 480 )
+texture = ExtResource( 2 )
+
+[node name="Kontaktoskatolo" parent="Reto" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 580, 330 )
+
+[node name="Kontaktoskatolo1" parent="Reto" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 445, 570 )
+
+[node name="Kontaktoskatolo2" parent="Reto" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 351, 260 )
+
+[node name="Kontaktoskatolo3" parent="Reto" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 184, 330 )
+
+[node name="Kontaktoskatolo4" parent="Reto" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 90, 470 )
+
 [node name="Bazo" type="Node2D" parent="."]
 
-transform/pos = Vector2( 322, 965 )
-transform/scale = Vector2( 0.5, 0.5 )
+editor/display_folded = true
+transform/pos = Vector2( 320, 960 )
+transform/scale = Vector2( 0.7, 0.7 )
 
 [node name="Sprite" type="Sprite" parent="Bazo"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="Bazo"]
 
@@ -113,7 +143,7 @@ margin/left = -46.0
 margin/top = -92.0
 margin/right = 8.0
 margin/bottom = -15.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 text = "-1"
 percent_visible = 1.0
 lines_skipped = 0
@@ -133,6 +163,7 @@ sort/enabled = true
 
 [node name="Mono" type="Label" parent="."]
 
+editor/display_folded = true
 visibility/opacity = 0.53
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -142,7 +173,7 @@ margin/left = 275.0
 margin/top = 12.0
 margin/right = 329.0
 margin/bottom = 89.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"
 align = 1
@@ -161,7 +192,7 @@ margin/left = -24.0
 margin/top = 26.0
 margin/right = 16.0
 margin/bottom = 103.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "$"
 percent_visible = 1.0
@@ -170,6 +201,7 @@ max_lines_visible = -1
 
 [node name="Ondo" type="Label" parent="."]
 
+editor/display_folded = true
 visibility/opacity = 0.53
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -179,7 +211,7 @@ margin/left = 40.0
 margin/top = 12.0
 margin/right = 94.0
 margin/bottom = 89.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"
 align = 1
@@ -198,7 +230,7 @@ margin/left = -10.0
 margin/top = 66.0
 margin/right = 140.0
 margin/bottom = 143.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ondo"
 percent_visible = 1.0
@@ -216,13 +248,13 @@ margin/left = 536.0
 margin/top = 860.0
 margin/right = 1060.0
 margin/bottom = 1379.0
-custom_styles/hover = ExtResource( 4 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/normal = ExtResource( 6 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 8 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 7 )
+icon = ExtResource( 9 )
 flat = false
 
 [node name="Aldoni_Ondilo" type="Button" parent="."]
@@ -236,17 +268,18 @@ margin/left = 0.0
 margin/top = 860.0
 margin/right = 524.0
 margin/bottom = 1379.0
-custom_styles/hover = ExtResource( 4 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/normal = ExtResource( 6 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 8 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 8 )
+icon = ExtResource( 10 )
 flat = false
 
 [node name="Path2D" type="Path2D" parent="."]
 
+editor/display_folded = true
 visibility/visible = false
 curve = SubResource( 3 )
 

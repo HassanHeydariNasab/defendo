@@ -100,6 +100,15 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
+[node name="Efekto" type="Tween" parent="Malamiko_0"]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
 [connection signal="input_event" from="Malamiko_0/Area2D" to="." method="_on_Area2D_input_event"]
+
+[connection signal="tween_complete" from="Malamiko_0/Efekto" to="." method="_on_Efekto_tween_complete"]
 
 

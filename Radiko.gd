@@ -33,14 +33,14 @@ func _process(delta):
 		elif ondo == 1:
 			for i in range(3):
 				var M0_ = M0.instance()
-				M0_.set_global_pos(Vector2(120+i*200, -100))
+				M0_.set_global_pos(Vector2(-80+i*400, -100))
 				Mj.add_child(M0_)
 			ondo_kreita = true
 		elif ondo == 2:
-			for i in range(3):
+			for i in range(2):
 				for j in range(4):
 					var M0_ = M0.instance()
-					M0_.set_global_pos(Vector2(120+i*200, -100+j*-200))
+					M0_.set_global_pos(Vector2(-80+i*600, -100+j*-200))
 					Mj.add_child(M0_)
 			ondo_kreita = true
 		else:
@@ -70,12 +70,18 @@ func _on_Aldoni_Kanonon_button_up():
 	if mono >= 10:
 		mono -= 10
 		var Kanono_ = Kanono.instance()
-		Kanono_.set_global_pos(Vector2(400, 600))
+		Kanono_.set_global_pos(Vector2(400, 700))
 		Pj.add_child(Kanono_)
 
 func _on_Aldoni_Ondilo_button_up():
 	if mono >= 20:
 		mono -= 20
 		var Ondilo_ = Ondilo.instance()
-		Ondilo_.set_global_pos(Vector2(260, 600))
+		Ondilo_.set_global_pos(Vector2(260, 700))
 		Pj.add_child(Ondilo_)
+
+func _je_malamiko_0_mortigxis():
+	mono += 10
+
+func _je_malamiko_0_batis_bazon():
+	vivo -= 10

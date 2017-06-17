@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Defendiloj/Sunpaneloj/Kontaktoskatolo.gd" type="Script" id=1]
+[ext_resource path="res://Defendiloj/Sunpaneloj/kontaktoskatolo.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 62.5
+
+[node name="Kontaktoskatolo" type="Node2D"]
+
+transform/scale = Vector2( 0.8, 0.8 )
+script/script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="Kontaktoskatolo" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 0 )
+gravity = 0.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 1024
+collision/mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kontaktoskatolo"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="body_enter" from="Kontaktoskatolo" to="." method="_on_Kontaktoskatolo_body_enter"]
+
+[connection signal="body_exit" from="Kontaktoskatolo" to="." method="_on_Kontaktoskatolo_body_exit"]
+
+

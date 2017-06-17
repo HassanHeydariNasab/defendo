@@ -9,6 +9,8 @@ onready var Ondo = get_node("Ondo")
 onready var Nivelo = get_node("Nivelo")
 onready var Areo = get_node("Area2D")
 onready var Limo = get_node("Area2D/Limo")
+onready var Radiko = get_tree().get_root().get_node("Radiko")
+
 var atendado_nova_K = 0
 var nivelo = 1
 
@@ -46,7 +48,7 @@ func _process(delta):
 		atendado_nova_K = 0
 		Ondo.set_scale(Vector2(1, 1))
 		Ondo.set_opacity(1)
-	if get_tree().get_root().get_node("Radiko").kaptitajxo == self:
+	if Radiko.kaptitajxo == self:
 		set_global_pos(get_global_mouse_pos())
 		Elektumo.show()
 		Limo.show()
@@ -60,14 +62,14 @@ func _process(delta):
 func _on_Kanono_input_event( viewport, event, shape_idx ):
 	if event.type == InputEvent.SCREEN_TOUCH:
 		if event.pressed:
-			get_tree().get_root().get_node("Radiko").kaptitajxo = self
+			Radiko.kaptitajxo = self
 		else:
-			get_tree().get_root().get_node("Radiko").kaptitajxo = null
+			Radiko.kaptitajxo = null
 	elif event.type == InputEvent.MOUSE_BUTTON:
 		if event.button_mask == 0:
-			get_tree().get_root().get_node("Radiko").kaptitajxo = self
+			Radiko.kaptitajxo = self
 		else:
-			get_tree().get_root().get_node("Radiko").kaptitajxo = null
+			Radiko.kaptitajxo = null
 
 func _on_Ondo_body_enter( korpo ):
 	if korpo.get_name() == "Malamiko_0":
