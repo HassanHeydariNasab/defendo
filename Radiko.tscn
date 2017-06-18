@@ -69,11 +69,15 @@ transform/pos = Vector2( 351, 260 )
 
 [node name="Kontaktoskatolo3" parent="Reto" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 184, 330 )
+transform/pos = Vector2( 158, 330 )
 
 [node name="Kontaktoskatolo4" parent="Reto" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 90, 470 )
+transform/pos = Vector2( 64, 470 )
+
+[node name="Kontaktoskatolo5" parent="Reto" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 243, 680 )
 
 [node name="Bazo" type="Node2D" parent="."]
 

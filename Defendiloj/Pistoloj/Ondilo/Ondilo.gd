@@ -1,6 +1,7 @@
 extends Node2D
 
 var Malamikoj = []
+var Malamikoj_kolizitaj = []
 
 onready var F = get_node("Fiksata")
 onready var P = get_node("Ondilo")
@@ -10,11 +11,14 @@ onready var Nivelo = get_node("Nivelo")
 onready var Areo = get_node("Area2D")
 onready var Limo = get_node("Area2D/Limo")
 onready var Radiko = get_tree().get_root().get_node("Radiko")
+onready var Enreta = get_node("Ondilo/Enreta")
 
 var atendado_nova_K = 0
 var nivelo = 1
+var enreta = false
 
 func _ready():
+	Enreta.hide()
 	set_process(true)
 
 func _on_Area2D_body_enter( korpo ):
@@ -26,13 +30,16 @@ func _on_Area2D_body_exit( korpo ):
 		Malamikoj.remove(Malamikoj.find(korpo))
 	
 func _process(delta):
-	if Malamikoj.size() > 0:
+	if enreta:
+		Enreta.show()
+	else:
+		Enreta.hide()
+	if Malamikoj.size() > 0 and enreta:
 		#se la malamiko liberigxis
 		for Malamiko in Malamikoj:
 			if not weakref(Malamiko).get_ref():
 				Malamikoj.erase(Malamiko)
 		if Malamikoj.size() > 0:
-			#PORFARI sxangxu gxin laux la strategio
 			var Malamiko = Malamikoj[0]
 			atendado_nova_K += 1
 			if atendado_nova_K < nivelo*5+80:
@@ -42,11 +49,11 @@ func _process(delta):
 					Ondo.set_opacity(0)
 			else:
 				atendado_nova_K = 0
-				Ondo.set_scale(Vector2(1, 1))
+				Ondo.set_scale(Vector2(0.8, 0.8))
 				Ondo.set_opacity(1.0)
 	else:
 		atendado_nova_K = 0
-		Ondo.set_scale(Vector2(1, 1))
+		Ondo.set_scale(Vector2(0.8, 0.8))
 		Ondo.set_opacity(1)
 	if Radiko.kaptitajxo == self:
 		set_global_pos(get_global_mouse_pos())
@@ -72,5 +79,5 @@ func _on_Kanono_input_event( viewport, event, shape_idx ):
 			Radiko.kaptitajxo = null
 
 func _on_Ondo_body_enter( korpo ):
-	if korpo.get_name() == "Malamiko_0":
+	if korpo.get_name() == "Malamiko_0" and enreta and Malamikoj_kolizitaj.size() == 0:
 		korpo.get_parent().vivo -= nivelo*10

@@ -14,6 +14,7 @@ onready var K = preload("res://Defendiloj/Kugloj/Kuglo/Kuglo.tscn")
 onready var Strategio = get_node("Strategio")
 onready var DK = get_node("DuoblaKlako")
 onready var Radiko = get_tree().get_root().get_node("Radiko")
+onready var Enreta = get_node("Kanono/Enreta")
 
 
 var nk = 0
@@ -24,6 +25,7 @@ var enreta = false
 
 func _ready():
 	Strategio.hide()
+	Enreta.hide()
 	set_process(true)
 
 func _on_Area2D_body_enter( korpo ):
@@ -35,15 +37,20 @@ func _on_Area2D_body_exit( korpo ):
 		Malamikoj.remove(Malamikoj.find(korpo))
 	
 func _process(delta):
+	if enreta:
+		Enreta.show()
+	else:
+		Enreta.hide()
 	if Malamikoj_kolizitaj.size() > 0:
 		for Mk in Malamikoj_kolizitaj:
 			if not weakref(Mk).get_ref():
 				Malamikoj_kolizitaj.erase(Mk)
 	if Malamikoj.size() > 0:
-		#se la malamiko liberigxis
+		#se malamiko liberigxis
 		for Malamiko in Malamikoj:
 			if not weakref(Malamiko).get_ref():
 				Malamikoj.erase(Malamiko)
+		#se ankoraux ni havas malamikojn
 		if Malamikoj.size() > 0 and Malamikoj_kolizitaj.size() == 0 and enreta:
 			var Malamiko = Malamikoj[0]
 			if strategio == 'nova':

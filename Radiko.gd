@@ -70,14 +70,14 @@ func _on_Aldoni_Kanonon_button_up():
 	if mono >= 10:
 		mono -= 10
 		var Kanono_ = Kanono.instance()
-		Kanono_.set_global_pos(Vector2(400, 700))
+		Kanono_.set_global_pos(Vector2(480, 800))
 		Pj.add_child(Kanono_)
 
 func _on_Aldoni_Ondilo_button_up():
 	if mono >= 20:
 		mono -= 20
 		var Ondilo_ = Ondilo.instance()
-		Ondilo_.set_global_pos(Vector2(260, 700))
+		Ondilo_.set_global_pos(Vector2(180, 800))
 		Pj.add_child(Ondilo_)
 
 func _je_malamiko_0_mortigxis():
