@@ -15,6 +15,7 @@ onready var Strategio = get_node("Strategio")
 onready var DK = get_node("DuoblaKlako")
 onready var Radiko = get_tree().get_root().get_node("Radiko")
 onready var Enreta = get_node("Kanono/Enreta")
+onready var Fajro = get_node("Fajro")
 
 
 var nk = 0
@@ -51,7 +52,8 @@ func _process(delta):
 			if not weakref(Malamiko).get_ref():
 				Malamikoj.erase(Malamiko)
 		#se ankoraux ni havas malamikojn
-		if Malamikoj.size() > 0 and Malamikoj_kolizitaj.size() == 0 and enreta:
+		#if Malamikoj.size() > 0 and Malamikoj_kolizitaj.size() == 0 and enreta:
+		if Malamikoj.size() > 0 and enreta:
 			var Malamiko = Malamikoj[0]
 			if strategio == 'nova':
 				Malamiko = Malamikoj[-1]
@@ -73,11 +75,17 @@ func _process(delta):
 			P.set_rot(angulo)
 			atendado_nova_K += 1
 			if atendado_nova_K < 100 and atendado_nova_K % 10 == 0:
+				Fajro.play()
 				var K_ = K.instance()
 				K_.pistolo = self
 				K_.nivelo = nivelo
 				K_.angulo = angulo
-				K_.set_global_pos(Kuglujo.get_global_pos())
+				if Malamikoj_kolizitaj.size() > 0:
+					#K_.set_global_pos(Kuglujo.get_global_pos()+
+					#Vector2(100*cos(angulo), -100*sin(angulo)))
+					K_.set_global_pos(Kuglujo.get_global_pos())
+				else:
+					K_.set_global_pos(Kuglujo.get_global_pos())
 				K_.set_global_scale(Vector2(log(nivelo)+1.0, log(nivelo)+1.0))
 				get_tree().get_root().get_node("Radiko/Kugloj").add_child(K_)
 			elif atendado_nova_K >= 100:

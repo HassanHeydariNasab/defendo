@@ -12,6 +12,7 @@ onready var Areo = get_node("Area2D")
 onready var Limo = get_node("Area2D/Limo")
 onready var Radiko = get_tree().get_root().get_node("Radiko")
 onready var Enreta = get_node("Ondilo/Enreta")
+onready var Fajro = get_node("Fajro")
 
 var atendado_nova_K = 0
 var nivelo = 1
@@ -35,6 +36,8 @@ func _process(delta):
 	else:
 		Enreta.hide()
 	if Malamikoj.size() > 0 and enreta:
+		if Ondo.get_scale() == Vector2(1, 1):
+			Fajro.play()
 		#se la malamiko liberigxis
 		for Malamiko in Malamikoj:
 			if not weakref(Malamiko).get_ref():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/Kanono.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono_elektajxo.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono_enreta.png" type="Texture" id=4]
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/gamo.png" type="Texture" id=5]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=6]
+[ext_resource path="res://Defendiloj/Pistoloj/Kanono/fajro.ogg" type="AudioStream" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -25,7 +26,7 @@ radius = 661.054
 [sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
-radius = 266.667
+radius = 235.702
 
 [node name="Kanono" type="Node2D"]
 
@@ -35,6 +36,7 @@ script/script = ExtResource( 1 )
 
 [node name="Kanono" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -145,6 +147,7 @@ max_lines_visible = -1
 
 [node name="Strategio" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( -396.925, 225.292 )
 transform/rot = 90.0
 
@@ -222,6 +225,17 @@ process_mode = 1
 wait_time = 0.4
 one_shot = true
 autostart = false
+
+[node name="Fajro" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 7 )
+stream/play = false
+stream/loop = false
+stream/volume_db = -8.14
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 [connection signal="input_event" from="Kanono" to="." method="_on_Kanono_input_event"]
 

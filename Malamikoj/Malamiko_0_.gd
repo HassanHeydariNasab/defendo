@@ -3,7 +3,7 @@ extends Node2D
 signal malamiko_0_mortigxis
 signal malamiko_0_batis_bazon
 
-var vivo = 999
+var vivo = 1
 onready var M = get_node("Malamiko_0")
 onready var Vivo = get_node("Malamiko_0/Vivo")
 onready var Vivo_P = get_node("Malamiko_0/Vivo_P")
@@ -36,11 +36,11 @@ func _process(delta):
 
 func _fixed_process(delta):
 	Vivo.set_text(str(vivo))
-	Vivo_P.set_scale(Vector2(vivo/999.0, 1))
+	Vivo_P.set_scale(Vector2(vivo/99.0, 1))
 	angulo = get_angle_to(get_tree().get_root().get_node("Radiko/Bazo").get_pos())
 	M.set_rot(angulo+deg2rad(180))
 	angulo += deg2rad(-90)
-	M.move(Vector2(.4*cos(angulo), -.4*sin(angulo)))
+	M.move(Vector2(2*cos(angulo), -2*sin(angulo)))
 	if M.is_colliding():
 		if M.get_collider().get_name() == "Bazo":
 			emit_signal('malamiko_0_batis_bazon')

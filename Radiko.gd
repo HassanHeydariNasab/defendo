@@ -33,14 +33,14 @@ func _process(delta):
 		elif ondo == 1:
 			for i in range(3):
 				var M0_ = M0.instance()
-				M0_.set_global_pos(Vector2(-80+i*400, -100))
+				M0_.set_global_pos(Vector2(-280+i*600, -500))
 				Mj.add_child(M0_)
 			ondo_kreita = true
 		elif ondo == 2:
 			for i in range(2):
 				for j in range(4):
 					var M0_ = M0.instance()
-					M0_.set_global_pos(Vector2(-80+i*600, -100+j*-200))
+					M0_.set_global_pos(Vector2(-180+i*900, -100+j*-400))
 					Mj.add_child(M0_)
 			ondo_kreita = true
 		else:
@@ -84,4 +84,4 @@ func _je_malamiko_0_mortigxis():
 	mono += 10
 
 func _je_malamiko_0_batis_bazon():
-	vivo -= 10
+	vivo -= 1

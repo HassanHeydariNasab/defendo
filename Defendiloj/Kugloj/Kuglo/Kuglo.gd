@@ -14,13 +14,10 @@ func _fixed_process(delta):
 	get_node("Kuglo").move((Vector2(4.0*(log(nivelo)+1.0)*cos(angulo), -4.0*(log(nivelo)+1.0)*sin(angulo))))
 
 func _process(delta):
-	if get_node("Kuglo").is_colliding():
-		var kolizio = get_node("Kuglo").get_collider()
-		if kolizio != null:
-			if weakref(kolizio).get_ref():
-				kolizio.get_parent().vivo -= nivelo*2
-		queue_free()
-		t += 10
 	t += 1
 	if t > 200:
 		queue_free()
+
+func _on_Area2D_body_enter( korpo ):
+	korpo.get_parent().vivo -= nivelo*2
+	queue_free()
