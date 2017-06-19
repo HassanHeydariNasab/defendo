@@ -1,7 +1,6 @@
 extends Node2D
 
 var Malamikoj = []
-var Malamikoj_kolizitaj = []
 
 onready var F = get_node("Fiksata")
 onready var P = get_node("Ondilo")
@@ -37,6 +36,7 @@ func _process(delta):
 		Enreta.hide()
 	if Malamikoj.size() > 0 and enreta:
 		if Ondo.get_scale() == Vector2(1, 1):
+			Radiko.mono -= 1
 			Fajro.play()
 		#se la malamiko liberigxis
 		for Malamiko in Malamikoj:
@@ -82,5 +82,5 @@ func _on_Kanono_input_event( viewport, event, shape_idx ):
 			Radiko.kaptitajxo = null
 
 func _on_Ondo_body_enter( korpo ):
-	if korpo.get_name() == "Malamiko_0" and enreta and Malamikoj_kolizitaj.size() == 0:
-		korpo.get_parent().vivo -= nivelo*10
+	if korpo.get_name() == "Malamiko_0" and enreta:
+		korpo.get_parent().vivo -= nivelo*5

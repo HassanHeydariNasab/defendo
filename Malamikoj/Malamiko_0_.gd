@@ -3,7 +3,9 @@ extends Node2D
 signal malamiko_0_mortigxis
 signal malamiko_0_batis_bazon
 
-var vivo = 1
+var vivo = 99
+var komenca_vivo = 99.0
+var rapido = 2
 onready var M = get_node("Malamiko_0")
 onready var Vivo = get_node("Malamiko_0/Vivo")
 onready var Vivo_P = get_node("Malamiko_0/Vivo_P")
@@ -29,21 +31,21 @@ func _process(delta):
 	#M.set_rot(M.get_rot()+deg2rad(7))
 	if vivo <= 0:
 		M.clear_shapes()
-		emit_signal('malamiko_0_mortigxis')
+		emit_signal('malamiko_0_mortigxis', get_scale().x)
 		Efekto.start()
 		set_process(false)
 		set_fixed_process(false)
 
 func _fixed_process(delta):
 	Vivo.set_text(str(vivo))
-	Vivo_P.set_scale(Vector2(vivo/99.0, 1))
+	Vivo_P.set_scale(Vector2(vivo/komenca_vivo, 1))
 	angulo = get_angle_to(get_tree().get_root().get_node("Radiko/Bazo").get_pos())
 	M.set_rot(angulo+deg2rad(180))
 	angulo += deg2rad(-90)
-	M.move(Vector2(2*cos(angulo), -2*sin(angulo)))
+	M.move(Vector2(rapido*cos(angulo), -rapido*sin(angulo)))
 	if M.is_colliding():
 		if M.get_collider().get_name() == "Bazo":
-			emit_signal('malamiko_0_batis_bazon')
+			emit_signal('malamiko_0_batis_bazon', get_scale().x)
 			M.clear_shapes()
 			Efekto.start()
 			set_process(false)

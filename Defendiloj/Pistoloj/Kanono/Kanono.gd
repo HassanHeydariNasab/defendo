@@ -1,7 +1,6 @@
 extends Node2D
 
 var Malamikoj = []
-var Malamikoj_kolizitaj = []
 
 onready var F = get_node("Fiksata")
 onready var P = get_node("Kanono")
@@ -42,17 +41,12 @@ func _process(delta):
 		Enreta.show()
 	else:
 		Enreta.hide()
-	if Malamikoj_kolizitaj.size() > 0:
-		for Mk in Malamikoj_kolizitaj:
-			if not weakref(Mk).get_ref():
-				Malamikoj_kolizitaj.erase(Mk)
 	if Malamikoj.size() > 0:
 		#se malamiko liberigxis
 		for Malamiko in Malamikoj:
 			if not weakref(Malamiko).get_ref():
 				Malamikoj.erase(Malamiko)
 		#se ankoraux ni havas malamikojn
-		#if Malamikoj.size() > 0 and Malamikoj_kolizitaj.size() == 0 and enreta:
 		if Malamikoj.size() > 0 and enreta:
 			var Malamiko = Malamikoj[0]
 			if strategio == 'nova':
@@ -67,7 +61,6 @@ func _process(delta):
 				for M in Malamikoj:
 					if M.get_parent().vivo < Malamiko.get_parent().vivo:
 						Malamiko = M
-			
 			else:
 				Malamiko = Malamikoj[-1]
 			var angulo = get_angle_to(Malamiko.get_global_pos())
@@ -76,16 +69,12 @@ func _process(delta):
 			atendado_nova_K += 1
 			if atendado_nova_K < 100 and atendado_nova_K % 10 == 0:
 				Fajro.play()
+				Radiko.mono -= 1
 				var K_ = K.instance()
 				K_.pistolo = self
 				K_.nivelo = nivelo
 				K_.angulo = angulo
-				if Malamikoj_kolizitaj.size() > 0:
-					#K_.set_global_pos(Kuglujo.get_global_pos()+
-					#Vector2(100*cos(angulo), -100*sin(angulo)))
-					K_.set_global_pos(Kuglujo.get_global_pos())
-				else:
-					K_.set_global_pos(Kuglujo.get_global_pos())
+				K_.set_global_pos(Kuglujo.get_global_pos())
 				K_.set_global_scale(Vector2(log(nivelo)+1.0, log(nivelo)+1.0))
 				get_tree().get_root().get_node("Radiko/Kugloj").add_child(K_)
 			elif atendado_nova_K >= 100:
@@ -146,10 +135,3 @@ func _on_MalNova_button_up():
 func _on_Forta_button_up():
 	Strategio.hide()
 	strategio = 'forta'
-
-func _on_Area2D_2_body_enter( korpo ):
-	#if korpo.get_name() == 'Malamiko_0':
-	Malamikoj_kolizitaj.append(korpo)
-
-func _on_Area2D_2_body_exit( korpo ):
-	Malamikoj_kolizitaj.erase(korpo)

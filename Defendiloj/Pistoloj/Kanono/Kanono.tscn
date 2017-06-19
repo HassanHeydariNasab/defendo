@@ -222,7 +222,7 @@ flat = false
 [node name="DuoblaKlako" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 0.4
+wait_time = 0.3
 one_shot = true
 autostart = false
 
@@ -242,10 +242,6 @@ stream/buffering_ms = 500
 [connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
 
 [connection signal="body_exit" from="Area2D" to="." method="_on_Area2D_body_exit"]
-
-[connection signal="body_enter" from="Area2D 2" to="." method="_on_Area2D_2_body_enter"]
-
-[connection signal="body_exit" from="Area2D 2" to="." method="_on_Area2D_2_body_exit"]
 
 [connection signal="button_up" from="Strategio/Nova" to="." method="_on_Nova_button_up"]
 
