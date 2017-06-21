@@ -1,16 +1,17 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Sunpaneloj/reto.png" type="Texture" id=2]
 [ext_resource path="res://Defendiloj/Sunpaneloj/Kontaktoskatolo.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Bazo/bazo.png" type="Texture" id=4]
+[ext_resource path="res://Defendiloj/Bazo/bazo.png" type="Texture" id=4]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=5]
-[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=6]
-[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=7]
-[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=8]
-[ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=9]
-[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=10]
-[ext_resource path="res://Muzikoj/Ars_Sonor__Digital_By_Birth_-_01_-_Digital_Soul_Utopia_Mix.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Defendiloj/Bazo/274404__sforsman__break-1.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=7]
+[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=8]
+[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=9]
+[ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=10]
+[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=11]
+[ext_resource path="res://Muzikoj/Ars_Sonor__Digital_By_Birth_-_01_-_Digital_Soul_Utopia_Mix.ogg" type="AudioStream" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -43,7 +44,7 @@ __meta__ = {
 
 [node name="Kontaktoskatolo" parent="Reto" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 580, 330 )
+transform/pos = Vector2( 565, 380 )
 
 [node name="Kontaktoskatolo1" parent="Reto" instance=ExtResource( 3 )]
 
@@ -142,6 +143,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="Batita" type="StreamPlayer" parent="Bazo"]
+
+stream/stream = ExtResource( 6 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
 [node name="Pistoloj" type="YSort" parent="."]
 
 sort/enabled = true
@@ -194,6 +206,7 @@ max_lines_visible = -1
 
 [node name="Ondo" type="Label" parent="."]
 
+editor/display_folded = true
 visibility/opacity = 0.53
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -247,13 +260,13 @@ margin/left = 536.0
 margin/top = 860.0
 margin/right = 1060.0
 margin/bottom = 1379.0
-custom_styles/hover = ExtResource( 6 )
-custom_styles/pressed = ExtResource( 7 )
-custom_styles/normal = ExtResource( 8 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 9 )
+icon = ExtResource( 10 )
 flat = false
 
 [node name="Aldoni_Ondilo" type="Button" parent="."]
@@ -267,18 +280,18 @@ margin/left = 0.0
 margin/top = 860.0
 margin/right = 524.0
 margin/bottom = 1379.0
-custom_styles/hover = ExtResource( 6 )
-custom_styles/pressed = ExtResource( 7 )
-custom_styles/normal = ExtResource( 8 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 10 )
+icon = ExtResource( 11 )
 flat = false
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 11 )
+stream/stream = ExtResource( 12 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0
@@ -290,18 +303,45 @@ stream/buffering_ms = 500
 [node name="Atendado_subondoj" type="Timer" parent="."]
 
 process_mode = 1
-wait_time = 12.0
+wait_time = 7.0
 one_shot = false
 autostart = true
+
+[node name="iru_al_sekva_ondo" type="Button" parent="."]
+
+visibility/visible = false
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 210.0
+margin/top = 100.0
+margin/right = 710.0
+margin/bottom = 267.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Sekva ondo"
+flat = false
 
 [connection signal="body_enter" from="Bazo/Area2D" to="." method="_on_Area2D_body_enter"]
 
 [connection signal="body_exit" from="Bazo/Area2D" to="." method="_on_Area2D_body_exit"]
 
-[connection signal="button_up" from="Aldoni_Kanonon" to="." method="_on_Aldoni_Kanonon_button_up"]
+[connection signal="pressed" from="Aldoni_Kanonon" to="." method="_on_Aldoni_Kanonon_pressed"]
 
-[connection signal="button_up" from="Aldoni_Ondilo" to="." method="_on_Aldoni_Ondilo_button_up"]
+[connection signal="pressed" from="Aldoni_Ondilo" to="." method="_on_Aldoni_Ondilo_pressed"]
 
 [connection signal="timeout" from="Atendado_subondoj" to="." method="_on_Atendado_subondoj_timeout"]
+
+[connection signal="pressed" from="iru_al_sekva_ondo" to="." method="_on_Sekva_ondo_pressed"]
 
 

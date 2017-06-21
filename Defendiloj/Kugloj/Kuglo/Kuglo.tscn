@@ -58,6 +58,15 @@ shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
+[node name="Vivtempilo" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = true
+autostart = true
+
 [connection signal="body_enter" from="Kuglo/Area2D" to="." method="_on_Area2D_body_enter"]
+
+[connection signal="timeout" from="Vivtempilo" to="." method="_on_Vivtempilo_timeout"]
 
 

@@ -1,20 +1,30 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Malamikoj/Malamiko.gd" type="Script" id=1]
-[ext_resource path="res://Malamikoj/malamiko_0.png" type="Texture" id=2]
+[ext_resource path="res://Malamikoj/malamiko_2.png" type="Texture" id=2]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 100, 97.9167, -100, 97.9167, -9.49857e-13, -72.9167 )
+points = Vector2Array( -60.4167, 89.5833, -89.5833, 54.1667, -72.9167, -37.5, -39.5833, -100, -1.35694e-12, -104.167, 45.8333, -100, 81.25, -37.5, 1.13983e-12, 87.5 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -89.5833, 54.1667, -106.25, 10.4167, -72.9167, -37.5 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 89.5833, 62.5, 64.5833, 91.6667, 1.13983e-12, 87.5, 81.25, -37.5, 110.417, 14.5833 )
 
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 400.78
 
-[node name="Malamiko_0_" type="Node2D"]
+[node name="Malamiko_2_" type="Node2D"]
 
 transform/scale = Vector2( 0.4, 0.4 )
 script/script = ExtResource( 1 )
@@ -26,6 +36,12 @@ input/pickable = false
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1.2, 7.10542e-15, -7.10542e-15, 1.2, 0, 0 )
 shapes/0/trigger = false
+shapes/1/shape = SubResource( 4 )
+shapes/1/transform = Matrix32( 1.2, 7.10542e-15, -7.10542e-15, 1.2, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 5 )
+shapes/2/transform = Matrix32( 1.2, 7.10542e-15, -7.10542e-15, 1.2, 0, 0 )
+shapes/2/trigger = false
 collision/layers = 4
 collision/mask = 4097
 collision/margin = 0.08
@@ -35,8 +51,8 @@ collision/margin = 0.08
 transform/rot = -3.39259e-13
 transform/scale = Vector2( 1.2, 1.2 )
 build_mode = 0
-polygon = Vector2Array( -9.49857e-13, -72.9167, -100, 97.9167, 100, 97.9167 )
-shape_range = Vector2( 0, 0 )
+polygon = Vector2Array( -39.5833, -100, -1.35694e-12, -104.167, 45.8333, -100, 81.25, -37.5, 110.417, 14.5833, 89.5833, 62.5, 64.5833, 91.6667, 1.13983e-12, 87.5, -60.4167, 89.5833, -89.5833, 54.1667, -106.25, 10.4167, -72.9167, -37.5 )
+shape_range = Vector2( 0, 2 )
 trigger = false
 
 [node name="Sprite" type="Sprite" parent="Malamiko"]

@@ -10,9 +10,9 @@
 script/source = "extends Node2D
 
 func _ready():
-	pass
+	get_node(\"Panel/Poentaro\").set_text(str(Tutmonda.poentaro))
 
-func _on_Denove_button_up():
+func _on_Denove_pressed():
 	get_tree().change_scene(\"res://Radiko.tscn\")"
 
 [sub_resource type="StyleBoxFlat" id=2]
@@ -44,19 +44,20 @@ margin/right = 640.0
 margin/bottom = 960.0
 custom_styles/panel = SubResource( 2 )
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Mesagxo" type="Label" parent="Panel"]
 
+rect/scale = Vector2( 1.2, 1.2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 99.0
-margin/top = 384.0
-margin/right = 696.0
-margin/bottom = 461.0
+margin/left = 58.0
+margin/top = 256.0
+margin/right = 516.0
+margin/bottom = 333.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Vi malvenkigxis!"
+text = "Vi Malvenkigxis!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -68,9 +69,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 128.0
-margin/top = 704.0
+margin/top = 768.0
 margin/right = 512.0
-margin/bottom = 832.0
+margin/bottom = 896.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
@@ -84,6 +85,42 @@ shortcut = null
 text = "Denove"
 flat = false
 
-[connection signal="button_up" from="Panel/Denove" to="." method="_on_Denove_button_up"]
+[node name="Poentaro" type="Label" parent="Panel"]
+
+rect/scale = Vector2( 1.3, 1.3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 256.0
+margin/top = 449.0
+margin/right = 310.0
+margin/bottom = 526.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "-1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label" type="Label" parent="Panel"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 256.0
+margin/top = 566.0
+margin/right = 474.0
+margin/bottom = 643.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Poentoj"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="pressed" from="Panel/Denove" to="." method="_on_Denove_pressed"]
 
 

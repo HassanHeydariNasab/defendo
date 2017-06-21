@@ -29,11 +29,11 @@ func _ready():
 	set_process(true)
 
 func _on_Area2D_body_enter( korpo ):
-	if korpo.get_name() == "Malamiko_0":
+	if korpo.get_name() == "Malamiko":
 		Malamikoj.push_back(korpo)
 
 func _on_Area2D_body_exit( korpo ):
-	if korpo.get_name() == "Malamiko_0":
+	if korpo.get_name() == "Malamiko":
 		Malamikoj.remove(Malamikoj.find(korpo))
 	
 func _process(delta):

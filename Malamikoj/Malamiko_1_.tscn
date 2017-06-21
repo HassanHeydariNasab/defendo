@@ -1,20 +1,20 @@
 [gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Malamikoj/Malamiko.gd" type="Script" id=1]
-[ext_resource path="res://Malamikoj/malamiko_0.png" type="Texture" id=2]
+[ext_resource path="res://Malamikoj/malamiko_1.png" type="Texture" id=2]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=3]
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 100, 97.9167, -100, 97.9167, -9.49857e-13, -72.9167 )
+points = Vector2Array( 110.417, -31.25, 70.8333, 97.9167, -66.6667, 97.9167, -106.25, -29.1667, 2.08333, -110.417 )
 
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 400.78
 
-[node name="Malamiko_0_" type="Node2D"]
+[node name="Malamiko_1_" type="Node2D"]
 
 transform/scale = Vector2( 0.4, 0.4 )
 script/script = ExtResource( 1 )
@@ -23,7 +23,7 @@ script/script = ExtResource( 1 )
 
 transform/rot = -4.07111e-13
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1.2, 7.10542e-15, -7.10542e-15, 1.2, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 4
@@ -35,7 +35,7 @@ collision/margin = 0.08
 transform/rot = -3.39259e-13
 transform/scale = Vector2( 1.2, 1.2 )
 build_mode = 0
-polygon = Vector2Array( -9.49857e-13, -72.9167, -100, 97.9167, 100, 97.9167 )
+polygon = Vector2Array( 2.08333, -110.417, -106.25, -29.1667, -66.6667, 97.9167, 70.8333, 97.9167, 110.417, -31.25 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 

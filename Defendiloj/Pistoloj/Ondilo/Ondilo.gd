@@ -22,11 +22,11 @@ func _ready():
 	set_process(true)
 
 func _on_Area2D_body_enter( korpo ):
-	if korpo.get_name() == "Malamiko_0":
+	if korpo.get_name() == "Malamiko":
 		Malamikoj.push_front(korpo)
 
 func _on_Area2D_body_exit( korpo ):
-	if korpo.get_name() == "Malamiko_0":
+	if korpo.get_name() == "Malamiko":
 		Malamikoj.remove(Malamikoj.find(korpo))
 	
 func _process(delta):
@@ -82,5 +82,5 @@ func _on_Kanono_input_event( viewport, event, shape_idx ):
 			Radiko.kaptitajxo = null
 
 func _on_Ondo_body_enter( korpo ):
-	if korpo.get_name() == "Malamiko_0" and enreta:
+	if korpo.get_name() == "Malamiko" and enreta:
 		korpo.get_parent().vivo -= nivelo*5
