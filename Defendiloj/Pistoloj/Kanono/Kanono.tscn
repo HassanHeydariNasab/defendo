@@ -26,7 +26,7 @@ radius = 661.054
 [sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
-radius = 235.702
+radius = 133.333
 
 [node name="Kanono" type="Node2D"]
 
@@ -83,7 +83,6 @@ texture = ExtResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/rot = 8.14222e-13
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
@@ -108,9 +107,8 @@ visibility/behind_parent = true
 transform/scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 5 )
 
-[node name="Area2D 2" type="Area2D" parent="."]
+[node name="Reta" type="Area2D" parent="."]
 
-editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -120,9 +118,9 @@ gravity = 0.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision/layers = 2
-collision/mask = 4100
+collision/mask = 1024
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D 2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reta"]
 
 shape = SubResource( 4 )
 trigger = false

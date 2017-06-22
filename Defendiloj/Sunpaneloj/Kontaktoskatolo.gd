@@ -12,9 +12,12 @@ func _fixed_process(delta):
 		for Pistolo in Pistoloj:
 			Pistolo.get_parent().enreta = false
 
-func _on_Kontaktoskatolo_body_enter( korpo ):
-	Pistoloj.append(korpo)
+func _on_Kontaktoskatolo_area_enter( areo ):
+	if areo.get_name() == "Reta":
+		Pistoloj.append(areo)
 
-func _on_Kontaktoskatolo_body_exit( korpo ):
-	Pistoloj.erase(korpo)
-	korpo.get_parent().enreta = false
+
+func _on_Kontaktoskatolo_area_exit( areo ):
+	if areo.get_name() == "Reta":
+		Pistoloj.erase(areo)
+		areo.get_parent().enreta = false

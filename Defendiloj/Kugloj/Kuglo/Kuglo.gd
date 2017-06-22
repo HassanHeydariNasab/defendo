@@ -14,8 +14,8 @@ func _fixed_process(delta):
 	get_node("Kuglo").move((Vector2(4.0*(log(nivelo)+1.0)*cos(angulo), -4.0*(log(nivelo)+1.0)*sin(angulo))))
 
 func _on_Area2D_body_enter( korpo ):
-	var patro_nomo = korpo.get_parent().get_name()
-	if "Malamiko_0_" in patro_nomo or "Malamiko_1_" in patro_nomo:
+	var patro_nomo = korpo.get_parent().nomo
+	if patro_nomo == "Malamiko_0_" or patro_nomo == "Malamiko_1_":
 		korpo.get_parent().vivo -= nivelo*2
 		queue_free()
 

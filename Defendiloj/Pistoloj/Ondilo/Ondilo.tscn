@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://Defendiloj/Pistoloj/Ondilo/Ondilo.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono_elektajxo.png" type="Texture" id=2]
@@ -19,6 +19,11 @@ radius = 124.772
 custom_solver_bias = 0.0
 radius = 661.054
 
+[sub_resource type="CircleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 133.333
+
 [sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
@@ -31,6 +36,7 @@ script/script = ExtResource( 1 )
 
 [node name="Ondilo" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -86,6 +92,25 @@ visibility/behind_parent = true
 transform/scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 5 )
 
+[node name="Reta" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 0 )
+gravity = 0.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 2
+collision/mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reta"]
+
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
+
 [node name="Fiksata" type="Node2D" parent="."]
 
 [node name="Nivelo" type="Label" parent="."]
@@ -106,6 +131,7 @@ max_lines_visible = -1
 
 [node name="Ondo" type="Area2D" parent="."]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )

@@ -36,7 +36,7 @@ func _process(delta):
 		Enreta.hide()
 	if Malamikoj.size() > 0 and enreta:
 		if Ondo.get_scale() == Vector2(1, 1):
-			Radiko.mono -= 1
+			Radiko.mono -= 5
 			Fajro.play()
 		#se la malamiko liberigxis
 		for Malamiko in Malamikoj:
@@ -83,4 +83,10 @@ func _on_Kanono_input_event( viewport, event, shape_idx ):
 
 func _on_Ondo_body_enter( korpo ):
 	if korpo.get_name() == "Malamiko" and enreta:
-		korpo.get_parent().vivo -= nivelo*5
+		var nova_rapido = korpo.get_parent().komenca_rapido/(1+log(korpo.get_parent().komenca_rapido*nivelo))
+		if korpo.get_parent().rapido > nova_rapido:
+			korpo.get_parent().rapido = nova_rapido
+		if korpo.get_parent().nomo == "Malamiko_2_":
+			korpo.get_parent().vivo -= nivelo*7
+		else:
+			korpo.get_parent().vivo -= nivelo

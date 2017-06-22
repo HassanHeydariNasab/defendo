@@ -31,11 +31,12 @@ func _ready():
 	tipoj = [
 	{'sceno': M0, 'grando': 0.3, 'vivo': 20, 'rapido': 3},
 	{'sceno': M0, 'grando': 0.45, 'vivo': 100, 'rapido': 1.5},
-	{'sceno': M0, 'grando': 0.7, 'vivo': 400, 'rapido': 0.7},
-	{'sceno': M1, 'grando': 0.45, 'vivo': 600, 'rapido': 1},
-	{'sceno': M2, 'grando': 0.45, 'vivo': 250, 'rapido': 1}
+	{'sceno': M0, 'grando': 0.7, 'vivo': 400, 'rapido': 0.9},
+	{'sceno': M1, 'grando': 0.7, 'vivo': 600, 'rapido': 0.7},
+	{'sceno': M2, 'grando': 0.45, 'vivo': 200, 'rapido': 1}
 	]
 	ondoj = [
+	#0
 	[{'nombro': 1, 'tipo': 0, 'atendo': 10},
 	 {'nombro': 1, 'tipo': 0, 'atendo': 1},
 	 {'nombro': 1, 'tipo': 0, 'atendo': 1},
@@ -43,32 +44,50 @@ func _ready():
 	 {'nombro': 1, 'tipo': 0, 'atendo': 7},
 	 {'nombro': 2, 'tipo': 0, 'atendo': 8},
 	 {'nombro': 3, 'tipo': 0, 'atendo': 99}],
+	#1
 	[{'nombro': 2, 'tipo': 0, 'atendo': 5},
 	 {'nombro': 1, 'tipo': 0, 'atendo': 5},
 	 {'nombro': 3, 'tipo': 0, 'atendo': 1},
 	 {'nombro': 3, 'tipo': 0, 'atendo': 10},
-	 {'nombro': 1, 'tipo': 1, 'atendo': 12}],
-	[{'nombro': 2, 'tipo': 1, 'atendo': 3},
+	 {'nombro': 1, 'tipo': 1, 'atendo': 99}],
+	#2
+	[{'nombro': 2, 'tipo': 0, 'atendo': 1},
+	 {'nombro': 1, 'tipo': 0, 'atendo': 2},
+	 {'nombro': 3, 'tipo': 0, 'atendo': 1},
+	 {'nombro': 3, 'tipo': 0, 'atendo': 12},
+	 {'nombro': 1, 'tipo': 2, 'atendo': 99}],
+	#3
+	[{'nombro': 1, 'tipo': 0, 'atendo': 5},
 	 {'nombro': 5, 'tipo': 0, 'atendo': 7},
-	 {'nombro': 1, 'tipo': 2, 'atendo': 12},
+	 {'nombro': 2, 'tipo': 1, 'atendo': 12},
 	 {'nombro': 3, 'tipo': 0, 'atendo': 2},
 	 {'nombro': 3, 'tipo': 0, 'atendo': 2},
-	 {'nombro': 3, 'tipo': 0, 'atendo': 10},
-	 {'nombro': 3, 'tipo': 3, 'atendo': 12}],
-	[{'nombro': 3, 'tipo': 3, 'atendo': 5},
+	 {'nombro': 3, 'tipo': 0, 'atendo': 7},
+	 {'nombro': 3, 'tipo': 2, 'atendo': 99}],
+	#4
+	[{'nombro': 2, 'tipo': 0, 'atendo': 3},
 	 {'nombro': 5, 'tipo': 0, 'atendo': 7},
-	 {'nombro': 1, 'tipo': 4, 'atendo': 12},
-	 {'nombro': 3, 'tipo': 0, 'atendo': 2},
-	 {'nombro': 3, 'tipo': 1, 'atendo': 5},
+	 {'nombro': 1, 'tipo': 3, 'atendo': 20},
+	 {'nombro': 1, 'tipo': 1, 'atendo': 10},
+	 {'nombro': 1, 'tipo': 2, 'atendo': 15},
 	 {'nombro': 3, 'tipo': 0, 'atendo': 10},
-	 {'nombro': 3, 'tipo': 4, 'atendo': 12}],
-	[{'nombro': 3, 'tipo': 1, 'atendo': 5},
-	 {'nombro': 5, 'tipo': 2, 'atendo': 7},
-	 {'nombro': 1, 'tipo': 4, 'atendo': 12},
-	 {'nombro': 7, 'tipo': 0, 'atendo': 2},
-	 {'nombro': 3, 'tipo': 3, 'atendo': 10},
-	 {'nombro': 3, 'tipo': 0, 'atendo': 3},
-	 {'nombro': 3, 'tipo': 4, 'atendo': 12}],
+	 {'nombro': 1, 'tipo': 4, 'atendo': 12}],
+	#5
+	[{'nombro': 1, 'tipo': 0, 'atendo': 5},
+	 {'nombro': 1, 'tipo': 2, 'atendo': 11},
+	 {'nombro': 1, 'tipo': 2, 'atendo': 15},
+	 {'nombro': 4, 'tipo': 0, 'atendo': 2},
+	 {'nombro': 1, 'tipo': 3, 'atendo': 20},
+	 {'nombro': 3, 'tipo': 0, 'atendo': 7},
+	 {'nombro': 2, 'tipo': 3, 'atendo': 99}],
+	#6
+	[{'nombro': 1, 'tipo': 1, 'atendo': 5},
+	 {'nombro': 1, 'tipo': 1, 'atendo': 5},
+	 {'nombro': 1, 'tipo': 1, 'atendo': 10},
+	 {'nombro': 2, 'tipo': 2, 'atendo': 20},
+	 {'nombro': 1, 'tipo': 3, 'atendo': 20},
+	 {'nombro': 3, 'tipo': 0, 'atendo': 10},
+	 {'nombro': 2, 'tipo': 4, 'atendo': 99}],
 	]
 	set_process(true)
 
@@ -87,22 +106,24 @@ func subondi(ondo_i, subondo_i):
 	Atendado_subondoj.start()
 	var subondo = ondoj[ondo_i][subondo_i]
 	randomize()
+	var hazardo = rand_range(-50.0, 100.0)
 	for i in range(subondo['nombro']):
 		var M_ = tipoj[subondo['tipo']]['sceno'].instance()
 		if subondo['nombro'] == 1:
 			M_.set_global_pos(Vector2(rand_range(0.0, 640.0), -100))
 		else:
-			M_.set_global_pos(Vector2(-subondo['nombro']*20+i*300+rand_range(-100.0, 100.0), -250))
+			M_.set_global_pos(Vector2(-subondo['nombro']*40+i*tipoj[subondo['tipo']]['grando']*1000+hazardo, -500))
 		M_.set_scale(Vector2(tipoj[subondo['tipo']]['grando'], tipoj[subondo['tipo']]['grando']))
 		M_.vivo = tipoj[subondo['tipo']]['vivo']
 		M_.komenca_vivo = float(tipoj[subondo['tipo']]['vivo'])
 		M_.rapido = tipoj[subondo['tipo']]['rapido']
+		M_.komenca_rapido = tipoj[subondo['tipo']]['rapido']
 		Mj.add_child(M_)
 	subondo_kreita = true
 	
 func _process(delta):
 	if vivo <= 0 or mono < 0:
-		Tutmonda.poentaro = int(mono+vivo+ondo*7)
+		Tutmonda.poentaro = ondo
 		get_tree().change_scene("res://Kontroloj/Malvenkigxi.tscn")
 	Mono.set_text(str(mono))
 	Ondo.set_text(str(ondo))
@@ -149,7 +170,7 @@ func _je_malamiko_mortigxis(komenca_vivo):
 
 func _je_malamiko_batis_bazon(komenca_vivo):
 	Batita.play()
-	vivo -= int(komenca_vivo/10)
+	vivo -= int(komenca_vivo/4)
 
 func _on_Atendado_subondoj_timeout():
 	if subondo < ondoj[ondo].size()-1:
@@ -162,7 +183,7 @@ func _on_Sekva_ondo_pressed():
 		iru_al_sekva_ondo.hide()
 		ondo += 1
 		if ondo > ondoj.size()-1:
-			Tutmonda.poentaro = int(mono+vivo+ondo*7)
+			Tutmonda.poentaro = ondo
 			get_tree().change_scene("res://Kontroloj/Venkigxi.tscn")
 		reanimi_ondo_teksto()
 		subondo = 0

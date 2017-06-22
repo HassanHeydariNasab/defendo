@@ -36,8 +36,8 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[connection signal="body_enter" from="Kontaktoskatolo" to="." method="_on_Kontaktoskatolo_body_enter"]
+[connection signal="area_enter" from="Kontaktoskatolo" to="." method="_on_Kontaktoskatolo_area_enter"]
 
-[connection signal="body_exit" from="Kontaktoskatolo" to="." method="_on_Kontaktoskatolo_body_exit"]
+[connection signal="area_exit" from="Kontaktoskatolo" to="." method="_on_Kontaktoskatolo_area_exit"]
 
 

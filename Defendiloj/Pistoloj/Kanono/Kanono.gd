@@ -15,6 +15,7 @@ onready var DK = get_node("DuoblaKlako")
 onready var Radiko = get_tree().get_root().get_node("Radiko")
 onready var Enreta = get_node("Kanono/Enreta")
 onready var Fajro = get_node("Fajro")
+var Kugloj
 
 
 var nk = 0
@@ -24,6 +25,7 @@ var strategio = 'nova'
 var enreta = false
 
 func _ready():
+	Kugloj = get_tree().get_root().get_node("Radiko/Kugloj")
 	Strategio.hide()
 	Enreta.hide()
 	set_process(true)
@@ -76,7 +78,7 @@ func _process(delta):
 				K_.angulo = angulo
 				K_.set_global_pos(Kuglujo.get_global_pos())
 				K_.set_global_scale(Vector2(log(nivelo)+1.0, log(nivelo)+1.0))
-				get_tree().get_root().get_node("Radiko/Kugloj").add_child(K_)
+				Kugloj.add_child(K_)
 			elif atendado_nova_K >= 100:
 				atendado_nova_K = 0
 	if Radiko.kaptitajxo == self:
