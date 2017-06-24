@@ -1,0 +1,149 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Kontroloj/Komenco.gd" type="Script" id=1]
+[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=3]
+[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=4]
+[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="Gvidilo" type="Node2D" parent="."]
+
+visibility/opacity = 0.0
+
+[node name="Kasxi_gvidilon" type="Tween" parent="Gvidilo"]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Gvidilo" type="Label" parent="Gvidilo"]
+
+rect/scale = Vector2( 0.6, 0.6 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 56.0
+margin/top = 140.0
+margin/right = 996.0
+margin/bottom = 873.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Cxu vi sciias ke vi povas plibonigi la pistolojn? kolektu samajn pistolojn en la bazo.
+Duoblklaku/Duoblfrapetu al kanono pro sxangxi gxian strategion.
+Pistoloj bezonas energion pro pafi al la malamikoj; metu ilin je la cirklumoj."
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Kontribuo" type="Label" parent="Gvidilo"]
+
+rect/scale = Vector2( 0.42, 0.42 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 20.0
+margin/top = 890.0
+margin/right = 1520.0
+margin/bottom = 1015.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "https://github.com/HassanHeydariNasab/defendo"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Ludi" type="Button" parent="Gvidilo"]
+
+rect/scale = Vector2( 0.7, 0.7 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 60.0
+margin/top = 630.0
+margin/right = 817.0
+margin/bottom = 816.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Mi estas preta."
+flat = false
+
+[node name="Enkonduko" type="Node2D" parent="."]
+
+[node name="Kasxi_enkondukon" type="Tween" parent="Enkonduko"]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Saluton" type="Label" parent="Enkonduko"]
+
+rect/scale = Vector2( 0.6, 0.6 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 60.0
+margin/top = 140.0
+margin/right = 1028.0
+margin/bottom = 723.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Saluton homido,
+Ni volas komandanton por defendi la bazon kontraux malamikoj.
+Se antauxe vi helpis nin, mi ne memoras; Cxar nun estas iam antaux tiam!
+"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Akcepti" type="Button" parent="Enkonduko"]
+
+rect/scale = Vector2( 0.7, 0.7 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 60.0
+margin/top = 630.0
+margin/right = 817.0
+margin/bottom = 816.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Mi akceptas la defion."
+flat = false
+
+[connection signal="tween_complete" from="Gvidilo/Kasxi_gvidilon" to="." method="_on_Kasxi_gvidilon_tween_complete"]
+
+[connection signal="pressed" from="Gvidilo/Ludi" to="." method="_on_Ludi_pressed"]
+
+[connection signal="pressed" from="Enkonduko/Akcepti" to="." method="_on_Akcepti_pressed"]
+
+

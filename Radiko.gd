@@ -28,6 +28,7 @@ var tipoj = []
 var ondoj = []
 
 func _ready():
+	get_tree().set_auto_accept_quit(false)
 	tipoj = [
 	{'sceno': M0, 'grando': 0.3, 'vivo': 20, 'rapido': 3},
 	{'sceno': M0, 'grando': 0.45, 'vivo': 100, 'rapido': 1.5},
@@ -90,6 +91,10 @@ func _ready():
 	 {'nombro': 2, 'tipo': 4, 'atendo': 99}],
 	]
 	set_process(true)
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+		get_node("Vere_eliri").popup()
 
 func reanimi_ondo_teksto():
 	Sekva_ondo.remove_all()
@@ -189,3 +194,9 @@ func _on_Sekva_ondo_pressed():
 		subondo = 0
 		subondo_kreita = false
 		Atendado_subondoj.start()
+
+func _on_Eliri_pressed():
+	get_tree().quit()
+
+func _on_Ludi_pressed():
+	get_node("Vere_eliri").hide()
