@@ -1,11 +1,13 @@
-#Defendo
+# Defendo
+
 Defendo is a tower defense game that made using Godot Game Engine v2.1.3.stable.official.
 
-#Contribute
+# Contribute
+
 - Open an issue
 - Add more levels, guns, enemies, etc.
 
-#License
+# License
     Defendo is a tower defense game.
     Copyright (C) 2017  Hassan Heydari Nasab
 
