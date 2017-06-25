@@ -108,7 +108,7 @@ margin/bottom = 723.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Saluton homido,
-Ni volas komandanton por defendi la bazon kontraux malamikoj.
+Ni bezonas komandanton por defendi la bazon kontraux malamikoj.
 Se antauxe vi helpis nin, mi ne memoras; Cxar nun estas iam antaux tiam!
 "
 autowrap = true
