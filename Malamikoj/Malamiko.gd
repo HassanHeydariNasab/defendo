@@ -63,7 +63,7 @@ func _process(delta):
 func _fixed_process(delta):
 	Vivo.set_text(str(vivo))
 	Vivo_P.set_scale(Vector2(vivo/komenca_vivo, 1))
-	angulo = get_angle_to(get_tree().get_root().get_node("Radiko/Bazo").get_pos())
+	angulo = get_angle_to(get_tree().get_root().get_node("Radiko/Bazo").get_global_pos())
 	M.set_rot(angulo+deg2rad(180))
 	angulo += deg2rad(-90)
 	M.move(Vector2(rapido*cos(angulo), -rapido*sin(angulo)))

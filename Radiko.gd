@@ -9,8 +9,9 @@ var subondo = 0
 var subondo_kreita = false
 var sekva_ondo_permesita = true
 
-onready var Mono = get_node("Mono")
-onready var Ondo = get_node("Ondo")
+onready var Kamero = get_node("Kamero")
+onready var Mono = get_node("Kanvaso/Mono")
+onready var Ondo = get_node("Kanvaso/Ondo")
 onready var Kanono = preload("res://Defendiloj/Pistoloj/Kanono/Kanono.tscn")
 onready var Ondilo = preload("res://Defendiloj/Pistoloj/Ondilo/Ondilo.tscn")
 onready var M0 = preload("res://Malamikoj/Malamiko_0_.tscn")
@@ -19,15 +20,21 @@ onready var M2 = preload("res://Malamikoj/Malamiko_2_.tscn")
 onready var Mj = get_node("Malamikoj")
 onready var Pj = get_node("Pistoloj")
 onready var Vivo = get_node("Bazo/Vivo")
-onready var Sekva_ondo = get_node("Ondo/Sekva_ondo")
+onready var Sekva_ondo = get_node("Kanvaso/Ondo/Sekva_ondo")
 onready var Batita = get_node("Bazo/Batita")
-onready var iru_al_sekva_ondo = get_node("iru_al_sekva_ondo")
+onready var iru_al_sekva_ondo = get_node("Kanvaso/iru_al_sekva_ondo")
 onready var Atendado_subondoj = get_node("Atendado_subondoj")
+onready var Bazo = get_node("Bazo")
+onready var Kanvaso = get_node("Kanvaso")
+
 
 var tipoj = []
 var ondoj = []
 
 func _ready():
+	Kamero.set_global_pos(Vector2(Kamero.get_global_pos().x,
+	Kamero.get_global_pos().y-(Kamero.get_zoom().y-1)*480
+	))
 	get_tree().set_auto_accept_quit(false)
 	tipoj = [
 	{'sceno': M0, 'grando': 0.3, 'vivo': 20, 'rapido': 3},
@@ -94,7 +101,7 @@ func _ready():
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		get_node("Vere_eliri").popup()
+		get_node("Kanvaso/Vere_eliri").popup()
 
 func reanimi_ondo_teksto():
 	Sekva_ondo.remove_all()
@@ -125,11 +132,12 @@ func subondi(ondo_i, subondo_i):
 		M_.komenca_rapido = tipoj[subondo['tipo']]['rapido']
 		Mj.add_child(M_)
 	subondo_kreita = true
-	
+
 func _process(delta):
 	if vivo <= 0 or mono < 0:
 		Tutmonda.poentaro = ondo
 		get_tree().change_scene("res://Kontroloj/Malvenkigxi.tscn")
+	#Kamero.set_global_pos(Bazo.get_global_pos()-Vector2(380, 960))
 	Mono.set_text(str(mono))
 	Ondo.set_text(str(ondo))
 	Vivo.set_text(str(vivo))
@@ -139,8 +147,8 @@ func _process(delta):
 	if Mj.get_child_count() == 0 and subondo == ondoj[ondo].size()-1:
 		sekva_ondo_permesita = true
 		iru_al_sekva_ondo.show()
-		
-	
+
+
 func _on_Area2D_body_enter( korpo ):
 	if korpo.get_name() == "Kanono" or korpo.get_name() == "Ondilo":
 		Pistoloj.append(korpo)

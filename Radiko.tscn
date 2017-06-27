@@ -166,89 +166,6 @@ sort/enabled = true
 
 sort/enabled = true
 
-[node name="Mono" type="Label" parent="."]
-
-editor/display_folded = true
-visibility/opacity = 0.53
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 275.0
-margin/top = 12.0
-margin/right = 329.0
-margin/bottom = 89.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "-1"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Label" type="Label" parent="Mono"]
-
-rect/scale = Vector2( 0.5, 0.5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -24.0
-margin/top = 26.0
-margin/right = 16.0
-margin/bottom = 103.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "$"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Ondo" type="Label" parent="."]
-
-editor/display_folded = true
-visibility/opacity = 0.53
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 40.0
-margin/top = 12.0
-margin/right = 94.0
-margin/bottom = 89.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "-1"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Label" type="Label" parent="Ondo"]
-
-rect/scale = Vector2( 0.5, 0.5 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -10.0
-margin/top = 66.0
-margin/right = 140.0
-margin/bottom = 143.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Ondo"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Sekva_ondo" type="Tween" parent="Ondo"]
-
-playback/process_mode = 1
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
-
 [node name="Aldoni_Kanonon" type="Button" parent="."]
 
 rect/scale = Vector2( 0.2, 0.2 )
@@ -307,7 +224,197 @@ wait_time = 7.0
 one_shot = false
 autostart = true
 
-[node name="iru_al_sekva_ondo" type="Button" parent="."]
+[node name="Kamero" type="Camera2D" parent="."]
+
+transform/pos = Vector2( 320, 480 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 2, 2 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="Kanvaso" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Mono" type="Label" parent="Kanvaso"]
+
+editor/display_folded = true
+visibility/opacity = 0.53
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 275.0
+margin/top = 12.0
+margin/right = 329.0
+margin/bottom = 89.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "-1"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label" type="Label" parent="Kanvaso/Mono"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -24.0
+margin/top = 26.0
+margin/right = 16.0
+margin/bottom = 103.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "$"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Ondo" type="Label" parent="Kanvaso"]
+
+editor/display_folded = true
+visibility/opacity = 0.53
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 40.0
+margin/top = 12.0
+margin/right = 94.0
+margin/bottom = 89.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "-1"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label" type="Label" parent="Kanvaso/Ondo"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -10.0
+margin/top = 66.0
+margin/right = 140.0
+margin/bottom = 143.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Ondo"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Sekva_ondo" type="Tween" parent="Kanvaso/Ondo"]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Vere_eliri" type="WindowDialog" parent="Kanvaso"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 400.0
+margin/right = 550.0
+margin/bottom = 600.0
+popup/exclusive = false
+window/title = "Eliri?"
+
+[node name="Eliri" type="Button" parent="Kanvaso/Vere_eliri"]
+
+rect/scale = Vector2( 0.6, 0.6 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 250.0
+margin/top = 100.0
+margin/right = 517.0
+margin/bottom = 217.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Eliri"
+flat = false
+
+[node name="Ludi" type="Button" parent="Kanvaso/Vere_eliri"]
+
+rect/scale = Vector2( 0.6, 0.6 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 40.0
+margin/top = 100.0
+margin/right = 307.0
+margin/bottom = 217.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Ludi"
+flat = false
+
+[node name="Label" type="Label" parent="Kanvaso/Vere_eliri"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 90.0
+margin/top = 30.0
+margin/right = 714.0
+margin/bottom = 107.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Cxu vere vi volas eliri?"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="iru_al_sekva_ondo" type="Button" parent="Kanvaso"]
 
 visibility/visible = false
 rect/scale = Vector2( 0.5, 0.5 )
@@ -332,86 +439,6 @@ shortcut = null
 text = "Sekva ondo"
 flat = false
 
-[node name="Vere_eliri" type="WindowDialog" parent="."]
-
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 100.0
-margin/top = 400.0
-margin/right = 550.0
-margin/bottom = 600.0
-popup/exclusive = false
-window/title = "Eliri?"
-
-[node name="Eliri" type="Button" parent="Vere_eliri"]
-
-rect/scale = Vector2( 0.6, 0.6 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 250.0
-margin/top = 100.0
-margin/right = 517.0
-margin/bottom = 217.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Eliri"
-flat = false
-
-[node name="Ludi" type="Button" parent="Vere_eliri"]
-
-rect/scale = Vector2( 0.6, 0.6 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 40.0
-margin/top = 100.0
-margin/right = 307.0
-margin/bottom = 217.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Ludi"
-flat = false
-
-[node name="Label" type="Label" parent="Vere_eliri"]
-
-rect/scale = Vector2( 0.4, 0.4 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 90.0
-margin/top = 30.0
-margin/right = 714.0
-margin/bottom = 107.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Cxu vere vi volas eliri?"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [connection signal="body_enter" from="Bazo/Area2D" to="." method="_on_Area2D_body_enter"]
 
 [connection signal="body_exit" from="Bazo/Area2D" to="." method="_on_Area2D_body_exit"]
@@ -422,10 +449,10 @@ max_lines_visible = -1
 
 [connection signal="timeout" from="Atendado_subondoj" to="." method="_on_Atendado_subondoj_timeout"]
 
-[connection signal="pressed" from="iru_al_sekva_ondo" to="." method="_on_Sekva_ondo_pressed"]
+[connection signal="pressed" from="Kanvaso/Vere_eliri/Eliri" to="." method="_on_Eliri_pressed"]
 
-[connection signal="pressed" from="Vere_eliri/Eliri" to="." method="_on_Eliri_pressed"]
+[connection signal="pressed" from="Kanvaso/Vere_eliri/Ludi" to="." method="_on_Ludi_pressed"]
 
-[connection signal="pressed" from="Vere_eliri/Ludi" to="." method="_on_Ludi_pressed"]
+[connection signal="pressed" from="Kanvaso/iru_al_sekva_ondo" to="." method="_on_Sekva_ondo_pressed"]
 
 
