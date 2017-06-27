@@ -32,9 +32,7 @@ var tipoj = []
 var ondoj = []
 
 func _ready():
-	Kamero.set_global_pos(Vector2(Kamero.get_global_pos().x,
-	Kamero.get_global_pos().y-(Kamero.get_zoom().y-1)*480
-	))
+	Kamero.set_global_pos(Vector2(400, 600))
 	get_tree().set_auto_accept_quit(false)
 	tipoj = [
 	{'sceno': M0, 'grando': 0.3, 'vivo': 20, 'rapido': 3},
@@ -122,9 +120,9 @@ func subondi(ondo_i, subondo_i):
 	for i in range(subondo['nombro']):
 		var M_ = tipoj[subondo['tipo']]['sceno'].instance()
 		if subondo['nombro'] == 1:
-			M_.set_global_pos(Vector2(rand_range(0.0, 640.0), -100))
+			M_.set_global_pos(Vector2(rand_range(0.0, 640.0), -2200))
 		else:
-			M_.set_global_pos(Vector2(-subondo['nombro']*40+i*tipoj[subondo['tipo']]['grando']*1000+hazardo, -500))
+			M_.set_global_pos(Vector2(-subondo['nombro']*40+i*tipoj[subondo['tipo']]['grando']*1000+hazardo, -2200))
 		M_.set_scale(Vector2(tipoj[subondo['tipo']]['grando'], tipoj[subondo['tipo']]['grando']))
 		M_.vivo = tipoj[subondo['tipo']]['vivo']
 		M_.komenca_vivo = float(tipoj[subondo['tipo']]['vivo'])
@@ -168,14 +166,14 @@ func _on_Aldoni_Kanonon_pressed():
 	if mono >= 10:
 		mono -= 10
 		var Kanono_ = Kanono.instance()
-		Kanono_.set_global_pos(Vector2(480, 800))
+		Kanono_.set_global_pos(Vector2(540, 1040))
 		Pj.add_child(Kanono_)
 
 func _on_Aldoni_Ondilo_pressed():
 	if mono >= 20:
 		mono -= 20
 		var Ondilo_ = Ondilo.instance()
-		Ondilo_.set_global_pos(Vector2(180, 800))
+		Ondilo_.set_global_pos(Vector2(250, 1040))
 		Pj.add_child(Ondilo_)
 
 func _je_malamiko_mortigxis(komenca_vivo):
@@ -207,4 +205,13 @@ func _on_Eliri_pressed():
 	get_tree().quit()
 
 func _on_Ludi_pressed():
-	get_node("Vere_eliri").hide()
+	get_node("Kanvaso/Vere_eliri").hide()
+
+
+func _on_Zomilo_value_changed( valoro ):
+	print(valoro)
+	Kamero.set_zoom(Vector2(valoro, valoro))
+	Kamero.set_offset(Vector2(0,
+	600-(Kamero.get_zoom().y)*600
+	))
+	print(Kamero.get_global_pos())

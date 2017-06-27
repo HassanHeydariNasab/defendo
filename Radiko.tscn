@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=17 format=1]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Sunpaneloj/reto.png" type="Texture" id=2]
@@ -6,12 +6,12 @@
 [ext_resource path="res://Defendiloj/Bazo/bazo.png" type="Texture" id=4]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=5]
 [ext_resource path="res://Defendiloj/Bazo/274404__sforsman__break-1.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=7]
-[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=8]
-[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=9]
-[ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=10]
-[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=11]
-[ext_resource path="res://Muzikoj/Ars_Sonor__Digital_By_Birth_-_01_-_Digital_Soul_Utopia_Mix.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Muzikoj/Ars_Sonor__Digital_By_Birth_-_01_-_Digital_Soul_Utopia_Mix.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=8]
+[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=9]
+[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=10]
+[ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=11]
+[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -23,6 +23,32 @@ radius = 237.801
 custom_solver_bias = 0.0
 radius = 216.231
 
+[sub_resource type="StyleBoxFlat" id=4]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.258824, 0.258824, 0.258824, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+content_margin/left = 0.0
+content_margin/right = 0.0
+content_margin/top = 0.0
+content_margin/bottom = 40.0
+bg_color = Color( 0.458824, 0.458824, 0.458824, 1 )
+light_color = Color( 1, 1, 1, 1 )
+dark_color = Color( 0, 0, 0, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
 [node name="Radiko" type="Node2D"]
 
 script/script = ExtResource( 1 )
@@ -30,9 +56,7 @@ script/script = ExtResource( 1 )
 [node name="Reto" type="Node2D" parent="."]
 
 editor/display_folded = true
-__meta__ = {
-"_edit_lock_": true
-}
+transform/pos = Vector2( 80, 239 )
 
 [node name="Reto" type="Sprite" parent="Reto"]
 
@@ -69,11 +93,8 @@ transform/pos = Vector2( 243, 680 )
 [node name="Bazo" type="Node2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 320, 960 )
+transform/pos = Vector2( 400, 1199 )
 transform/scale = Vector2( 0.7, 0.7 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Bazo"]
 
@@ -166,49 +187,9 @@ sort/enabled = true
 
 sort/enabled = true
 
-[node name="Aldoni_Kanonon" type="Button" parent="."]
-
-rect/scale = Vector2( 0.2, 0.2 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 536.0
-margin/top = 860.0
-margin/right = 1060.0
-margin/bottom = 1379.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-icon = ExtResource( 10 )
-flat = false
-
-[node name="Aldoni_Ondilo" type="Button" parent="."]
-
-rect/scale = Vector2( 0.2, 0.2 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 860.0
-margin/right = 524.0
-margin/bottom = 1379.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-icon = ExtResource( 11 )
-flat = false
-
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 12 )
+stream/stream = ExtResource( 7 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0
@@ -226,11 +207,11 @@ autostart = true
 
 [node name="Kamero" type="Camera2D" parent="."]
 
-transform/pos = Vector2( 320, 480 )
+transform/pos = Vector2( 400, 600 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 1, 1 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
@@ -255,13 +236,14 @@ scale = Vector2( 1, 1 )
 
 editor/display_folded = true
 visibility/opacity = 0.53
+rect/scale = Vector2( 1.2, 1.2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 275.0
+margin/left = 302.0
 margin/top = 12.0
-margin/right = 329.0
+margin/right = 356.0
 margin/bottom = 89.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -293,6 +275,7 @@ max_lines_visible = -1
 
 editor/display_folded = true
 visibility/opacity = 0.53
+rect/scale = Vector2( 1.2, 1.2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -341,10 +324,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 100.0
-margin/top = 400.0
-margin/right = 550.0
-margin/bottom = 600.0
+margin/left = 128.0
+margin/top = 512.0
+margin/right = 640.0
+margin/bottom = 712.0
 popup/exclusive = false
 window/title = "Eliri?"
 
@@ -355,13 +338,13 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 250.0
+margin/left = 287.0
 margin/top = 100.0
-margin/right = 517.0
+margin/right = 554.0
 margin/bottom = 217.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -379,13 +362,13 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 40.0
+margin/left = 67.0
 margin/top = 100.0
-margin/right = 307.0
+margin/right = 334.0
 margin/bottom = 217.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -398,14 +381,14 @@ flat = false
 
 [node name="Label" type="Label" parent="Kanvaso/Vere_eliri"]
 
-rect/scale = Vector2( 0.4, 0.4 )
+rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 90.0
+margin/left = 62.0
 margin/top = 30.0
-margin/right = 714.0
+margin/right = 686.0
 margin/bottom = 107.0
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -422,13 +405,13 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 210.0
-margin/top = 100.0
-margin/right = 710.0
-margin/bottom = 267.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+margin/left = 0.0
+margin/top = 167.0
+margin/right = 512.0
+margin/bottom = 423.0
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -439,13 +422,71 @@ shortcut = null
 text = "Sekva ondo"
 flat = false
 
+[node name="Aldoni_Kanonon" type="Button" parent="Kanvaso"]
+
+rect/scale = Vector2( 0.2, 0.2 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 696.0
+margin/top = 1098.0
+margin/right = 1220.0
+margin/bottom = 1617.0
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 11 )
+flat = false
+
+[node name="Aldoni_Ondilo" type="Button" parent="Kanvaso"]
+
+rect/scale = Vector2( 0.2, 0.2 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 1098.0
+margin/right = 524.0
+margin/bottom = 1617.0
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 12 )
+flat = false
+
+[node name="Zomilo" type="VScrollBar" parent="Kanvaso"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 0
+size_flags/vertical = 2
+margin/left = 731.0
+margin/top = 699.0
+margin/right = 800.0
+margin/bottom = 965.0
+custom_styles/grabber_hilite = SubResource( 4 )
+custom_styles/grabber = SubResource( 3 )
+custom_styles/scroll = ExtResource( 10 )
+range/min = 1.0
+range/max = 2.6
+range/step = 0.1
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+custom_step = -1.0
+
 [connection signal="body_enter" from="Bazo/Area2D" to="." method="_on_Area2D_body_enter"]
 
 [connection signal="body_exit" from="Bazo/Area2D" to="." method="_on_Area2D_body_exit"]
-
-[connection signal="pressed" from="Aldoni_Kanonon" to="." method="_on_Aldoni_Kanonon_pressed"]
-
-[connection signal="pressed" from="Aldoni_Ondilo" to="." method="_on_Aldoni_Ondilo_pressed"]
 
 [connection signal="timeout" from="Atendado_subondoj" to="." method="_on_Atendado_subondoj_timeout"]
 
@@ -454,5 +495,11 @@ flat = false
 [connection signal="pressed" from="Kanvaso/Vere_eliri/Ludi" to="." method="_on_Ludi_pressed"]
 
 [connection signal="pressed" from="Kanvaso/iru_al_sekva_ondo" to="." method="_on_Sekva_ondo_pressed"]
+
+[connection signal="pressed" from="Kanvaso/Aldoni_Kanonon" to="." method="_on_Aldoni_Kanonon_pressed"]
+
+[connection signal="pressed" from="Kanvaso/Aldoni_Ondilo" to="." method="_on_Aldoni_Ondilo_pressed"]
+
+[connection signal="value_changed" from="Kanvaso/Zomilo" to="." method="_on_Zomilo_value_changed"]
 
 
