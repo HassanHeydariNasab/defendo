@@ -8,6 +8,7 @@ var ondo = 0
 var subondo = 0
 var subondo_kreita = false
 var sekva_ondo_permesita = true
+var reto = 0
 
 onready var Kamero = get_node("Kamero")
 onready var Mono = get_node("Kanvaso/Mono")
@@ -23,6 +24,7 @@ onready var Vivo = get_node("Bazo/Vivo")
 onready var Sekva_ondo = get_node("Kanvaso/Ondo/Sekva_ondo")
 onready var Batita = get_node("Bazo/Batita")
 onready var iru_al_sekva_ondo = get_node("Kanvaso/iru_al_sekva_ondo")
+onready var vastigu_la_reton = get_node("Kanvaso/vastigu_la_reton")
 onready var Atendado_subondoj = get_node("Atendado_subondoj")
 onready var Bazo = get_node("Bazo")
 onready var Kanvaso = get_node("Kanvaso")
@@ -32,7 +34,6 @@ var tipoj = []
 var ondoj = []
 
 func _ready():
-	Kamero.set_global_pos(Vector2(400, 600))
 	get_tree().set_auto_accept_quit(false)
 	tipoj = [
 	{'sceno': M0, 'grando': 0.3, 'vivo': 20, 'rapido': 3},
@@ -132,10 +133,10 @@ func subondi(ondo_i, subondo_i):
 	subondo_kreita = true
 
 func _process(delta):
+	get_node("Kanvaso/FPS").set_text(str(int(1.0/delta)))
 	if vivo <= 0 or mono < 0:
 		Tutmonda.poentaro = ondo
 		get_tree().change_scene("res://Kontroloj/Malvenkigxi.tscn")
-	#Kamero.set_global_pos(Bazo.get_global_pos()-Vector2(380, 960))
 	Mono.set_text(str(mono))
 	Ondo.set_text(str(ondo))
 	Vivo.set_text(str(vivo))
@@ -145,6 +146,7 @@ func _process(delta):
 	if Mj.get_child_count() == 0 and subondo == ondoj[ondo].size()-1:
 		sekva_ondo_permesita = true
 		iru_al_sekva_ondo.show()
+		vastigu_la_reton.show()
 
 
 func _on_Area2D_body_enter( korpo ):
@@ -192,6 +194,7 @@ func _on_Atendado_subondoj_timeout():
 func _on_Sekva_ondo_pressed():
 	if sekva_ondo_permesita:
 		iru_al_sekva_ondo.hide()
+		vastigu_la_reton.hide()
 		ondo += 1
 		if ondo > ondoj.size()-1:
 			Tutmonda.poentaro = ondo
@@ -209,9 +212,25 @@ func _on_Ludi_pressed():
 
 
 func _on_Zomilo_value_changed( valoro ):
-	print(valoro)
 	Kamero.set_zoom(Vector2(valoro, valoro))
 	Kamero.set_offset(Vector2(0,
 	600-(Kamero.get_zoom().y)*600
 	))
-	print(Kamero.get_global_pos())
+
+func _on_vastigu_la_reton_pressed():
+	if reto == 0 and mono > 50:
+		mono -= 50
+		get_node("Reto/N1").show()
+		reto = 1
+	elif reto == 1 and mono > 75:
+		mono -= 75
+		get_node("Reto/N2").show()
+		reto = 2
+	elif reto == 2 and mono > 100:
+		mono -= 100
+		get_node("Reto/N3").show()
+		reto = 3
+	elif reto == 3 and mono > 150:
+		mono -= 150
+		get_node("Reto/N4").show()
+		reto = 4

@@ -5,8 +5,8 @@
 [ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=3]
 [ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo_enreta.png" type="Texture" id=4]
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/gamo.png" type="Texture" id=5]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=6]
-[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondo.png" type="Texture" id=7]
+[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondo.png" type="Texture" id=6]
+[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=7]
 [ext_resource path="res://Defendiloj/Pistoloj/Ondilo/fajro.ogg" type="AudioStream" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -19,12 +19,12 @@ radius = 124.772
 custom_solver_bias = 0.0
 radius = 661.054
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 133.333
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
 radius = 165.637
@@ -95,7 +95,7 @@ texture = ExtResource( 5 )
 [node name="Reta" type="Area2D" parent="."]
 
 input/pickable = true
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 0 )
@@ -107,33 +107,17 @@ collision/mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Reta"]
 
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Fiksata" type="Node2D" parent="."]
 
-[node name="Nivelo" type="Label" parent="."]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -18.0
-margin/top = -33.0
-margin/right = 22.0
-margin/bottom = 44.0
-custom_fonts/font = ExtResource( 6 )
-text = "0"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="Ondo" type="Area2D" parent="."]
 
 editor/display_folded = true
 input/pickable = true
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 0 )
@@ -145,13 +129,33 @@ collision/mask = 4100
 
 [node name="Sprite" type="Sprite" parent="Ondo"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ondo"]
 
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
+
+[node name="Nivelo" type="Label" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+rect/scale = Vector2( 2.4, 2.4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -85.0
+margin/top = -85.0
+margin/right = 80.0
+margin/bottom = 72.0
+custom_fonts/font = ExtResource( 7 )
+text = "0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="Fajro" type="StreamPlayer" parent="."]
 

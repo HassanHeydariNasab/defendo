@@ -15,6 +15,7 @@ onready var DK = get_node("DuoblaKlako")
 onready var Radiko = get_tree().get_root().get_node("Radiko")
 onready var Enreta = get_node("Kanono/Enreta")
 onready var Fajro = get_node("Fajro")
+
 var Kugloj
 
 
@@ -83,9 +84,11 @@ func _process(delta):
 				atendado_nova_K = 0
 	if Radiko.kaptitajxo == self:
 		set_global_pos(get_global_mouse_pos())
+		set_global_scale(Vector2(1.35, 1.35))
 		Elektumo.show()
 		Limo.show()
 	else:
+		set_global_scale(Vector2(1.3, 1.3))
 		Elektumo.hide()
 		Limo.hide()
 	

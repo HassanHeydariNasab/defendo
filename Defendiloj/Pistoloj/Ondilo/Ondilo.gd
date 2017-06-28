@@ -60,9 +60,11 @@ func _process(delta):
 		Ondo.set_opacity(1)
 	if Radiko.kaptitajxo == self:
 		set_global_pos(get_global_mouse_pos())
+		set_global_scale(Vector2(1.35, 1.35))
 		Elektumo.show()
 		Limo.show()
 	else:
+		set_global_scale(Vector2(1.3, 1.3))
 		Elektumo.hide()
 		Limo.hide()
 	

@@ -3,7 +3,8 @@ extends Node2D
 var Pistoloj = []
 
 func _ready():
-	set_fixed_process(true)
+	if is_visible():
+		set_fixed_process(true)
 	
 func _fixed_process(delta):
 	if Pistoloj.size() == 1:
