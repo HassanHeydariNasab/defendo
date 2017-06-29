@@ -4,7 +4,7 @@ var kaptitajxo = null
 var vivo = 999
 var Pistoloj = []
 var mono = 350
-var ondo = 0
+var ondo = 1
 var subondo = 0
 var subondo_kreita = false
 var sekva_ondo_permesita = true
@@ -36,10 +36,10 @@ var ondoj = []
 func _ready():
 	get_tree().set_auto_accept_quit(false)
 	tipoj = [
-	{'sceno': M0, 'grando': 0.3, 'vivo': 20, 'rapido': 3},
-	{'sceno': M0, 'grando': 0.45, 'vivo': 100, 'rapido': 1.5},
-	{'sceno': M0, 'grando': 0.7, 'vivo': 400, 'rapido': 0.9},
-	{'sceno': M1, 'grando': 0.7, 'vivo': 600, 'rapido': 0.7},
+	{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.2},
+	{'sceno': M0, 'grando': 0.45, 'vivo': 300, 'rapido': 2.8},
+	{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 2.2},
+	{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 0.7},
 	{'sceno': M2, 'grando': 0.45, 'vivo': 200, 'rapido': 1}
 	]
 	ondoj = [
@@ -52,41 +52,51 @@ func _ready():
 	 {'nombro': 2, 'tipo': 0, 'atendo': 8},
 	 {'nombro': 3, 'tipo': 0, 'atendo': 99}],
 	#1
-	[{'nombro': 2, 'tipo': 0, 'atendo': 5},
-	 {'nombro': 1, 'tipo': 0, 'atendo': 5},
-	 {'nombro': 3, 'tipo': 0, 'atendo': 1},
-	 {'nombro': 3, 'tipo': 0, 'atendo': 10},
+	[{'nombro': 3, 'tipo': 0, 'atendo': 5},
+	 {'nombro': 1, 'tipo': 0, 'atendo': 7},
+	 {'nombro': 5, 'tipo': 0, 'atendo': 8},
+	 {'nombro': 7, 'tipo': 0, 'atendo': 10},
 	 {'nombro': 1, 'tipo': 1, 'atendo': 99}],
 	#2
-	[{'nombro': 2, 'tipo': 0, 'atendo': 1},
-	 {'nombro': 1, 'tipo': 0, 'atendo': 2},
-	 {'nombro': 3, 'tipo': 0, 'atendo': 1},
-	 {'nombro': 3, 'tipo': 0, 'atendo': 12},
+	[{'nombro': 4, 'tipo': 0, 'atendo': 2},
+	 {'nombro': 1, 'tipo': 0, 'atendo': 6},
+	 {'nombro': 9, 'tipo': 0, 'atendo': 5},
+	 {'nombro': 3, 'tipo': 1, 'atendo': 12},
 	 {'nombro': 1, 'tipo': 2, 'atendo': 99}],
 	#3
-	[{'nombro': 1, 'tipo': 0, 'atendo': 5},
-	 {'nombro': 5, 'tipo': 0, 'atendo': 7},
-	 {'nombro': 2, 'tipo': 1, 'atendo': 12},
+	[{'nombro': 1, 'tipo': 1, 'atendo': 6},
+	 {'nombro': 5, 'tipo': 0, 'atendo': 5},
+	 {'nombro': 3, 'tipo': 1, 'atendo': 10},
 	 {'nombro': 3, 'tipo': 0, 'atendo': 2},
 	 {'nombro': 3, 'tipo': 0, 'atendo': 2},
 	 {'nombro': 3, 'tipo': 0, 'atendo': 7},
-	 {'nombro': 3, 'tipo': 2, 'atendo': 99}],
+	 {'nombro': 1, 'tipo': 2, 'atendo': 4},
+	 {'nombro': 1, 'tipo': 2, 'atendo': 4},
+	 {'nombro': 1, 'tipo': 2, 'atendo': 99}],
 	#4
-	[{'nombro': 2, 'tipo': 0, 'atendo': 3},
-	 {'nombro': 5, 'tipo': 0, 'atendo': 7},
-	 {'nombro': 1, 'tipo': 3, 'atendo': 20},
-	 {'nombro': 1, 'tipo': 1, 'atendo': 10},
-	 {'nombro': 1, 'tipo': 2, 'atendo': 15},
-	 {'nombro': 3, 'tipo': 0, 'atendo': 10},
+	[{'nombro': 1, 'tipo': 2, 'atendo': 12},
+	 {'nombro': 7, 'tipo': 0, 'atendo': 7},
+	 {'nombro': 1, 'tipo': 3, 'atendo': 15},
+	 {'nombro': 5, 'tipo': 1, 'atendo': 10},
+	 {'nombro': 5, 'tipo': 0, 'atendo': 5},
+	 {'nombro': 3, 'tipo': 0, 'atendo': 8},
 	 {'nombro': 1, 'tipo': 4, 'atendo': 12}],
 	#5
-	[{'nombro': 1, 'tipo': 0, 'atendo': 5},
+	[{'nombro': 1, 'tipo': 0, 'atendo': 2},
+	 {'nombro': 1, 'tipo': 0, 'atendo': 2},
+	 {'nombro': 1, 'tipo': 0, 'atendo': 2},
+	 {'nombro': 1, 'tipo': 0, 'atendo': 2},
+	 {'nombro': 1, 'tipo': 0, 'atendo': 2},
+	 {'nombro': 1, 'tipo': 0, 'atendo': 2},
+	 {'nombro': 1, 'tipo': 0, 'atendo': 2},
 	 {'nombro': 1, 'tipo': 2, 'atendo': 11},
 	 {'nombro': 1, 'tipo': 2, 'atendo': 15},
-	 {'nombro': 4, 'tipo': 0, 'atendo': 2},
+	 {'nombro': 3, 'tipo': 0, 'atendo': 2},
 	 {'nombro': 1, 'tipo': 3, 'atendo': 20},
 	 {'nombro': 3, 'tipo': 0, 'atendo': 7},
-	 {'nombro': 2, 'tipo': 3, 'atendo': 99}],
+	 {'nombro': 1, 'tipo': 3, 'atendo': 15},
+	 {'nombro': 1, 'tipo': 3, 'atendo': 15},
+	 {'nombro': 1, 'tipo': 3, 'atendo': 99}],
 	#6
 	[{'nombro': 1, 'tipo': 1, 'atendo': 5},
 	 {'nombro': 1, 'tipo': 1, 'atendo': 5},
@@ -121,9 +131,9 @@ func subondi(ondo_i, subondo_i):
 	for i in range(subondo['nombro']):
 		var M_ = tipoj[subondo['tipo']]['sceno'].instance()
 		if subondo['nombro'] == 1:
-			M_.set_global_pos(Vector2(rand_range(0.0, 640.0), -2200))
+			M_.set_global_pos(Vector2(rand_range(0.0, 800.0), -2200))
 		else:
-			M_.set_global_pos(Vector2(-subondo['nombro']*40+i*tipoj[subondo['tipo']]['grando']*1000+hazardo, -2200))
+			M_.set_global_pos(Vector2(-subondo['nombro']*200+i*tipoj[subondo['tipo']]['grando']*2000+hazardo, -2200))
 		M_.set_scale(Vector2(tipoj[subondo['tipo']]['grando'], tipoj[subondo['tipo']]['grando']))
 		M_.vivo = tipoj[subondo['tipo']]['vivo']
 		M_.komenca_vivo = float(tipoj[subondo['tipo']]['vivo'])
@@ -146,7 +156,8 @@ func _process(delta):
 	if Mj.get_child_count() == 0 and subondo == ondoj[ondo].size()-1:
 		sekva_ondo_permesita = true
 		iru_al_sekva_ondo.show()
-		vastigu_la_reton.show()
+		if weakref(vastigu_la_reton).get_ref():
+			vastigu_la_reton.show()
 
 
 func _on_Area2D_body_enter( korpo ):
@@ -179,7 +190,7 @@ func _on_Aldoni_Ondilo_pressed():
 		Pj.add_child(Ondilo_)
 
 func _je_malamiko_mortigxis(komenca_vivo):
-	mono += int(komenca_vivo/10)+10
+	mono += int(komenca_vivo/8)+10
 
 func _je_malamiko_batis_bazon(komenca_vivo):
 	Batita.play()
@@ -194,7 +205,8 @@ func _on_Atendado_subondoj_timeout():
 func _on_Sekva_ondo_pressed():
 	if sekva_ondo_permesita:
 		iru_al_sekva_ondo.hide()
-		vastigu_la_reton.hide()
+		if weakref(vastigu_la_reton).get_ref():
+			vastigu_la_reton.hide()
 		ondo += 1
 		if ondo > ondoj.size()-1:
 			Tutmonda.poentaro = ondo
@@ -218,19 +230,24 @@ func _on_Zomilo_value_changed( valoro ):
 	))
 
 func _on_vastigu_la_reton_pressed():
-	if reto == 0 and mono > 50:
-		mono -= 50
+	var prezoj = [500, 750, 900, 1200]
+	if reto == 0 and mono > prezoj[0]:
+		mono -= prezoj[0]
 		get_node("Reto/N1").show()
+		get_node("Kanvaso/vastigu_la_reton/Prezo").set_text(str(prezoj[1]))
 		reto = 1
-	elif reto == 1 and mono > 75:
-		mono -= 75
+	elif reto == 1 and mono > prezoj[1]:
+		mono -= prezoj[1]
 		get_node("Reto/N2").show()
+		get_node("Kanvaso/vastigu_la_reton/Prezo").set_text(str(prezoj[2]))
 		reto = 2
-	elif reto == 2 and mono > 100:
-		mono -= 100
+	elif reto == 2 and mono > prezoj[2]:
+		mono -= prezoj[2]
 		get_node("Reto/N3").show()
+		get_node("Kanvaso/vastigu_la_reton/Prezo").set_text(str(prezoj[3]))
 		reto = 3
-	elif reto == 3 and mono > 150:
-		mono -= 150
+	elif reto == 3 and mono > prezoj[3]:
+		mono -= prezoj[3]
+		vastigu_la_reton.queue_free()
 		get_node("Reto/N4").show()
 		reto = 4

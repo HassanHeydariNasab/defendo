@@ -8,7 +8,6 @@
 
 [node name="Node2D" type="Node2D"]
 
-editor/display_folded = true
 script/script = ExtResource( 1 )
 
 [node name="Gvidilo" type="Node2D" parent="."]

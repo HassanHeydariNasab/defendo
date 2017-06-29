@@ -1,21 +1,16 @@
-[gd_scene load_steps=21 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
-[ext_resource path="res://Defendiloj/Reto/reto_0.png" type="Texture" id=2]
-[ext_resource path="res://Defendiloj/Reto/Kontaktoskatolo.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Defendiloj/Reto/reto_1.png" type="Texture" id=4]
-[ext_resource path="res://Defendiloj/Reto/reto_2.png" type="Texture" id=5]
-[ext_resource path="res://Defendiloj/Reto/reto_3.png" type="Texture" id=6]
-[ext_resource path="res://Defendiloj/Reto/reto_4.png" type="Texture" id=7]
-[ext_resource path="res://Defendiloj/Bazo/bazo.png" type="Texture" id=8]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=9]
-[ext_resource path="res://Defendiloj/Bazo/274404__sforsman__break-1.ogg" type="AudioStream" id=10]
-[ext_resource path="res://Muzikoj/Ars_Sonor__Digital_By_Birth_-_01_-_Digital_Soul_Utopia_Mix.ogg" type="AudioStream" id=11]
-[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=12]
-[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=13]
-[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=14]
-[ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=15]
-[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=16]
+[ext_resource path="res://Defendiloj/Reto/Kontaktoskatolo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Defendiloj/Bazo/bazo.png" type="Texture" id=3]
+[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://Defendiloj/Bazo/274404__sforsman__break-1.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Muzikoj/Ars_Sonor__Digital_By_Birth_-_01_-_Digital_Soul_Utopia_Mix.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=7]
+[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=8]
+[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=9]
+[ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=10]
+[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -45,7 +40,7 @@ draw_bg = true
 content_margin/left = 0.0
 content_margin/right = 0.0
 content_margin/top = 0.0
-content_margin/bottom = 40.0
+content_margin/bottom = 64.0
 bg_color = Color( 0.458824, 0.458824, 0.458824, 1 )
 light_color = Color( 1, 1, 1, 1 )
 dark_color = Color( 0, 0, 0, 1 )
@@ -65,13 +60,6 @@ transform/pos = Vector2( 80, 239 )
 
 editor/display_folded = true
 transform/pos = Vector2( -25, 0 )
-
-[node name="Reto" type="Sprite" parent="Reto/N0"]
-
-visibility/visible = false
-transform/pos = Vector2( 320, -500 )
-transform/scale = Vector2( 10, 10 )
-texture = ExtResource( 2 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Reto/N0"]
 
@@ -129,43 +117,35 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="Kontaktoskatolo" parent="Reto/N0" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo" parent="Reto/N0" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 105, 425 )
 
-[node name="Kontaktoskatolo1" parent="Reto/N0" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo1" parent="Reto/N0" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 198, 295 )
 
-[node name="Kontaktoskatolo2" parent="Reto/N0" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo2" parent="Reto/N0" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 285, 660 )
 
-[node name="Kontaktoskatolo3" parent="Reto/N0" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo3" parent="Reto/N0" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 393, 245 )
 
-[node name="Kontaktoskatolo4" parent="Reto/N0" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo4" parent="Reto/N0" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 485, 524 )
 
-[node name="Kontaktoskatolo5" parent="Reto/N0" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo5" parent="Reto/N0" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 605, 350 )
 
 [node name="N1" type="Node2D" parent="Reto"]
 
-transform/pos = Vector2( -25, 0 )
-
-[node name="Reto" type="Sprite" parent="Reto/N1"]
-
+editor/display_folded = true
 visibility/visible = false
-transform/pos = Vector2( 320, -500 )
-transform/scale = Vector2( 10, 10 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
+transform/pos = Vector2( -25, 0 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Reto/N1"]
 
@@ -224,36 +204,27 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="Kontaktoskatolo" parent="Reto/N1" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo" parent="Reto/N1" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( -26, -28 )
 
-[node name="Kontaktoskatolo1" parent="Reto/N1" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo1" parent="Reto/N1" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 296, -175 )
 
-[node name="Kontaktoskatolo2" parent="Reto/N1" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo2" parent="Reto/N1" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 480, 1 )
 
-[node name="Kontaktoskatolo3" parent="Reto/N1" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo3" parent="Reto/N1" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 696, -39 )
 
 [node name="N2" type="Node2D" parent="Reto"]
 
 editor/display_folded = true
-transform/pos = Vector2( -25, 0 )
-
-[node name="Reto" type="Sprite" parent="Reto/N2"]
-
 visibility/visible = false
-transform/pos = Vector2( 320, -500 )
-transform/scale = Vector2( 10, 10 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
+transform/pos = Vector2( -25, 0 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Reto/N2"]
 
@@ -271,6 +242,7 @@ invert/border = 100.0
 
 [node name="Polygon2D1" type="Polygon2D" parent="Reto/N2"]
 
+transform/pos = Vector2( 0, 120 )
 polygon = Vector2Array( 681, 57, 641, 57, 609, 17, 609, -471, 569, -471, 569, 33, 625, 97, 681, 97 )
 uv = Vector2Array(  )
 color = Color( 0.74902, 0.74902, 0.74902, 1 )
@@ -325,36 +297,27 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="Kontaktoskatolo" parent="Reto/N2" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo" parent="Reto/N2" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( -231, -287 )
 
-[node name="Kontaktoskatolo1" parent="Reto/N2" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo1" parent="Reto/N2" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 149, -622 )
 
-[node name="Kontaktoskatolo2" parent="Reto/N2" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo2" parent="Reto/N2" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 587, -479 )
+transform/pos = Vector2( 587, -359 )
 
-[node name="Kontaktoskatolo3" parent="Reto/N2" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo3" parent="Reto/N2" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 905, -295 )
 
 [node name="N3" type="Node2D" parent="Reto"]
 
 editor/display_folded = true
-transform/pos = Vector2( -25, 0 )
-
-[node name="Reto" type="Sprite" parent="Reto/N3"]
-
 visibility/visible = false
-transform/pos = Vector2( 320, -500 )
-transform/scale = Vector2( 10, 10 )
-texture = ExtResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
+transform/pos = Vector2( -25, 0 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Reto/N3"]
 
@@ -372,8 +335,8 @@ invert/border = 100.0
 
 [node name="Polygon2D1" type="Polygon2D" parent="Reto/N3"]
 
-transform/pos = Vector2( -319, -151 )
-polygon = Vector2Array( 921, 41, 945, 41, 977, 9, 976, -464, 1016, -464, 1016, 24, 961, 81, 921, 81 )
+transform/pos = Vector2( -319, -207 )
+polygon = Vector2Array( 921, 41, 945, 41, 977, 9, 976, -656, 1016, -656, 1016, 24, 961, 81, 921, 81 )
 uv = Vector2Array(  )
 color = Color( 0.74902, 0.74902, 0.74902, 1 )
 vertex_colors = ColorArray(  )
@@ -445,27 +408,27 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="Kontaktoskatolo" parent="Reto/N3" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo" parent="Reto/N3" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( -389, -607 )
 
-[node name="Kontaktoskatolo1" parent="Reto/N3" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo1" parent="Reto/N3" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( -111, -671 )
 
-[node name="Kontaktoskatolo2" parent="Reto/N3" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo2" parent="Reto/N3" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 275, -1055 )
 
-[node name="Kontaktoskatolo3" parent="Reto/N3" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo3" parent="Reto/N3" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 439, -775 )
 
-[node name="Kontaktoskatolo4" parent="Reto/N3" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo4" parent="Reto/N3" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 680, -623 )
+transform/pos = Vector2( 679, -871 )
 
-[node name="Kontaktoskatolo5" parent="Reto/N3" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo5" parent="Reto/N3" instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 996, -647 )
 
@@ -475,46 +438,137 @@ editor/display_folded = true
 visibility/visible = false
 transform/pos = Vector2( -25, 0 )
 
-[node name="Reto" type="Sprite" parent="Reto/N4"]
+[node name="Polygon2D" type="Polygon2D" parent="Reto/N4"]
 
-transform/pos = Vector2( 320, -500 )
-transform/scale = Vector2( 10, 10 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
+polygon = Vector2Array( 1017, -231, 1073, -231, 1105, -263, 1105, -815, 1145, -815, 1145, -247, 1089, -191, 1017, -191 )
+uv = Vector2Array(  )
+color = Color( 0.74902, 0.74902, 0.74902, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
 
-[node name="Kontaktoskatolo" parent="Reto/N4" instance=ExtResource( 3 )]
+[node name="Polygon2D1" type="Polygon2D" parent="Reto/N4"]
 
-transform/pos = Vector2( -522.681, -773.358 )
+transform/pos = Vector2( -559, -319 )
+polygon = Vector2Array( 1016, -232, 1072, -232, 1104, -264, 1104, -896, 1144, -896, 1144, -248, 1088, -192, 1016, -192 )
+uv = Vector2Array(  )
+color = Color( 0.74902, 0.74902, 0.74902, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
 
-[node name="Kontaktoskatolo1" parent="Reto/N4" instance=ExtResource( 3 )]
+[node name="Polygon2D2" type="Polygon2D" parent="Reto/N4"]
 
-transform/pos = Vector2( -331.959, -910.832 )
+transform/pos = Vector2( -719, -607 )
+polygon = Vector2Array( 1016, -232, 1048, -232, 1080, -264, 1080, -808, 1120, -808, 1120, -256, 1064, -192, 1016, -192 )
+uv = Vector2Array(  )
+color = Color( 0.74902, 0.74902, 0.74902, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
 
-[node name="Kontaktoskatolo2" parent="Reto/N4" instance=ExtResource( 3 )]
+[node name="Polygon2D3" type="Polygon2D" parent="Reto/N4"]
 
-transform/pos = Vector2( -48.9644, -1039.53 )
+transform/pos = Vector2( -1103, -183 )
+polygon = Vector2Array( 1016, -232, 1048, -232, 1080, -264, 1080, -920, 1120, -920, 1120, -248, 1064, -192, 1016, -192 )
+uv = Vector2Array(  )
+color = Color( 0.74902, 0.74902, 0.74902, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
 
-[node name="Kontaktoskatolo3" parent="Reto/N4" instance=ExtResource( 3 )]
+[node name="Polygon2D4" type="Polygon2D" parent="Reto/N4"]
 
-transform/pos = Vector2( 113.564, -1306.19 )
+transform/pos = Vector2( -1383, -143 )
+polygon = Vector2Array( 1016, -232, 1048, -232, 1080, -264, 1080, -808, 1120, -808, 1120, -248, 1064, -192, 1016, -192 )
+uv = Vector2Array(  )
+color = Color( 0.74902, 0.74902, 0.74902, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
 
-[node name="Kontaktoskatolo4" parent="Reto/N4" instance=ExtResource( 3 )]
+[node name="Polygon2D6" type="Polygon2D" parent="Reto/N4"]
 
-transform/pos = Vector2( 335.415, -1360.85 )
+transform/pos = Vector2( -719, -631 )
+polygon = Vector2Array( 976, -88, 920, -88, 888, -120, 888, -728, 848, -728, 848, -104, 912, -48, 976, -48 )
+uv = Vector2Array(  )
+color = Color( 0.74902, 0.74902, 0.74902, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
 
-[node name="Kontaktoskatolo5" parent="Reto/N4" instance=ExtResource( 3 )]
+[node name="Polygon2D7" type="Polygon2D" parent="Reto/N4"]
 
-transform/pos = Vector2( 529.833, -1165.43 )
+transform/pos = Vector2( 1, -375 )
+polygon = Vector2Array( 976, -88, 920, -88, 888, -120, 888, -728, 848, -728, 848, -104, 912, -48, 976, -48 )
+uv = Vector2Array(  )
+color = Color( 0.74902, 0.74902, 0.74902, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
 
-[node name="Kontaktoskatolo6" parent="Reto/N4" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo1" parent="Reto/N4" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 832.574, -1060.32 )
+transform/pos = Vector2( -287, -959 )
 
-[node name="Kontaktoskatolo7" parent="Reto/N4" instance=ExtResource( 3 )]
+[node name="Kontaktoskatolo2" parent="Reto/N4" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 1090.06, -768.189 )
+transform/pos = Vector2( -9, -1127 )
+
+[node name="Kontaktoskatolo3" parent="Reto/N4" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 146, -1319 )
+
+[node name="Kontaktoskatolo4" parent="Reto/N4" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 378, -1383 )
+
+[node name="Kontaktoskatolo5" parent="Reto/N4" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 564, -1247 )
+
+[node name="Kontaktoskatolo6" parent="Reto/N4" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 868, -1119 )
+
+[node name="Kontaktoskatolo7" parent="Reto/N4" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1125, -831 )
 
 [node name="Bazo" type="Node2D" parent="."]
 
@@ -524,7 +578,7 @@ transform/scale = Vector2( 0.7, 0.7 )
 
 [node name="Sprite" type="Sprite" parent="Bazo"]
 
-texture = ExtResource( 8 )
+texture = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="Bazo"]
 
@@ -587,7 +641,7 @@ margin/left = -68.0
 margin/top = -122.0
 margin/right = 31.0
 margin/bottom = 109.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 text = "-1"
 align = 1
 percent_visible = 1.0
@@ -596,7 +650,7 @@ max_lines_visible = -1
 
 [node name="Batita" type="StreamPlayer" parent="Bazo"]
 
-stream/stream = ExtResource( 10 )
+stream/stream = ExtResource( 5 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 0.0
@@ -619,7 +673,7 @@ sort/enabled = true
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 11 )
+stream/stream = ExtResource( 6 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0
@@ -675,7 +729,7 @@ margin/left = 302.0
 margin/top = 12.0
 margin/right = 356.0
 margin/bottom = 89.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"
 align = 1
@@ -694,7 +748,7 @@ margin/left = -24.0
 margin/top = 26.0
 margin/right = 16.0
 margin/bottom = 103.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "$"
 percent_visible = 1.0
@@ -714,7 +768,7 @@ margin/left = 40.0
 margin/top = 12.0
 margin/right = 94.0
 margin/bottom = 89.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"
 align = 1
@@ -733,7 +787,7 @@ margin/left = -10.0
 margin/top = 66.0
 margin/right = 140.0
 margin/bottom = 143.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ondo"
 percent_visible = 1.0
@@ -773,10 +827,10 @@ margin/left = 287.0
 margin/top = 100.0
 margin/right = 554.0
 margin/bottom = 217.0
-custom_styles/hover = ExtResource( 12 )
-custom_styles/pressed = ExtResource( 13 )
-custom_styles/normal = ExtResource( 14 )
-custom_fonts/font = ExtResource( 9 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
@@ -797,10 +851,10 @@ margin/left = 67.0
 margin/top = 100.0
 margin/right = 334.0
 margin/bottom = 217.0
-custom_styles/hover = ExtResource( 12 )
-custom_styles/pressed = ExtResource( 13 )
-custom_styles/normal = ExtResource( 14 )
-custom_fonts/font = ExtResource( 9 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
@@ -821,7 +875,7 @@ margin/left = 62.0
 margin/top = 30.0
 margin/right = 686.0
 margin/bottom = 107.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Cxu vere vi volas eliri?"
 percent_visible = 1.0
@@ -840,10 +894,10 @@ margin/left = 0.0
 margin/top = 167.0
 margin/right = 512.0
 margin/bottom = 487.0
-custom_styles/hover = ExtResource( 12 )
-custom_styles/pressed = ExtResource( 13 )
-custom_styles/normal = ExtResource( 14 )
-custom_fonts/font = ExtResource( 9 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
@@ -855,7 +909,6 @@ flat = false
 
 [node name="vastigu_la_reton" type="Button" parent="Kanvaso"]
 
-editor/display_folded = true
 visibility/visible = false
 rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = false
@@ -866,10 +919,10 @@ margin/left = 545.0
 margin/top = 167.0
 margin/right = 1057.0
 margin/bottom = 487.0
-custom_styles/hover = ExtResource( 12 )
-custom_styles/pressed = ExtResource( 13 )
-custom_styles/normal = ExtResource( 14 )
-custom_fonts/font = ExtResource( 9 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
@@ -889,7 +942,7 @@ margin/left = 204.0
 margin/top = 221.0
 margin/right = 312.0
 margin/bottom = 298.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "500"
 percent_visible = 1.0
@@ -907,7 +960,7 @@ margin/left = -34.0
 margin/top = 14.0
 margin/right = 6.0
 margin/bottom = 91.0
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "$"
 percent_visible = 1.0
@@ -916,42 +969,42 @@ max_lines_visible = -1
 
 [node name="Aldoni_Kanonon" type="Button" parent="Kanvaso"]
 
-rect/scale = Vector2( 0.2, 0.2 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 696.0
-margin/top = 1098.0
-margin/right = 1220.0
-margin/bottom = 1617.0
-custom_styles/hover = ExtResource( 12 )
-custom_styles/pressed = ExtResource( 13 )
-custom_styles/normal = ExtResource( 14 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-icon = ExtResource( 15 )
-flat = false
-
-[node name="Aldoni_Ondilo" type="Button" parent="Kanvaso"]
-
-rect/scale = Vector2( 0.2, 0.2 )
+rect/scale = Vector2( 0.22, 0.22 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 1098.0
-margin/right = 524.0
-margin/bottom = 1617.0
-custom_styles/hover = ExtResource( 12 )
-custom_styles/pressed = ExtResource( 13 )
-custom_styles/normal = ExtResource( 14 )
+margin/top = 856.0
+margin/right = 600.0
+margin/bottom = 1456.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 16 )
+icon = ExtResource( 10 )
+flat = false
+
+[node name="Aldoni_Ondilo" type="Button" parent="Kanvaso"]
+
+rect/scale = Vector2( 0.22, 0.22 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 1008.0
+margin/right = 600.0
+margin/bottom = 1608.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 11 )
 flat = false
 
 [node name="Zomilo" type="VScrollBar" parent="Kanvaso"]
@@ -960,13 +1013,13 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 0
 size_flags/vertical = 2
-margin/left = 731.0
-margin/top = 809.0
-margin/right = 800.0
-margin/bottom = 1075.0
+margin/left = 720.0
+margin/top = 840.0
+margin/right = 797.0
+margin/bottom = 1106.0
 custom_styles/grabber_hilite = SubResource( 3 )
 custom_styles/grabber = SubResource( 4 )
-custom_styles/scroll = ExtResource( 14 )
+custom_styles/scroll = ExtResource( 9 )
 range/min = 0.8
 range/max = 2.2
 range/step = 0.1
@@ -976,17 +1029,47 @@ range/exp_edit = false
 range/rounded = false
 custom_step = -1.0
 
+[node name="Polygon2D" type="Polygon2D" parent="Kanvaso/Zomilo"]
+
+transform/pos = Vector2( 0, -8 )
+polygon = Vector2Array( 32, -48, 32, -32, 16, -32, 16, -24, 32, -24, 32, -8, 40, -8, 40, -24, 56, -24, 56, -32, 40, -32, 40, -48 )
+uv = Vector2Array(  )
+color = Color( 0.258824, 0.258824, 0.258824, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="Polygon2D 2" type="Polygon2D" parent="Kanvaso/Zomilo"]
+
+transform/pos = Vector2( -8, 8 )
+polygon = Vector2Array( 64, 280, 24, 280, 24, 288, 64, 288 )
+uv = Vector2Array(  )
+color = Color( 0.258824, 0.258824, 0.258824, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
 [node name="FPS" type="Label" parent="Kanvaso"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 536.0
-margin/top = 36.0
-margin/right = 590.0
-margin/bottom = 113.0
-custom_fonts/font = ExtResource( 9 )
+margin/left = 640.0
+margin/top = 20.0
+margin/right = 694.0
+margin/bottom = 97.0
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"
 percent_visible = 1.0
