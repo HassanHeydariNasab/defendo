@@ -1,23 +1,27 @@
 extends Node2D
 
 var pistolo
-var t = 0
 var nivelo = 0
 var angulo = 0
 
+onready var Laserradio = get_node("Laserradio")
+onready var Vivtempilo = get_node("Vivtempilo")
+
 func _ready():
 	if nivelo != 0 and angulo != 0:
-		set_process(true)
+		set_global_rot(angulo+deg2rad(90))
 		set_fixed_process(true)
 
 func _fixed_process(delta):
-	get_node("Laserradio").move((Vector2(50*cos(angulo), -50*sin(angulo))))
+	Laserradio.move((Vector2(25.0*cos(angulo), -25.0*sin(angulo))))
+	set_scale(Vector2(1, (5-Vivtempilo.get_time_left())*10))
 
-func _process(delta):
-	if get_node("Laserradio").is_colliding():
-		get_node("Laserradio").get_collider().get_parent().vivo -= nivelo
+func _on_Area2D_body_enter( korpo ):
+	var patro_nomo = korpo.get_parent().nomo
+	if patro_nomo == "Malamiko_0_" or patro_nomo == "Malamiko_1_" or patro_nomo == "Malamiko_2_":
+		korpo.get_parent().vivo -= log(nivelo+3)*20-10
 		queue_free()
-		t += 10
-	t += 1
-	if t > 200:
-		queue_free()
+
+
+func _on_Vivtempilo_timeout():
+	queue_free()

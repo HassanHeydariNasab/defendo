@@ -36,7 +36,6 @@ script/script = ExtResource( 1 )
 
 [node name="Kanono" type="KinematicBody2D" parent="."]
 
-editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -83,6 +82,7 @@ texture = ExtResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
+editor/display_folded = true
 transform/rot = 8.14222e-13
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
@@ -109,6 +109,7 @@ texture = ExtResource( 5 )
 
 [node name="Reta" type="Area2D" parent="."]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -151,6 +152,7 @@ max_lines_visible = -1
 
 [node name="Strategio" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( -833.333, 433.333 )
 transform/rot = 90.0
 transform/scale = Vector2( 2, 2 )

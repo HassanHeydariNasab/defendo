@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=17 format=1]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Reto/Kontaktoskatolo.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=9]
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=10]
 [ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=11]
+[ext_resource path="res://Defendiloj/Pistoloj/Lasero/lasero.png" type="Texture" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -572,7 +573,6 @@ transform/pos = Vector2( 1125, -831 )
 
 [node name="Bazo" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 400, 1199 )
 transform/scale = Vector2( 0.7, 0.7 )
 
@@ -885,15 +885,15 @@ max_lines_visible = -1
 [node name="iru_al_sekva_ondo" type="Button" parent="Kanvaso"]
 
 visibility/visible = false
-rect/scale = Vector2( 0.5, 0.5 )
+rect/scale = Vector2( 0.8, 0.8 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 167.0
-margin/right = 512.0
-margin/bottom = 487.0
+margin/left = 440.0
+margin/top = 160.0
+margin/right = 890.0
+margin/bottom = 360.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 8 )
 custom_styles/normal = ExtResource( 9 )
@@ -910,15 +910,15 @@ flat = false
 [node name="vastigu_la_reton" type="Button" parent="Kanvaso"]
 
 visibility/visible = false
-rect/scale = Vector2( 0.5, 0.5 )
+rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 545.0
-margin/top = 167.0
-margin/right = 1057.0
-margin/bottom = 487.0
+margin/left = 440.0
+margin/top = 334.0
+margin/right = 1043.0
+margin/bottom = 497.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 8 )
 custom_styles/normal = ExtResource( 9 )
@@ -938,10 +938,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 204.0
-margin/top = 221.0
-margin/right = 312.0
-margin/bottom = 298.0
+margin/left = 351.0
+margin/top = 137.0
+margin/right = 459.0
+margin/bottom = 214.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "500"
@@ -967,6 +967,21 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="Polygon2D" type="Polygon2D" parent="Kanvaso/vastigu_la_reton/Prezo"]
+
+visibility/behind_parent = true
+polygon = Vector2Array( 39.6666, -13.6667, -80.3334, -0.333374, -80.3334, 79.6666, 106.333, 106.333, 199.667, 79.6666, 222.333, 12.9999, 119.667, -13.6667 )
+uv = Vector2Array(  )
+color = Color( 0.917647, 0.917647, 0.917647, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
 [node name="Aldoni_Kanonon" type="Button" parent="Kanvaso"]
 
 rect/scale = Vector2( 0.22, 0.22 )
@@ -975,9 +990,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 856.0
+margin/top = 1010.0
 margin/right = 600.0
-margin/bottom = 1456.0
+margin/bottom = 1610.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 8 )
 custom_styles/normal = ExtResource( 9 )
@@ -995,9 +1010,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 1008.0
+margin/top = 858.0
 margin/right = 600.0
-margin/bottom = 1608.0
+margin/bottom = 1458.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 8 )
 custom_styles/normal = ExtResource( 9 )
@@ -1005,6 +1020,26 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 icon = ExtResource( 11 )
+flat = false
+
+[node name="Aldoni_Lasero" type="Button" parent="Kanvaso"]
+
+rect/scale = Vector2( 0.22, 0.22 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 706.0
+margin/right = 600.0
+margin/bottom = 1306.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 12 )
 flat = false
 
 [node name="Zomilo" type="VScrollBar" parent="Kanvaso"]
@@ -1093,6 +1128,8 @@ max_lines_visible = -1
 [connection signal="pressed" from="Kanvaso/Aldoni_Kanonon" to="." method="_on_Aldoni_Kanonon_pressed"]
 
 [connection signal="pressed" from="Kanvaso/Aldoni_Ondilo" to="." method="_on_Aldoni_Ondilo_pressed"]
+
+[connection signal="pressed" from="Kanvaso/Aldoni_Lasero" to="." method="_on_Aldoni_Lasero_pressed"]
 
 [connection signal="value_changed" from="Kanvaso/Zomilo" to="." method="_on_Zomilo_value_changed"]
 

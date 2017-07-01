@@ -34,6 +34,19 @@
          stdDeviation="15.82579"
          id="feGaussianBlur4392" />
     </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4202"
+       x="-0.0096832094"
+       width="1.0193664"
+       y="-0.015774085"
+       height="1.0315482">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.017437"
+         id="feGaussianBlur4204" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -43,17 +56,21 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="103.98185"
-     inkscape:cy="163.94098"
+     inkscape:cx="249.25089"
+     inkscape:cy="249.02558"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="false"
+     showgrid="true"
      units="px"
      inkscape:window-width="1024"
      inkscape:window-height="744"
      inkscape:window-x="0"
      inkscape:window-y="24"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4138" />
+  </sodipodi:namedview>
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -92,5 +109,21 @@
        height="262.85715"
        x="125.71429"
        y="677.79077" />
+    <path
+       style="fill:#3366cc;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 387.91334,844.07648 0,94.28571 -249.91334,0 249.91334,-94.28571"
+       id="path4140"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4142"
+       d="m 123.57563,786.38163 0,155.84727 252.34737,0 -252.34737,-155.84727"
+       style="fill:#3366cc;fill-rule:evenodd;stroke:none;stroke-width:1.03538179px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#003399;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4202)"
+       d="m 124.24456,786.48946 252.1735,154.8013"
+       id="path4172"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>

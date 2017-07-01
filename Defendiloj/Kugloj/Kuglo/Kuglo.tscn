@@ -1,14 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://Defendiloj/Kugloj/Kuglo/Kuglo.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Kugloj/Kuglo/kuglo.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 22.0167
-
-[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 4.48251
@@ -20,19 +15,9 @@ script/script = ExtResource( 1 )
 [node name="Kuglo" type="KinematicBody2D" parent="."]
 
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 0.2, 0, 0, 0.2, 0, 0 )
-shapes/0/trigger = false
 collision/layers = 2048
 collision/mask = 0
 collision/margin = 0.08
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kuglo"]
-
-transform/scale = Vector2( 0.2, 0.2 )
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
 
 [node name="Sprite" type="Sprite" parent="Kuglo"]
 
@@ -42,7 +27,7 @@ texture = ExtResource( 2 )
 [node name="Area2D" type="Area2D" parent="Kuglo"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 0 )
@@ -54,7 +39,7 @@ collision/mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kuglo/Area2D"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 

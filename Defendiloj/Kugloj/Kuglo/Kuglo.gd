@@ -4,6 +4,7 @@ var pistolo
 var nivelo = 0
 var angulo = 0
 
+onready var Kuglo = get_node("Kuglo")
 onready var Vivtempilo = get_node("Vivtempilo")
 
 func _ready():
@@ -11,7 +12,7 @@ func _ready():
 		set_fixed_process(true)
 
 func _fixed_process(delta):
-	get_node("Kuglo").move((Vector2(4.0*(log(nivelo)+1.0)*cos(angulo), -4.0*(log(nivelo)+1.0)*sin(angulo))))
+	Kuglo.move((Vector2(4.0*(log(nivelo)+1.0)*cos(angulo), -4.0*(log(nivelo)+1.0)*sin(angulo))))
 
 func _on_Area2D_body_enter( korpo ):
 	var patro_nomo = korpo.get_parent().nomo

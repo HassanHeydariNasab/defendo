@@ -39,6 +39,8 @@ func _ready():
 	set_fixed_process(true)
 
 func _process(delta):
+	Vivo.set_text(str(vivo))
+	Vivo_P.set_scale(Vector2(vivo/komenca_vivo, 1))
 	if "Malamiko_2_" in get_name():
 		M.get_node("Sprite").rotate(0.05)
 	if vivo <= 0:
@@ -61,8 +63,6 @@ func _process(delta):
 		set_fixed_process(false)
 
 func _fixed_process(delta):
-	Vivo.set_text(str(vivo))
-	Vivo_P.set_scale(Vector2(vivo/komenca_vivo, 1))
 	angulo = get_angle_to(get_tree().get_root().get_node("Radiko/Bazo").get_global_pos())
 	M.set_rot(angulo+deg2rad(180))
 	angulo += deg2rad(-90)
