@@ -38,28 +38,29 @@ func _ready():
 	get_tree().set_auto_accept_quit(false)
 	tipoj = [
 	{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.2, 'unuarenkonto': 0},
+	{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.2, 'unuarenkonto': 0},
 	{'sceno': M0, 'grando': 0.45, 'vivo': 300, 'rapido': 2.8, 'unuarenkonto': 1},
 	{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 2.2, 'unuarenkonto': 3},
 	{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1, 'unuarenkonto': 5},
-	{'sceno': M1, 'grando': 1.1, 'vivo': 5000, 'rapido': 0.7, 'unuarenkonto': 10},
+	{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 0.7, 'unuarenkonto': 10},
 	{'sceno': M2, 'grando': 0.45, 'vivo': 200, 'rapido': 1.5, 'unuarenkonto': 7},
 	{'sceno': M2, 'grando': 0.7, 'vivo': 900, 'rapido': 1, 'unuarenkonto': 12},
 	]
 	ondoj = []
-	randomize()
+#	ondoj = [[{'nombro': 1, 'tipo': 6, 'atendo': 20}]]
 	for o in range(50):
 		ondoj.append([])
 		while ondoj[-1].size() < 5:
+			randomize()
 			var t = int(rand_range(0, tipoj.size()))
 			if o >= tipoj[t]['unuarenkonto'] and int(rand_range(0,2)) == 1:
-				var nombro = o - tipoj[t]['unuarenkonto'] + int(rand_range(0,2)) + 1
-				#nombro = int(log(nombro*100))-3
+				var nombro = int(rand_range(1, o - tipoj[t]['unuarenkonto'] + rand_range(1,3)))
 				var atendo = tipoj[t]['rapido']+tipoj[t]['vivo']/50 + nombro/2 + rand_range(0,5)
 				ondoj[-1].append({'nombro': nombro, 'tipo': t, 'atendo': atendo})
-	for ondo in ondoj:
-		print("***")
-		for so in ondo:
-			print(so)
+#	for ondo in ondoj:
+#		print("***")
+#		for so in ondo:
+#			print(so)
 	set_process(true)
 
 func _notification(what):
@@ -155,11 +156,11 @@ func _on_Aldoni_Lasero_pressed():
 
 
 func _je_malamiko_mortigxis(komenca_vivo):
-	mono += int(log(komenca_vivo)*25-85)
+	mono += int(log(komenca_vivo)*50-170)
 
 func _je_malamiko_batis_bazon(komenca_vivo):
 	Batita.play()
-	vivo -= int(log(komenca_vivo)*25-85)
+	vivo -= int(log(komenca_vivo)*50-170)
 
 func _on_Atendado_subondoj_timeout():
 	if subondo < ondoj[ondo].size()-1:
@@ -195,7 +196,7 @@ func _on_Zomilo_value_changed( valoro ):
 	))
 
 func _on_vastigu_la_reton_pressed():
-	var prezoj = [500, 750, 900, 1200]
+	var prezoj = [1000, 3200, 6500, 15000]
 	if reto == 0 and mono > prezoj[0]:
 		mono -= prezoj[0]
 		get_node("Reto/N1").show()

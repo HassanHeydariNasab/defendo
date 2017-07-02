@@ -17,7 +17,7 @@ func _fixed_process(delta):
 func _on_Area2D_body_enter( korpo ):
 	var patro_nomo = korpo.get_parent().nomo
 	if patro_nomo == "Malamiko_0_" or patro_nomo == "Malamiko_1_":
-		korpo.get_parent().vivo -= log(nivelo+3)*10-10
+		korpo.get_parent().vivo -= log(nivelo+3)*10-6
 		queue_free()
 
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Malamikoj/Malamiko.gd" type="Script" id=1]
 [ext_resource path="res://Malamikoj/malamiko_1.png" type="Texture" id=2]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://Malamikoj/partiklo.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -106,6 +107,58 @@ playback/process_mode = 1
 playback/active = false
 playback/repeat = false
 playback/speed = 1.0
+
+[node name="Partiklo" type="Particles2D" parent="Malamiko"]
+
+transform/pos = Vector2( -50, 177.5 )
+transform/rot = -3.39259e-13
+config/amount = 16
+config/lifetime = 0.25
+config/process_mode = 1
+config/half_extents = Vector2( 2, 1 )
+config/texture = ExtResource( 4 )
+params/direction = 0.0
+params/spread = 16.36
+params/linear_velocity = 900.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.5
+params/final_size = 0.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+
+[node name="Partiklo2" type="Particles2D" parent="Malamiko"]
+
+transform/pos = Vector2( 50, 177.5 )
+transform/rot = -3.39259e-13
+config/amount = 16
+config/lifetime = 0.25
+config/process_mode = 1
+config/half_extents = Vector2( 2, 1 )
+config/texture = ExtResource( 4 )
+params/direction = 0.0
+params/spread = 16.36
+params/linear_velocity = 900.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.5
+params/final_size = 0.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
 
 [connection signal="tween_complete" from="Malamiko/Efekto" to="." method="_on_Efekto_tween_complete"]
 

@@ -91,4 +91,4 @@ func _on_Ondo_body_enter( korpo ):
 		if korpo.get_parent().nomo == "Malamiko_2_":
 			korpo.get_parent().vivo -= log(nivelo+3)*70-10
 		else:
-			korpo.get_parent().vivo -= log(nivelo+3)*10-10
+			korpo.get_parent().vivo -= log(nivelo+3)*15-10

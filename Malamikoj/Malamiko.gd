@@ -41,8 +41,10 @@ func _ready():
 func _process(delta):
 	Vivo.set_text(str(vivo))
 	Vivo_P.set_scale(Vector2(vivo/komenca_vivo, 1))
-	if "Malamiko_2_" in get_name():
+	if "Malamiko_2_" == nomo:
 		M.get_node("Sprite").rotate(0.05)
+	elif vivo > 0:
+		M.get_node("Partiklo").set_explosiveness(vivo/komenca_vivo)
 	if vivo <= 0:
 		M.clear_shapes()
 		Vivo_P.hide()
