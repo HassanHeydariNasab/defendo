@@ -757,7 +757,6 @@ max_lines_visible = -1
 
 [node name="Ondo" type="Label" parent="Kanvaso"]
 
-editor/display_folded = true
 visibility/opacity = 0.53
 rect/scale = Vector2( 1.2, 1.2 )
 focus/ignore_mouse = true
@@ -1096,14 +1095,15 @@ invert/border = 100.0
 
 [node name="FPS" type="Label" parent="Kanvaso"]
 
+rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 640.0
-margin/top = 20.0
-margin/right = 694.0
-margin/bottom = 97.0
+margin/left = 712.0
+margin/top = 24.0
+margin/right = 766.0
+margin/bottom = 101.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"

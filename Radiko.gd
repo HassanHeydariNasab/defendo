@@ -30,12 +30,24 @@ onready var Atendado_subondoj = get_node("Atendado_subondoj")
 onready var Bazo = get_node("Bazo")
 onready var Kanvaso = get_node("Kanvaso")
 
+var agordejo = "user://agordejo.cfg"
+onready var Agordejo = ConfigFile.new()
+const lingvoj = ["eo", "en"]
 
 var tipoj = []
 var ondoj = []
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
+	
+	Agordejo.load(agordejo)
+	var lingvo_indekso = Agordejo.get_value("Lingvo", "lingvo")
+	if lingvo_indekso == null:
+		get_tree().change_scene("res://Kontroloj/Lingvo.tscn")
+	elif TranslationServer.get_locale() != lingvoj[lingvo_indekso]:
+		TranslationServer.set_locale(lingvoj[lingvo_indekso])
+		get_tree().reload_current_scene()
+
 	tipoj = [
 	{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.2, 'unuarenkonto': 0},
 	{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.2, 'unuarenkonto': 0},
