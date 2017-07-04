@@ -59,7 +59,7 @@ func _ready():
 	{'sceno': M2, 'grando': 0.7, 'vivo': 900, 'rapido': 1, 'unuarenkonto': 12},
 	]
 	ondoj = []
-#	ondoj = [[{'nombro': 1, 'tipo': 6, 'atendo': 20}]]
+#	ondoj = [[{'nombro': 1, 'tipo': 4, 'atendo': 99}]]
 	for o in range(50):
 		ondoj.append([])
 		while ondoj[-1].size() < 5:
@@ -67,6 +67,8 @@ func _ready():
 			var t = int(rand_range(0, tipoj.size()))
 			if o >= tipoj[t]['unuarenkonto'] and int(rand_range(0,2)) == 1:
 				var nombro = int(rand_range(1, o - tipoj[t]['unuarenkonto'] + rand_range(1,3)))
+				if nombro > 8:
+					nombro = 8
 				var atendo = tipoj[t]['rapido']+tipoj[t]['vivo']/50 + nombro/2 + rand_range(0,5)
 				ondoj[-1].append({'nombro': nombro, 'tipo': t, 'atendo': atendo})
 #	for ondo in ondoj:
@@ -81,11 +83,11 @@ func _notification(what):
 
 func reanimi_ondo_teksto():
 	Sekva_ondo.remove_all()
-	Sekva_ondo.interpolate_property(Ondo, 'rect/scale', Vector2(1, 1),
-		Vector2(1.5, 1.5), 0.4, Tween.TRANS_QUAD, Tween.EASE_OUT
+	Sekva_ondo.interpolate_property(Ondo, 'rect/scale', Vector2(1.2, 1.2),
+		Vector2(1.6, 1.6), 0.4, Tween.TRANS_QUAD, Tween.EASE_OUT
 	)
-	Sekva_ondo.interpolate_property(Ondo, 'rect/scale', Vector2(1.5, 1.5),
-		Vector2(1, 1), 0.4, Tween.TRANS_QUAD, Tween.EASE_OUT, 0.4
+	Sekva_ondo.interpolate_property(Ondo, 'rect/scale', Vector2(1.6, 1.6),
+		Vector2(1.2, 1.2), 0.4, Tween.TRANS_QUAD, Tween.EASE_OUT, 0.4
 	)
 	Sekva_ondo.start()
 
@@ -172,7 +174,7 @@ func _je_malamiko_mortigxis(komenca_vivo):
 
 func _je_malamiko_batis_bazon(komenca_vivo):
 	Batita.play()
-	vivo -= int(log(komenca_vivo)*50-170)
+	vivo -= int(log(komenca_vivo)*20-65)
 
 func _on_Atendado_subondoj_timeout():
 	if subondo < ondoj[ondo].size()-1:

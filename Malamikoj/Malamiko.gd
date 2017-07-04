@@ -54,10 +54,10 @@ func _process(delta):
 				var M_ = M0.instance()
 				M_.set_global_pos(M.get_global_pos()+Vector2(rand_range(-150.0, 150.0), rand_range(-75.0, 75.0)))
 				M_.set_scale(Vector2(0.3, 0.3))
-				M_.vivo = 20
-				M_.komenca_vivo = 20.0
-				M_.rapido = 3
-				M_.komenca_rapido = 3
+				M_.vivo = 40
+				M_.komenca_vivo = 40.0
+				M_.rapido = 3.2
+				M_.komenca_rapido = 3.2
 				Mj.add_child(M_)
 		emit_signal('malamiko_mortigxis', komenca_vivo)
 		Efekto.start()

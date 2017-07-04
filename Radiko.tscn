@@ -928,7 +928,7 @@ custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Vastigi la reton"
+text = "Vastigu la reton"
 flat = false
 
 [node name="Prezo" type="Label" parent="Kanvaso/vastigu_la_reton"]
