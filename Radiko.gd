@@ -2,7 +2,7 @@ extends Node2D
 
 var kaptitajxo = null
 var vivo = 999
-var Pistoloj = []
+var Armiloj = []
 var mono = 350
 var ondo = 0
 var subondo = 0
@@ -16,11 +16,13 @@ onready var Ondo = get_node("Kanvaso/Ondo")
 onready var Kanono = preload("res://Defendiloj/Pistoloj/Kanono/Kanono.tscn")
 onready var Ondilo = preload("res://Defendiloj/Pistoloj/Ondilo/Ondilo.tscn")
 onready var Lasero = preload("res://Defendiloj/Pistoloj/Lasero/Lasero.tscn")
+onready var Bombo = preload("res://Defendiloj/Kugloj/Bombo/Bombo.tscn")
 onready var M0 = preload("res://Malamikoj/Malamiko_0_.tscn")
 onready var M1 = preload("res://Malamikoj/Malamiko_1_.tscn")
 onready var M2 = preload("res://Malamikoj/Malamiko_2_.tscn")
 onready var Mj = get_node("Malamikoj")
 onready var Pj = get_node("Pistoloj")
+onready var Kugloj = get_node("Kugloj")
 onready var Vivo = get_node("Bazo/Vivo")
 onready var Sekva_ondo = get_node("Kanvaso/Ondo/Sekva_ondo")
 onready var Batita = get_node("Bazo/Batita")
@@ -39,7 +41,7 @@ var ondoj = []
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
-	
+
 	Agordejo.load(agordejo)
 	var lingvo_indekso = Agordejo.get_value("Lingvo", "lingvo")
 	if lingvo_indekso == null:
@@ -53,13 +55,12 @@ func _ready():
 	{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.2, 'unuarenkonto': 0},
 	{'sceno': M0, 'grando': 0.45, 'vivo': 300, 'rapido': 2.8, 'unuarenkonto': 1},
 	{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 2.2, 'unuarenkonto': 3},
-	{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1, 'unuarenkonto': 5},
-	{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 0.7, 'unuarenkonto': 10},
-	{'sceno': M2, 'grando': 0.45, 'vivo': 200, 'rapido': 1.5, 'unuarenkonto': 7},
-	{'sceno': M2, 'grando': 0.7, 'vivo': 900, 'rapido': 1, 'unuarenkonto': 12},
+	{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1.2, 'unuarenkonto': 5},
+	{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 1, 'unuarenkonto': 10},
+	{'sceno': M2, 'grando': 0.45, 'vivo': 500, 'rapido': 1.7, 'unuarenkonto': 7},
+	{'sceno': M2, 'grando': 0.8, 'vivo': 1500, 'rapido': 1, 'unuarenkonto': 12},
 	]
-	ondoj = []
-#	ondoj = [[{'nombro': 1, 'tipo': 4, 'atendo': 99}]]
+#	ondoj = [[{'nombro': 1, 'tipo': 6, 'atendo': 99}]]
 	for o in range(50):
 		ondoj.append([])
 		while ondoj[-1].size() < 5:
@@ -129,23 +130,26 @@ func _process(delta):
 			vastigu_la_reton.show()
 
 
-func _on_Area2D_body_enter( korpo ):
-	if korpo.get_name() == "Kanono" or korpo.get_name() == "Ondilo" or korpo.get_name() == "Lasero":
-		Pistoloj.append(korpo)
-	if Pistoloj.size() == 2:
-		if Pistoloj[0].get_name() == "Kanono" and Pistoloj[1].get_name() == "Kanono":
-			Pistoloj[0].get_parent().nivelo += Pistoloj[1].get_parent().nivelo
-			Pistoloj[1].get_parent().queue_free()
-		elif Pistoloj[0].get_name() == "Ondilo" and Pistoloj[1].get_name() == "Ondilo":
-			Pistoloj[0].get_parent().nivelo += Pistoloj[1].get_parent().nivelo
-			Pistoloj[1].get_parent().queue_free()
-		elif Pistoloj[0].get_name() == "Lasero" and Pistoloj[1].get_name() == "Lasero":
-			Pistoloj[0].get_parent().nivelo += Pistoloj[1].get_parent().nivelo
-			Pistoloj[1].get_parent().queue_free()
+func _on_Area2D_area_enter( areo ):
+	if areo.get_name() == "Reta":
+		Armiloj.append(areo)
+	if Armiloj.size() == 2:
+		if Armiloj[0].tipo == "Kanono" and Armiloj[1].tipo == "Kanono":
+			Armiloj[0].get_parent().nivelo += Armiloj[1].get_parent().nivelo
+			Armiloj[1].get_parent().queue_free()
+		elif Armiloj[0].tipo == "Lasero" and Armiloj[1].tipo == "Lasero":
+			Armiloj[0].get_parent().nivelo += Armiloj[1].get_parent().nivelo
+			Armiloj[1].get_parent().queue_free()
+		elif Armiloj[0].tipo == "Ondilo" and Armiloj[1].tipo == "Ondilo":
+			Armiloj[0].get_parent().nivelo += Armiloj[1].get_parent().nivelo
+			Armiloj[1].get_parent().queue_free()
+		elif Armiloj[0].tipo == "Bombo" and Armiloj[1].tipo == "Bombo":
+			Armiloj[0].get_parent().nivelo += Armiloj[1].get_parent().nivelo
+			Armiloj[1].get_parent().queue_free()
 
-func _on_Area2D_body_exit( korpo ):
-	if korpo.get_name() == "Kanono" or korpo.get_name() == "Ondilo" or korpo.get_name() == "Lasero":
-		Pistoloj.erase(korpo)
+func _on_Area2D_area_exit( areo ):
+	if areo.get_name() == "Reta":
+		Armiloj.erase(areo)
 
 func _on_Aldoni_Kanonon_pressed():
 	if mono >= 10:
@@ -165,9 +169,15 @@ func _on_Aldoni_Lasero_pressed():
 	if mono >= 20:
 		mono -= 20
 		var Lasero_ = Lasero.instance()
-		Lasero_.set_global_pos(Vector2(400, 800))
+		Lasero_.set_global_pos(Vector2(490, 900))
 		Pj.add_child(Lasero_)
 
+func _on_Aldoni_Bombo_pressed():
+	if mono >= 1:
+		mono -= 1
+		var Bombo_ = Bombo.instance()
+		Bombo_.set_global_pos(Vector2(400, 800))
+		Kugloj.add_child(Bombo_)
 
 func _je_malamiko_mortigxis(komenca_vivo):
 	mono += int(log(komenca_vivo)*50-170)

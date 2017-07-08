@@ -17,11 +17,10 @@ func _fixed_process(delta):
 	set_scale(Vector2(1, (5-Vivtempilo.get_time_left())*10))
 
 func _on_Area2D_body_enter( korpo ):
-	var patro_nomo = korpo.get_parent().nomo
-	if patro_nomo == "Malamiko_0_" or patro_nomo == "Malamiko_1_" or patro_nomo == "Malamiko_2_":
-		korpo.get_parent().vivo -= log(nivelo+3)*20-10
-		queue_free()
-
+	if korpo.get_name() == "Malamiko":
+		if korpo.tipo == 0 or korpo.tipo == 1 or korpo.tipo == 2:
+			korpo.get_parent().vivo -= log(nivelo+3)*22-20
+			queue_free()
 
 func _on_Vivtempilo_timeout():
 	queue_free()

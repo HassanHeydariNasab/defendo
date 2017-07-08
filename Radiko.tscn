@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Reto/Kontaktoskatolo.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=10]
 [ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=11]
 [ext_resource path="res://Defendiloj/Pistoloj/Lasero/lasero.png" type="Texture" id=12]
+[ext_resource path="res://Defendiloj/Kugloj/Bombo/bombo.png" type="Texture" id=13]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -573,6 +574,7 @@ transform/pos = Vector2( 1125, -831 )
 
 [node name="Bazo" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 400, 1199 )
 transform/scale = Vector2( 0.7, 0.7 )
 
@@ -757,6 +759,7 @@ max_lines_visible = -1
 
 [node name="Ondo" type="Label" parent="Kanvaso"]
 
+editor/display_folded = true
 visibility/opacity = 0.53
 rect/scale = Vector2( 1.2, 1.2 )
 focus/ignore_mouse = true
@@ -908,6 +911,7 @@ flat = false
 
 [node name="vastigu_la_reton" type="Button" parent="Kanvaso"]
 
+editor/display_folded = true
 visibility/visible = false
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = false
@@ -1041,6 +1045,26 @@ shortcut = null
 icon = ExtResource( 12 )
 flat = false
 
+[node name="Aldoni_Bombo" type="Button" parent="Kanvaso"]
+
+rect/scale = Vector2( 0.22, 0.22 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 552.0
+margin/right = 600.0
+margin/bottom = 1152.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 13 )
+flat = false
+
 [node name="Zomilo" type="VScrollBar" parent="Kanvaso"]
 
 focus/ignore_mouse = false
@@ -1063,7 +1087,7 @@ range/exp_edit = false
 range/rounded = false
 custom_step = -1.0
 
-[node name="Polygon2D" type="Polygon2D" parent="Kanvaso/Zomilo"]
+[node name="Plussigno" type="Polygon2D" parent="Kanvaso/Zomilo"]
 
 transform/pos = Vector2( 0, -8 )
 polygon = Vector2Array( 32, -48, 32, -32, 16, -32, 16, -24, 32, -24, 32, -8, 40, -8, 40, -24, 56, -24, 56, -32, 40, -32, 40, -48 )
@@ -1078,7 +1102,7 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="Polygon2D 2" type="Polygon2D" parent="Kanvaso/Zomilo"]
+[node name="Minussigno" type="Polygon2D" parent="Kanvaso/Zomilo"]
 
 transform/pos = Vector2( -8, 8 )
 polygon = Vector2Array( 64, 280, 24, 280, 24, 288, 64, 288 )
@@ -1111,7 +1135,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[connection signal="body_enter" from="Bazo/Area2D" to="." method="_on_Area2D_body_enter"]
+[connection signal="area_enter" from="Bazo/Area2D" to="." method="_on_Area2D_area_enter"]
+
+[connection signal="area_exit" from="Bazo/Area2D" to="." method="_on_Area2D_area_exit"]
 
 [connection signal="body_exit" from="Bazo/Area2D" to="." method="_on_Area2D_body_exit"]
 
@@ -1130,6 +1156,8 @@ max_lines_visible = -1
 [connection signal="pressed" from="Kanvaso/Aldoni_Ondilo" to="." method="_on_Aldoni_Ondilo_pressed"]
 
 [connection signal="pressed" from="Kanvaso/Aldoni_Lasero" to="." method="_on_Aldoni_Lasero_pressed"]
+
+[connection signal="pressed" from="Kanvaso/Aldoni_Bombo" to="." method="_on_Aldoni_Bombo_pressed"]
 
 [connection signal="value_changed" from="Kanvaso/Zomilo" to="." method="_on_Zomilo_value_changed"]
 

@@ -4,7 +4,7 @@ var Malamikoj = []
 
 onready var F = get_node("Fiksata")
 onready var P = get_node("Ondilo")
-onready var Elektumo = get_node("Ondilo/Elektumo")
+onready var Elektumo = get_node("Elektumo")
 onready var Ondo = get_node("Ondo")
 onready var Nivelo = get_node("Nivelo")
 onready var Areo = get_node("Area2D")
@@ -71,7 +71,7 @@ func _process(delta):
 	Nivelo.set_text(str(nivelo))
 	Areo.set_scale(Vector2(log(nivelo)/5.0+1,log(nivelo)/5.0+1))
 	
-func _on_Kanono_input_event( viewport, event, shape_idx ):
+func _on_Reta_input_event( viewport, event, shape_idx ):
 	if event.type == InputEvent.SCREEN_TOUCH:
 		if event.pressed:
 			Radiko.kaptitajxo = self
@@ -88,7 +88,7 @@ func _on_Ondo_body_enter( korpo ):
 		var nova_rapido = korpo.get_parent().komenca_rapido/(1+log(korpo.get_parent().komenca_rapido*nivelo))
 		if korpo.get_parent().rapido > nova_rapido:
 			korpo.get_parent().rapido = nova_rapido
-		if korpo.get_parent().nomo == "Malamiko_2_":
+		if korpo.tipo == 2:
 			korpo.get_parent().vivo -= log(nivelo+3)*70-10
 		else:
-			korpo.get_parent().vivo -= log(nivelo+3)*15-10
+			korpo.get_parent().vivo -= log(nivelo+3)*20-15

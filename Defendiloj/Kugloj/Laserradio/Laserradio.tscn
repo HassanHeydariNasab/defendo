@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Defendiloj/Kugloj/Laserradio/Laserradio.gd" type="Script" id=1]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -8, -16, 8, -16, 8, 16, -8, 16 )
+extents = Vector2( 8, 16 )
 
 [node name="Laserradio" type="Node2D"]
 
@@ -45,12 +45,11 @@ angular_damp = 1.0
 collision/layers = 2048
 collision/mask = 4
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Laserradio/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laserradio/Area2D"]
 
-build_mode = 0
-polygon = Vector2Array( -8, -16, 8, -16, 8, 16, -8, 16 )
-shape_range = Vector2( 0, 0 )
+shape = SubResource( 1 )
 trigger = false
+_update_shape_index = 0
 
 [node name="Vivtempilo" type="Timer" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Malamikoj/Malamiko.gd" type="Script" id=1]
 [ext_resource path="res://Malamikoj/malamiko_0.png" type="Texture" id=2]
@@ -10,7 +10,13 @@
 custom_solver_bias = 0.0
 points = Vector2Array( 100, 97.9167, -100, 97.9167, -9.49857e-13, -72.9167 )
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends KinematicBody2D
+
+var tipo = 0"
+
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 400.78
@@ -30,6 +36,7 @@ shapes/0/trigger = false
 collision/layers = 4
 collision/mask = 4097
 collision/margin = 0.08
+script/script = SubResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Malamiko"]
 
@@ -50,7 +57,7 @@ texture = ExtResource( 2 )
 
 transform/rot = 8.14222e-13
 input/pickable = true
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 0 )
@@ -62,7 +69,7 @@ collision/mask = 2051
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Malamiko/Area2D"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 

@@ -17,14 +17,16 @@ onready var Efekto = get_node("Malamiko/Efekto")
 onready var Radiko = get_tree().get_root().get_node("Radiko")
 onready var M0 = Radiko.M0
 onready var Mj = Radiko.Mj
-var nomo = ""
+#var nomo = ""
+var tipo = null
 
 func _ready():
-	var nomo_ = get_name().split("@")
-	if nomo_.size() == 1:
-		nomo = nomo_[0]
-	else:
-		nomo = nomo_[1]
+#	var nomo_ = get_name().split("@")
+#	if nomo_.size() == 1:
+#		nomo = nomo_[0]
+#	else:
+#		nomo = nomo_[1]
+	tipo = M.tipo
 	connect('malamiko_mortigxis', Radiko, '_je_malamiko_mortigxis')
 	connect('malamiko_batis_bazon', Radiko, '_je_malamiko_batis_bazon')
 	Efekto.interpolate_property(M, 'transform/scale',
@@ -41,14 +43,14 @@ func _ready():
 func _process(delta):
 	Vivo.set_text(str(vivo))
 	Vivo_P.set_scale(Vector2(vivo/komenca_vivo, 1))
-	if "Malamiko_2_" == nomo:
+	if tipo == 2:
 		M.get_node("Sprite").rotate(0.05)
 	elif vivo > 0:
 		M.get_node("Partiklo").set_explosiveness(vivo/komenca_vivo)
 	if vivo <= 0:
 		M.clear_shapes()
 		Vivo_P.hide()
-		if "Malamiko_1_" in get_name():
+		if tipo == 1:
 			for i in range(4):
 				randomize()
 				var M_ = M0.instance()

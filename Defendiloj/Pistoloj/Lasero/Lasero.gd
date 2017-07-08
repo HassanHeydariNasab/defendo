@@ -5,7 +5,7 @@ var Malamikoj = []
 onready var F = get_node("Fiksata")
 onready var P = get_node("Lasero")
 onready var Laserradiujo = get_node("Lasero/Laserradiujo")
-onready var Elektumo = get_node("Lasero/Elektumo")
+onready var Elektumo = get_node("Elektumo")
 onready var Nivelo = get_node("Nivelo")
 onready var Areo = get_node("Area2D")
 onready var Limo = get_node("Area2D/Limo")
@@ -95,7 +95,7 @@ func _process(delta):
 	Nivelo.set_text(str(nivelo))
 	Areo.set_scale(Vector2(log(nivelo)/5.0+1,log(nivelo)/5.0+1))
 	
-func _on_Lasero_input_event( viewport, event, shape_idx ):
+func _on_Reta_input_event( viewport, event, shape_idx ):
 	if event.type == InputEvent.SCREEN_TOUCH:
 		if event.pressed:
 			nk += 1

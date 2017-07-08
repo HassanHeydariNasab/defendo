@@ -15,11 +15,10 @@ func _fixed_process(delta):
 	Kuglo.move((Vector2(4.0*(log(nivelo)+1.0)*cos(angulo), -4.0*(log(nivelo)+1.0)*sin(angulo))))
 
 func _on_Area2D_body_enter( korpo ):
-	var patro_nomo = korpo.get_parent().nomo
-	if patro_nomo == "Malamiko_0_" or patro_nomo == "Malamiko_1_":
-		korpo.get_parent().vivo -= log(nivelo+3)*10-6
-		queue_free()
-
+	if korpo.get_name() == "Malamiko":
+		if korpo.tipo == 0 or korpo.tipo == 1:
+			korpo.get_parent().vivo -= log(nivelo+3)*10-7
+			queue_free()
 
 func _on_Vivtempilo_timeout():
 	queue_free()
