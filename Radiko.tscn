@@ -224,6 +224,7 @@ transform/pos = Vector2( 696, -39 )
 
 [node name="N2" type="Node2D" parent="Reto"]
 
+editor/display_folded = true
 visibility/visible = false
 transform/pos = Vector2( -25, 0 )
 
@@ -721,14 +722,16 @@ scale = Vector2( 1, 1 )
 
 editor/display_folded = true
 visibility/opacity = 0.53
+anchor/left = 3
+anchor/right = 3
 rect/scale = Vector2( 1.2, 1.2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 302.0
+margin/left = 98.0
 margin/top = 12.0
-margin/right = 356.0
+margin/right = 44.0
 margin/bottom = 89.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -806,14 +809,18 @@ playback/speed = 1.0
 
 editor/display_folded = true
 visibility/visible = false
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 128.0
-margin/top = 512.0
-margin/right = 640.0
-margin/bottom = 712.0
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 272.0
+margin/top = 88.0
+margin/right = -240.0
+margin/bottom = -112.0
 popup/exclusive = false
 window/title = "Eliri?"
 
@@ -886,15 +893,18 @@ max_lines_visible = -1
 [node name="iru_al_sekva_ondo" type="Button" parent="Kanvaso"]
 
 visibility/visible = false
+anchor/left = 1
+anchor/right = 1
+anchor/bottom = 1
 rect/scale = Vector2( 0.8, 0.8 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 440.0
+margin/left = 360.0
 margin/top = 160.0
-margin/right = 890.0
-margin/bottom = 360.0
+margin/right = -90.0
+margin/bottom = 840.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 8 )
 custom_styles/normal = ExtResource( 9 )
@@ -912,15 +922,18 @@ flat = false
 
 editor/display_folded = true
 visibility/visible = false
+anchor/left = 1
+anchor/right = 1
+anchor/bottom = 1
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 440.0
+margin/left = 360.0
 margin/top = 334.0
-margin/right = 1043.0
-margin/bottom = 497.0
+margin/right = -243.0
+margin/bottom = 703.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 8 )
 custom_styles/normal = ExtResource( 9 )
@@ -1066,14 +1079,18 @@ flat = false
 
 [node name="Zomilo" type="VScrollBar" parent="Kanvaso"]
 
+anchor/left = 1
+anchor/top = 3
+anchor/right = 1
+anchor/bottom = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
-size_flags/horizontal = 0
-size_flags/vertical = 2
-margin/left = 720.0
-margin/top = 840.0
-margin/right = 797.0
-margin/bottom = 1106.0
+size_flags/horizontal = 1
+size_flags/vertical = 3
+margin/left = 80.0
+margin/top = -240.0
+margin/right = 3.0
+margin/bottom = -506.0
 custom_styles/grabber_hilite = SubResource( 3 )
 custom_styles/grabber = SubResource( 4 )
 custom_styles/scroll = ExtResource( 9 )
@@ -1118,18 +1135,21 @@ invert/border = 100.0
 
 [node name="FPS" type="Label" parent="Kanvaso"]
 
-rect/scale = Vector2( 0.6, 0.6 )
+anchor/left = 1
+anchor/right = 1
+rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 723.0
-margin/top = 21.0
-margin/right = 777.0
-margin/bottom = 98.0
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 800.0
+margin/top = 0.0
+margin/right = -800.0
+margin/bottom = 2400.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"
+align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

@@ -24,7 +24,6 @@ func _ready():
 func _process(delta):
 	if enreta:
 		Enreta.show()
-		print(Radiko.sekva_ondo_permesita)
 		if not Radiko.sekva_ondo_permesita:
 			Tempilo.set_active(true)
 		else:

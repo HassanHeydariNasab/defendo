@@ -23,6 +23,8 @@ playback/speed = 1.0
 
 [node name="Gvidilo" type="Label" parent="Gvidilo"]
 
+anchor/right = 1
+anchor/bottom = 1
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -30,8 +32,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 56.0
 margin/top = 254.0
-margin/right = 1280.0
-margin/bottom = 987.0
+margin/right = -1216.0
+margin/bottom = -923.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Cxu vi sciias ke vi povas plibonigi la armilojn? kolektu samajn armilojn en la bazo.
@@ -115,15 +117,19 @@ playback/speed = 1.0
 
 [node name="Saluton" type="Label" parent="Enkonduko"]
 
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 64.0
-margin/top = 306.0
-margin/right = 1231.0
-margin/bottom = 889.0
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = -32.0
+margin/top = -274.0
+margin/right = -1175.0
+margin/bottom = -857.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Saluton homido,

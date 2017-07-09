@@ -31,6 +31,7 @@ onready var vastigu_la_reton = get_node("Kanvaso/vastigu_la_reton")
 onready var Atendado_subondoj = get_node("Atendado_subondoj")
 onready var Bazo = get_node("Bazo")
 onready var Kanvaso = get_node("Kanvaso")
+onready var FPS = get_node("Kanvaso/FPS")
 
 var agordejo = "user://agordejo.cfg"
 onready var Agordejo = ConfigFile.new()
@@ -113,7 +114,7 @@ func subondi(ondo_i, subondo_i):
 	subondo_kreita = true
 
 func _process(delta):
-	get_node("Kanvaso/FPS").set_text(str(int(1.0/delta)))
+	FPS.set_text(str(int(1.0/delta)))
 	if vivo <= 0 or mono < 0:
 		Tutmonda.poentaro = ondo
 		get_tree().change_scene("res://Kontroloj/Malvenkigxi.tscn")

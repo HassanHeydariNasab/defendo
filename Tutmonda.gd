@@ -2,6 +2,8 @@ extends Node
 
 var poentaro = 123456
 
+var nivelo = 0
+
 func patro_nomo(korpo):
 	var patro_nomo = korpo.get_parent().get_name().split("@")
 	if patro_nomo.size() == 1:
