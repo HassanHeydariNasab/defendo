@@ -14,7 +14,6 @@ func _fixed_process(delta):
 				Pistolo.get_parent().enreta = false
 
 func _on_Kontaktoskatolo_area_enter( areo ):
-	print(areo.get_name())
 	if areo.get_name() == "Reta":
 		Pistoloj.append(areo)
 

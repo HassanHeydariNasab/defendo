@@ -6,17 +6,32 @@ var enreta = false
 onready var Radiko = get_tree().get_root().get_node("Radiko")
 onready var Nivelo = get_node("Nivelo")
 onready var Enreta = get_node("Enreta")
+onready var Eksplodi = get_node("Eksplodi")
+onready var Eksplodsono = get_node("Eksplodsono")
+onready var Tempilo = get_node("Tempilo")
 
 
 func _ready():
+	Eksplodi.interpolate_property(self, "transform/scale",
+		Vector2(0.3,0.3),Vector2(0.5,0.5),0.3,
+		Tween.TRANS_QUAD, Tween.EASE_OUT
+	)
+	Eksplodi.interpolate_property(self, "visibility/opacity",
+		1, 0, 0.3,Tween.TRANS_QUAD, Tween.EASE_OUT
+	)
 	set_process(true)
 
 func _process(delta):
-#	print(enreta)
 	if enreta:
 		Enreta.show()
+		print(Radiko.sekva_ondo_permesita)
+		if not Radiko.sekva_ondo_permesita:
+			Tempilo.set_active(true)
+		else:
+			Tempilo.set_active(false)
 	else:
 		Enreta.hide()
+		Tempilo.set_active(false)
 	if Radiko.kaptitajxo == self:
 		set_global_pos(get_global_mouse_pos())
 		set_global_scale(Vector2(1.35, 1.35))
@@ -27,8 +42,9 @@ func _process(delta):
 func _on_Reta_body_enter( korpo ):
 	if korpo.get_name() == "Malamiko":
 		if korpo.tipo == 0 or korpo.tipo == 1:
-			korpo.get_parent().vivo -= log(nivelo+3)*40-45
-			queue_free()
+			korpo.get_parent().vivo -= log(nivelo+3)*100-125
+			Eksplodsono.play()
+			Eksplodi.start()
 
 
 func _on_Reta_input_event( viewport, event, shape_idx ):
@@ -43,3 +59,10 @@ func _on_Reta_input_event( viewport, event, shape_idx ):
 			Radiko.kaptitajxo = self
 		else:
 			Radiko.kaptitajxo = null
+
+func _on_Eksplodi_tween_complete( object, key ):
+	queue_free()
+
+
+func _on_Tempilo_timeout():
+	nivelo += 1

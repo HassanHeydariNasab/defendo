@@ -1,16 +1,17 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Defendiloj/Kugloj/Bombo/Bombo.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Kugloj/Bombo/bombo_enreta.png" type="Texture" id=2]
 [ext_resource path="res://Defendiloj/Kugloj/Bombo/bombo.png" type="Texture" id=3]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://Defendiloj/Kugloj/Bombo/eksplodi.ogg" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 133.333
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=2]
 
 script/source = "extends Area2D
 
@@ -40,8 +41,8 @@ gravity = 0.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision/layers = 2
-collision/mask = 1024
-script/script = SubResource( 3 )
+collision/mask = 1028
+script/script = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Reta"]
 
@@ -69,8 +70,37 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="Eksplodi" type="Tween" parent="."]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Eksplodsono" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 5 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Tempilo" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = true
+
 [connection signal="body_enter" from="Reta" to="." method="_on_Reta_body_enter"]
 
 [connection signal="input_event" from="Reta" to="." method="_on_Reta_input_event"]
+
+[connection signal="tween_complete" from="Eksplodi" to="." method="_on_Eksplodi_tween_complete"]
+
+[connection signal="timeout" from="Tempilo" to="." method="_on_Tempilo_timeout"]
 
 

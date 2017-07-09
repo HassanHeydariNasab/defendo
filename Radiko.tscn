@@ -224,7 +224,6 @@ transform/pos = Vector2( 696, -39 )
 
 [node name="N2" type="Node2D" parent="Reto"]
 
-editor/display_folded = true
 visibility/visible = false
 transform/pos = Vector2( -25, 0 )
 
@@ -1124,10 +1123,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 712.0
-margin/top = 24.0
-margin/right = 766.0
-margin/bottom = 101.0
+margin/left = 723.0
+margin/top = 21.0
+margin/right = 777.0
+margin/bottom = 98.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"

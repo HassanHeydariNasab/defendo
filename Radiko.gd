@@ -7,7 +7,7 @@ var mono = 350
 var ondo = 0
 var subondo = 0
 var subondo_kreita = false
-var sekva_ondo_permesita = true
+var sekva_ondo_permesita = false
 var reto = 0
 
 onready var Kamero = get_node("Kamero")
@@ -126,6 +126,7 @@ func _process(delta):
 	if Mj.get_child_count() == 0 and subondo == ondoj[ondo].size()-1:
 		sekva_ondo_permesita = true
 		iru_al_sekva_ondo.show()
+		#vastigu_la_reton forigxos je lasta vastigxado
 		if weakref(vastigu_la_reton).get_ref():
 			vastigu_la_reton.show()
 
@@ -176,7 +177,7 @@ func _on_Aldoni_Bombo_pressed():
 	if mono >= 1:
 		mono -= 1
 		var Bombo_ = Bombo.instance()
-		Bombo_.set_global_pos(Vector2(400, 800))
+		Bombo_.set_global_pos(Vector2(650, 1100))
 		Kugloj.add_child(Bombo_)
 
 func _je_malamiko_mortigxis(komenca_vivo):
@@ -205,6 +206,7 @@ func _on_Sekva_ondo_pressed():
 		subondo = 0
 		subondo_kreita = false
 		Atendado_subondoj.start()
+		sekva_ondo_permesita = false
 
 func _on_Eliri_pressed():
 	get_tree().quit()
