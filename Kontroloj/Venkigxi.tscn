@@ -1,37 +1,26 @@
 [gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=1]
-[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=2]
-[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=3]
-[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=4]
+[ext_resource path="res://Kontroloj/Venkigxi.gd" type="Script" id=1]
+[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=3]
+[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=4]
+[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=5]
 
-[sub_resource type="GDScript" id=1]
+[node name="Venkigxi" type="Control"]
 
-script/source = "extends Node2D
-
-var agordejo = \"user://agordejo.cfg\"
-onready var Agordejo = ConfigFile.new()
-const lingvoj = [\"eo\", \"en\"]
-
-func _ready():
-	get_tree().set_auto_accept_quit(true)
-	
-	Agordejo.load(agordejo)
-	var lingvo_indekso = Agordejo.get_value(\"Lingvo\", \"lingvo\")
-	if lingvo_indekso == null:
-		get_tree().change_scene(\"res://Kontroloj/Lingvo.tscn\")
-	elif TranslationServer.get_locale() != lingvoj[lingvo_indekso]:
-		TranslationServer.set_locale(lingvoj[lingvo_indekso])
-		get_tree().reload_current_scene()
-		
-	get_node(\"Poentaro\").set_text(str(Tutmonda.poentaro))
-
-func _on_Denove_pressed():
-	get_tree().change_scene(\"res://Radiko.tscn\")"
-
-[node name="Node2D" type="Node2D"]
-
-script/script = SubResource( 1 )
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 400.0
+margin/top = 600.0
+margin/right = 400.0
+margin/bottom = 600.0
+script/script = ExtResource( 1 )
 
 [node name="Mesagxo" type="Label" parent="."]
 
@@ -42,38 +31,42 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 128.0
-margin/top = 256.0
-margin/right = -427.0
-margin/bottom = -269.0
-custom_fonts/font = ExtResource( 1 )
+margin/left = 200.0
+margin/top = 250.0
+margin/right = -563.0
+margin/bottom = -327.0
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Vi Venkigxis!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Denove" type="Button" parent="."]
+[node name="Reen" type="Button" parent="."]
 
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 192.0
-margin/top = 896.0
-margin/right = 576.0
-margin/bottom = 1024.0
-custom_styles/hover = ExtResource( 2 )
-custom_styles/pressed = ExtResource( 3 )
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = ExtResource( 1 )
+margin/left = -150.0
+margin/top = -900.0
+margin/right = -650.0
+margin/bottom = -1050.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Denove"
+text = "Reen"
 flat = false
 
 [node name="Poentaro" type="Label" parent="."]
@@ -89,7 +82,7 @@ margin/left = 192.0
 margin/top = 576.0
 margin/right = -182.0
 margin/bottom = -589.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"
 align = 1
@@ -109,13 +102,13 @@ margin/left = 320.0
 margin/top = 704.0
 margin/right = 538.0
 margin/bottom = 781.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ondoj"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[connection signal="pressed" from="Denove" to="." method="_on_Denove_pressed"]
+[connection signal="pressed" from="Reen" to="." method="_on_Reen_pressed"]
 
 

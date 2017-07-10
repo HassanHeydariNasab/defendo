@@ -7,9 +7,9 @@ If already you helped us, I don't remember; Because now is a time before that!"
 Mi akceptas la defion.,I accept the challenge.
 "Cxu vi sciias ke vi povas plibonigi la armilojn? kolektu samajn armilojn en la bazo.
 Duoblklaku/Duoblfrapetu al kanono/lasero por sxangxi gxian strategion.
-Armiloj bezonas energion por pafi al malamikoj; metu ilin je la cirklumoj.","Do you know that you can upgrade the weapons? Collect similar weapons in the base.
+Armiloj bezonas energion por pafi al malamikoj; metu ilin je la cirklumoj. (Vi povas plibonigi bombojn ankaux tiel.)","Do you know that you can upgrade the weapons? Collect similar weapons in the base.
 Double tap/Double click on cannon/laser to change its strategy.
-Weapons need energy for firing at enemies; put them on the circles."
+Weapons need energy for firing at enemies; put them on the circles.(Also you can upgrade bombs in this way)"
 Mi estas preta.,I'm ready.
 Ondo,Wave
 Nova,New
@@ -25,3 +25,48 @@ Ludi,Play
 Cxu vere vi volas eliri?,Do you really want to exit?
 Sekva ondo,Next wave
 Vastigu la reton,Extend the network
+"Cxi tio ludo eldonas sub GPLv3 permesilo.
+vi povas atingi la kodon je:
+https://github.com/HassanHeydariNasab/defendo
+
+Atribuoj:
+
+#Sonoj
+Ondilo:
+http://freesound.org/people/BMacZero/sounds/164102
+Kanono:
+http://freesound.org/people/bowlingballout/sounds/151713
+Lasero:
+http://freesound.org/people/junggle/sounds/28912
+Malamiko batas la bazon:
+http://freesound.org/people/sforsman/sounds/274404
+Bombo:
+http://freesound.org/people/zippi1/sounds/21313
+
+#Muzikoj
+Digital Soul (Utopia Mix) by Ars Sonor and Digital By Birth","This game releases under GPLv3 license.
+you can access the code at:
+https://github.com/HassanHeydariNasab/defendo
+
+Attributions:
+
+#Sounds
+Ondilo:
+http://freesound.org/people/BMacZero/sounds/164102
+Cannon:
+http://freesound.org/people/bowlingballout/sounds/151713
+Laser:
+http://freesound.org/people/junggle/sounds/28912
+Enemy hits the base:
+http://freesound.org/people/sforsman/sounds/274404
+Bomb:
+http://freesound.org/people/zippi1/sounds/21313
+
+#Musics
+Digital Soul (Utopia Mix) by Ars Sonor and Digital By Birth"
+Via Rekordo,Your Record
+Reen,Back
+Nova epoko,New era
+Malnova epoko,Old era
+Pri,About
+Gvidilo,Guide

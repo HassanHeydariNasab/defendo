@@ -18,8 +18,11 @@ func _fixed_process(delta):
 
 func _on_Area2D_body_enter( korpo ):
 	if korpo.get_name() == "Malamiko":
-		if korpo.tipo == 0 or korpo.tipo == 1 or korpo.tipo == 2:
-			korpo.get_parent().vivo -= log(nivelo+3)*22-20
+		if korpo.tipo == 2:
+			korpo.get_parent().vivo -= log(nivelo+5)*70-70
+			queue_free()
+		else:
+			korpo.get_parent().vivo -= log(nivelo+5)*70-110
 			queue_free()
 
 func _on_Vivtempilo_timeout():

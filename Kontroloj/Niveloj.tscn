@@ -6,8 +6,18 @@
 [ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=4]
 [ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=5]
 
-[node name="Niveloj" type="Node2D"]
+[node name="Niveloj" type="Control"]
 
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 800.0
+margin/bottom = 1200.0
 script/script = ExtResource( 1 )
 
 [node name="Fadi" type="Tween" parent="."]
@@ -17,23 +27,23 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="Nivelo_nova" type="Control" parent="."]
+[node name="Nova_epoko" type="Control" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
-size_flags/horizontal = 1
+size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = -100.0
+margin/top = -150.0
 margin/right = 0.0
-margin/bottom = -100.0
+margin/bottom = -150.0
 
-[node name="Rektangulo" type="Polygon2D" parent="Nivelo_nova"]
+[node name="Rektangulo" type="Polygon2D" parent="Nova_epoko"]
 
 transform/pos = Vector2( -100, 0 )
 polygon = Vector2Array( 500, 200, 100, 200, 100, 500, 500, 500 )
 uv = Vector2Array(  )
-color = Color( 0.917647, 0.917647, 0.917647, 1 )
+color = Color( 0.878431, 0.878431, 0.878431, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = null
@@ -43,7 +53,7 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="Rekordo" type="Label" parent="Nivelo_nova"]
+[node name="Rekordo" type="Label" parent="Nova_epoko"]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -65,7 +75,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Label 2" type="Label" parent="Nivelo_nova"]
+[node name="Label 2" type="Label" parent="Nova_epoko"]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -74,9 +84,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 50.0
+margin/left = 0.0
 margin/top = 400.0
-margin/right = -650.0
+margin/right = -800.0
 margin/bottom = -500.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -87,7 +97,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Ludi" type="Button" parent="Nivelo_nova"]
+[node name="Ludi" type="Button" parent="Nova_epoko"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -110,7 +120,7 @@ shortcut = null
 text = "Ludi"
 flat = false
 
-[node name="Polygon2D" type="Polygon2D" parent="Nivelo_nova"]
+[node name="Polygon2D" type="Polygon2D" parent="Nova_epoko"]
 
 transform/pos = Vector2( -93, 1 )
 polygon = Vector2Array( 493, 199, 780, 232, 743, 499, 493, 599 )
@@ -125,7 +135,7 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="Label" type="Label" parent="Nivelo_nova"]
+[node name="Label" type="Label" parent="Nova_epoko"]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -135,9 +145,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 400.0
-margin/top = 250.0
+margin/top = 200.0
 margin/right = -817.0
-margin/bottom = -556.0
+margin/bottom = -589.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.917647, 0.917647, 0.917647, 1 )
 text = "Nova epoko"
@@ -147,23 +157,26 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Nivelo_malnova" type="Control" parent="."]
+[node name="Malnova_epoko" type="Control" parent="."]
 
+anchor/left = 1
+anchor/right = 1
+anchor/bottom = 1
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 1
-size_flags/vertical = 2
+size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 450.0
+margin/top = -150.0
 margin/right = 0.0
-margin/bottom = 450.0
+margin/bottom = 150.0
 
-[node name="Rektangulo" type="Polygon2D" parent="Nivelo_malnova"]
+[node name="Rektangulo" type="Polygon2D" parent="Malnova_epoko"]
 
-transform/pos = Vector2( -100, 0 )
+transform/pos = Vector2( 300, 450 )
 polygon = Vector2Array( 500, 200, 100, 200, 100, 500, 500, 500 )
 uv = Vector2Array(  )
-color = Color( 0.917647, 0.917647, 0.917647, 1 )
+color = Color( 0.878431, 0.878431, 0.878431, 1 )
 vertex_colors = ColorArray(  )
 offset = Vector2( 0, 0 )
 texture/texture = null
@@ -173,7 +186,7 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="Rekordo" type="Label" parent="Nivelo_malnova"]
+[node name="Rekordo" type="Label" parent="Malnova_epoko"]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -182,10 +195,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 250.0
-margin/right = -267.0
-margin/bottom = -350.0
+margin/left = 400.0
+margin/top = 700.0
+margin/right = -667.0
+margin/bottom = -800.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "123"
@@ -195,7 +208,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Label 2" type="Label" parent="Nivelo_malnova"]
+[node name="Label 2" type="Label" parent="Malnova_epoko"]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -204,10 +217,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 50.0
-margin/top = 400.0
-margin/right = -650.0
-margin/bottom = -500.0
+margin/left = 400.0
+margin/top = 850.0
+margin/right = -1200.0
+margin/bottom = -950.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Via Rekordo"
@@ -217,16 +230,16 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Ludi" type="Button" parent="Nivelo_malnova"]
+[node name="Ludi" type="Button" parent="Malnova_epoko"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 500.0
-margin/right = 400.0
-margin/bottom = 600.0
+margin/left = 400.0
+margin/top = 950.0
+margin/right = 800.0
+margin/bottom = 1050.0
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 5 )
@@ -240,10 +253,10 @@ shortcut = null
 text = "Ludi"
 flat = false
 
-[node name="Polygon2D" type="Polygon2D" parent="Nivelo_malnova"]
+[node name="Polygon2D" type="Polygon2D" parent="Malnova_epoko"]
 
-transform/pos = Vector2( -93, 1 )
-polygon = Vector2Array( 493, 199, 793, 249, 807, 470, 493, 599 )
+transform/pos = Vector2( -400, 450 )
+polygon = Vector2Array( 498, 299, 800, 200, 800, 600, 476, 501 )
 uv = Vector2Array(  )
 color = Color( 0.403922, 0.227451, 0.717647, 1 )
 vertex_colors = ColorArray(  )
@@ -255,7 +268,7 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="Label" type="Label" parent="Nivelo_malnova"]
+[node name="Label" type="Label" parent="Malnova_epoko"]
 
 anchor/right = 1
 anchor/bottom = 1
@@ -264,10 +277,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 400.0
-margin/top = 250.0
-margin/right = -912.0
-margin/bottom = -556.0
+margin/left = 100.0
+margin/top = 650.0
+margin/right = -600.0
+margin/bottom = -1094.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.917647, 0.917647, 0.917647, 1 )
 text = "Malnova epoko"
@@ -277,10 +290,115 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="Lingvo" type="Button" parent="."]
+
+rect/scale = Vector2( 0.7, 0.7 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 950.0
+margin/right = 643.0
+margin/bottom = 1093.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Language/Lingvo"
+flat = false
+
+[node name="Gvidilo" type="Button" parent="."]
+
+anchor/left = 1
+anchor/right = 1
+anchor/bottom = 1
+rect/scale = Vector2( 0.7, 0.7 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -500.0
+margin/top = 1075.0
+margin/right = -929.0
+margin/bottom = -1218.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Gvidilo"
+flat = false
+
+[node name="Pri" type="Button" parent="."]
+
+anchor/left = 1
+anchor/right = 1
+anchor/bottom = 1
+rect/scale = Vector2( 0.7, 0.7 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -500.0
+margin/top = 950.0
+margin/right = -927.0
+margin/bottom = -1093.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Pri"
+flat = false
+
+[node name="Versio" type="Label" parent="."]
+
+anchor/bottom = 1
+rect/scale = Vector2( 0.6, 0.6 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 50.0
+margin/top = 1100.0
+margin/right = 550.0
+margin/bottom = -1267.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "v2.3"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [connection signal="tween_complete" from="Fadi" to="." method="_on_Fadi_tween_complete"]
 
-[connection signal="pressed" from="Nivelo_nova/Ludi" to="." method="_on_Ludi_pressed"]
+[connection signal="pressed" from="Nova_epoko/Ludi" to="." method="_on_Ludi_pressed"]
 
-[connection signal="pressed" from="Nivelo_malnova/Ludi" to="." method="_on_Ludi_malnova_pressed"]
+[connection signal="pressed" from="Malnova_epoko/Ludi" to="." method="_on_Ludi_malnova_pressed"]
+
+[connection signal="pressed" from="Lingvo" to="." method="_on_Lingvo_pressed"]
+
+[connection signal="pressed" from="Gvidilo" to="." method="_on_Gvidilo_pressed"]
+
+[connection signal="pressed" from="Pri" to="." method="_on_Pri_pressed"]
 
 

@@ -807,7 +807,6 @@ playback/speed = 1.0
 
 [node name="Vere_eliri" type="WindowDialog" parent="Kanvaso"]
 
-editor/display_folded = true
 visibility/visible = false
 anchor/left = 3
 anchor/top = 3
@@ -1005,9 +1004,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 1010.0
-margin/right = 600.0
-margin/bottom = 1610.0
+margin/top = 1008.0
+margin/right = 618.0
+margin/bottom = 1626.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 8 )
 custom_styles/normal = ExtResource( 9 )
@@ -1025,9 +1024,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 858.0
-margin/right = 600.0
-margin/bottom = 1458.0
+margin/top = 552.0
+margin/right = 618.0
+margin/bottom = 1170.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 8 )
 custom_styles/normal = ExtResource( 9 )
@@ -1045,9 +1044,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 706.0
-margin/right = 600.0
-margin/bottom = 1306.0
+margin/top = 704.0
+margin/right = 618.0
+margin/bottom = 1322.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 8 )
 custom_styles/normal = ExtResource( 9 )
@@ -1065,9 +1064,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 552.0
-margin/right = 600.0
-margin/bottom = 1152.0
+margin/top = 856.0
+margin/right = 618.0
+margin/bottom = 1474.0
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 8 )
 custom_styles/normal = ExtResource( 9 )
@@ -1153,6 +1152,9 @@ align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="area_enter" from="Bazo/Area2D" to="." method="_on_Area2D_area_enter"]
 

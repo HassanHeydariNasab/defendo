@@ -89,6 +89,6 @@ func _on_Ondo_body_enter( korpo ):
 		if korpo.get_parent().rapido > nova_rapido:
 			korpo.get_parent().rapido = nova_rapido
 		if korpo.tipo == 2:
-			korpo.get_parent().vivo -= log(nivelo+3)*70-10
+			korpo.get_parent().vivo -= log(nivelo+5)*70-80
 		else:
-			korpo.get_parent().vivo -= log(nivelo+3)*20-15
+			korpo.get_parent().vivo -= log(nivelo+5)*50-60

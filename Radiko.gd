@@ -51,20 +51,46 @@ func _ready():
 		TranslationServer.set_locale(lingvoj[lingvo_indekso])
 		get_tree().reload_current_scene()
 
-	tipoj = [
-	{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.2, 'unuarenkonto': 0},
-	{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.2, 'unuarenkonto': 0},
-	{'sceno': M0, 'grando': 0.45, 'vivo': 300, 'rapido': 2.8, 'unuarenkonto': 1},
-	{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 2.2, 'unuarenkonto': 3},
-	{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1.2, 'unuarenkonto': 5},
-	{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 1, 'unuarenkonto': 10},
-	{'sceno': M2, 'grando': 0.45, 'vivo': 500, 'rapido': 1.7, 'unuarenkonto': 7},
-	{'sceno': M2, 'grando': 0.8, 'vivo': 1500, 'rapido': 1, 'unuarenkonto': 12},
-	]
-#	ondoj = [[{'nombro': 1, 'tipo': 6, 'atendo': 99}]]
+	var epoko = Tutmonda.epoko
+	
+	if epoko == "nova":
+		tipoj = [
+		{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.2, 'unuarenkonto': 0},
+		{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.3, 'unuarenkonto': 0},
+		{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 4.5, 'unuarenkonto': 10},
+		{'sceno': M0, 'grando': 0.45, 'vivo': 300, 'rapido': 2.8, 'unuarenkonto': 1},
+		{'sceno': M0, 'grando': 0.45, 'vivo': 300, 'rapido': 3.5, 'unuarenkonto': 14},
+		{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 2.2, 'unuarenkonto': 3},
+		{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 3, 'unuarenkonto': 18},
+		{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1.2, 'unuarenkonto': 5},
+		{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1.8, 'unuarenkonto': 22},
+		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 1, 'unuarenkonto': 10},
+		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 1.3, 'unuarenkonto': 26},
+		{'sceno': M2, 'grando': 0.45, 'vivo': 500, 'rapido': 1.7, 'unuarenkonto': 7},
+		{'sceno': M2, 'grando': 0.45, 'vivo': 500, 'rapido': 2.3, 'unuarenkonto': 16},
+		{'sceno': M2, 'grando': 0.8, 'vivo': 2500, 'rapido': 1, 'unuarenkonto': 12},
+		{'sceno': M2, 'grando': 0.8, 'vivo': 2500, 'rapido': 1.6, 'unuarenkonto': 30},
+		]
+	elif epoko == "malnova":
+		get_node("Kanvaso/Aldoni_Ondilo").hide()
+		get_node("Kanvaso/Aldoni_Lasero").hide()
+		tipoj = [
+		{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3, 'unuarenkonto': 0},
+		{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.1, 'unuarenkonto': 0},
+		{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 4.5, 'unuarenkonto': 10},
+		{'sceno': M0, 'grando': 0.45, 'vivo': 300, 'rapido': 2.5, 'unuarenkonto': 2},
+		{'sceno': M0, 'grando': 0.45, 'vivo': 300, 'rapido': 3.5, 'unuarenkonto': 14},
+		{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 2, 'unuarenkonto': 5},
+		{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 3, 'unuarenkonto': 18},
+		{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1, 'unuarenkonto': 7},
+		{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1.8, 'unuarenkonto': 22},
+		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 0.8, 'unuarenkonto': 12},
+		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 1.3, 'unuarenkonto': 28},
+		]
+#	ondoj = [[{'nombro': 1, 'tipo': 11, 'atendo': 99}]]
 	for o in range(50):
 		ondoj.append([])
-		while ondoj[-1].size() < 5:
+		while ondoj[-1].size() < 6:
 			randomize()
 			var t = int(rand_range(0, tipoj.size()))
 			if o >= tipoj[t]['unuarenkonto'] and int(rand_range(0,2)) == 1:
@@ -104,7 +130,7 @@ func subondi(ondo_i, subondo_i):
 		if subondo['nombro'] == 1:
 			M_.set_global_pos(Vector2(rand_range(0.0, 800.0), -2200))
 		else:
-			M_.set_global_pos(Vector2(-subondo['nombro']*200+i*tipoj[subondo['tipo']]['grando']*2000+hazardo, -2200))
+			M_.set_global_pos(Vector2(-subondo['nombro']*200+i*tipoj[subondo['tipo']]['grando']*1000+hazardo, -2200))
 		M_.set_scale(Vector2(tipoj[subondo['tipo']]['grando'], tipoj[subondo['tipo']]['grando']))
 		M_.vivo = tipoj[subondo['tipo']]['vivo']
 		M_.komenca_vivo = float(tipoj[subondo['tipo']]['vivo'])
@@ -210,7 +236,7 @@ func _on_Sekva_ondo_pressed():
 		sekva_ondo_permesita = false
 
 func _on_Eliri_pressed():
-	get_tree().quit()
+	get_tree().change_scene("res://Kontroloj/Niveloj.tscn")
 
 func _on_Ludi_pressed():
 	get_node("Kanvaso/Vere_eliri").hide()
@@ -223,7 +249,7 @@ func _on_Zomilo_value_changed( valoro ):
 	))
 
 func _on_vastigu_la_reton_pressed():
-	var prezoj = [1000, 3200, 6500, 15000]
+	var prezoj = [1000, 4200, 9500, 17800]
 	if reto == 0 and mono > prezoj[0]:
 		mono -= prezoj[0]
 		get_node("Reto/N1").show()

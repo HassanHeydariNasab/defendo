@@ -78,7 +78,7 @@ func _process(delta):
 				K_.nivelo = nivelo
 				K_.angulo = angulo
 				K_.set_global_pos(Kuglujo.get_global_pos())
-				K_.set_global_scale(Vector2(log(nivelo)+1.0, log(nivelo)+1.0))
+				K_.set_global_scale(Vector2(log(nivelo+1)+1.0, log(nivelo+1)+1.0))
 				Kugloj.add_child(K_)
 			elif atendado_nova_K >= 100:
 				atendado_nova_K = 0

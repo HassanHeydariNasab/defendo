@@ -12,7 +12,7 @@ func _ready():
 		set_fixed_process(true)
 
 func _fixed_process(delta):
-	Kuglo.move((Vector2(4.0*(log(nivelo)+1.0)*cos(angulo), -4.0*(log(nivelo)+1.0)*sin(angulo))))
+	Kuglo.move((Vector2(4.0*(log(nivelo+1)+1.0)*cos(angulo), -4.0*(log(nivelo+1)+1.0)*sin(angulo))))
 
 func _on_Area2D_body_enter( korpo ):
 	if korpo.get_name() == "Malamiko":
