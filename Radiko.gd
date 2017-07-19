@@ -87,7 +87,7 @@ func _ready():
 		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 0.8, 'unuarenkonto': 12},
 		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 1.3, 'unuarenkonto': 28},
 		]
-#	ondoj = [[{'nombro': 1, 'tipo': 11, 'atendo': 99}]]
+#	ondoj = [[{'nombro': 8, 'tipo': 8, 'atendo': 99}]]
 	for o in range(50):
 		ondoj.append([])
 		while ondoj[-1].size() < 6:
@@ -123,14 +123,20 @@ func subondi(ondo_i, subondo_i):
 	Atendado_subondoj.set_wait_time(ondoj[ondo_i][subondo_i]['atendo'])
 	Atendado_subondoj.start()
 	var subondo = ondoj[ondo_i][subondo_i]
+	var sumo_vivoj = tipoj[subondo['tipo']]['vivo']*subondo['nombro']
 	randomize()
-	var hazardo = rand_range(-50.0, 100.0)
+	var hazardo = rand_range(-100.0, 100.0)
 	for i in range(subondo['nombro']):
 		var M_ = tipoj[subondo['tipo']]['sceno'].instance()
 		if subondo['nombro'] == 1:
 			M_.set_global_pos(Vector2(rand_range(0.0, 800.0), -2200))
 		else:
-			M_.set_global_pos(Vector2(-subondo['nombro']*200+i*tipoj[subondo['tipo']]['grando']*1000+hazardo, -2200))
+			if sumo_vivoj >= 2000 and sumo_vivoj < 6000:
+				M_.set_global_pos(Vector2(700+hazardo*2, -2200-i*700))
+			elif sumo_vivoj >= 6000:
+				M_.set_global_pos(Vector2(700+hazardo, -2200-i*900))
+			else:
+				M_.set_global_pos(Vector2(-subondo['nombro']*200+i*650+hazardo, -2200))
 		M_.set_scale(Vector2(tipoj[subondo['tipo']]['grando'], tipoj[subondo['tipo']]['grando']))
 		M_.vivo = tipoj[subondo['tipo']]['vivo']
 		M_.komenca_vivo = float(tipoj[subondo['tipo']]['vivo'])
@@ -194,8 +200,8 @@ func _on_Aldoni_Ondilo_pressed():
 		Pj.add_child(Ondilo_)
 
 func _on_Aldoni_Lasero_pressed():
-	if mono >= 20:
-		mono -= 20
+	if mono >= 50:
+		mono -= 50
 		var Lasero_ = Lasero.instance()
 		Lasero_.set_global_pos(Vector2(490, 900))
 		Pj.add_child(Lasero_)
@@ -205,7 +211,7 @@ func _on_Aldoni_Bombo_pressed():
 		mono -= 1
 		var Bombo_ = Bombo.instance()
 		Bombo_.set_global_pos(Vector2(650, 1100))
-		Kugloj.add_child(Bombo_)
+		Pj.add_child(Bombo_)
 
 func _je_malamiko_mortigxis(komenca_vivo):
 	mono += int(log(komenca_vivo)*50-170)

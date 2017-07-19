@@ -85,7 +85,7 @@ func _on_Reta_input_event( viewport, event, shape_idx ):
 
 func _on_Ondo_body_enter( korpo ):
 	if korpo.get_name() == "Malamiko" and enreta:
-		var nova_rapido = korpo.get_parent().komenca_rapido/(1+log(korpo.get_parent().komenca_rapido*nivelo))
+		var nova_rapido = korpo.get_parent().komenca_rapido*(((nivelo+18.0)/(nivelo+10.0))-0.75)
 		if korpo.get_parent().rapido > nova_rapido:
 			korpo.get_parent().rapido = nova_rapido
 		if korpo.tipo == 2:

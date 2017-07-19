@@ -41,7 +41,7 @@ func _process(delta):
 func _on_Reta_body_enter( korpo ):
 	if korpo.get_name() == "Malamiko":
 		if korpo.tipo == 0 or korpo.tipo == 1:
-			korpo.get_parent().vivo -= log(nivelo+3)*100-125
+			korpo.get_parent().vivo -= log(nivelo+10)*200-450
 			Eksplodsono.play()
 			Eksplodi.start()
 
@@ -64,4 +64,5 @@ func _on_Eksplodi_tween_complete( object, key ):
 
 
 func _on_Tempilo_timeout():
-	nivelo += 1
+	if nivelo < 99:
+		nivelo += 1

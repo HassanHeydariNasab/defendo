@@ -574,7 +574,6 @@ transform/pos = Vector2( 1125, -831 )
 
 [node name="Bazo" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 400, 1199 )
 transform/scale = Vector2( 0.7, 0.7 )
 
@@ -1159,8 +1158,6 @@ __meta__ = {
 [connection signal="area_enter" from="Bazo/Area2D" to="." method="_on_Area2D_area_enter"]
 
 [connection signal="area_exit" from="Bazo/Area2D" to="." method="_on_Area2D_area_exit"]
-
-[connection signal="body_exit" from="Bazo/Area2D" to="." method="_on_Area2D_body_exit"]
 
 [connection signal="timeout" from="Atendado_subondoj" to="." method="_on_Atendado_subondoj_timeout"]
 
