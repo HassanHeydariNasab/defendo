@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Kontroloj/Malvenkigxi.gd" type="Script" id=1]
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=2]
-[ext_resource path="res://Temoj/Butono_sxveda.tres" type="StyleBox" id=3]
+[ext_resource path="res://Temoj/Butono_sxveba.tres" type="StyleBox" id=3]
 [ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=4]
 [ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=5]
 

@@ -33,9 +33,9 @@ func _process(delta):
 		Tempilo.set_active(false)
 	if Radiko.kaptitajxo == self:
 		set_global_pos(get_global_mouse_pos())
-		set_global_scale(Vector2(1.35, 1.35))
+		set_global_scale(Vector2(0.35, 0.35))
 	else:
-		set_global_scale(Vector2(1.3, 1.3))
+		set_global_scale(Vector2(0.3, 0.3))
 	Nivelo.set_text(str(nivelo))
 
 func _on_Reta_body_enter( korpo ):

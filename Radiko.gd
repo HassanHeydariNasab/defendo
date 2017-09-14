@@ -147,7 +147,7 @@ func subondi(ondo_i, subondo_i):
 
 func _process(delta):
 	FPS.set_text(str(int(1.0/delta)))
-	if vivo <= 0 or mono < 0:
+	if vivo <= 0:
 		Tutmonda.poentaro = ondo
 		get_tree().change_scene("res://Kontroloj/Malvenkigxi.tscn")
 	Mono.set_text(str(mono))
@@ -191,6 +191,8 @@ func _on_Aldoni_Kanonon_pressed():
 		var Kanono_ = Kanono.instance()
 		Kanono_.set_global_pos(Vector2(560, 1000))
 		Pj.add_child(Kanono_)
+	if mono <= 0:
+		get_node("Kanvaso/Vere_dauxrigi").popup()
 
 func _on_Aldoni_Ondilo_pressed():
 	if mono >= 20:
@@ -198,6 +200,8 @@ func _on_Aldoni_Ondilo_pressed():
 		var Ondilo_ = Ondilo.instance()
 		Ondilo_.set_global_pos(Vector2(270, 1000))
 		Pj.add_child(Ondilo_)
+	if mono <= 0:
+		get_node("Kanvaso/Vere_dauxrigi").popup()
 
 func _on_Aldoni_Lasero_pressed():
 	if mono >= 50:
@@ -205,6 +209,8 @@ func _on_Aldoni_Lasero_pressed():
 		var Lasero_ = Lasero.instance()
 		Lasero_.set_global_pos(Vector2(490, 900))
 		Pj.add_child(Lasero_)
+	if mono <= 0:
+		get_node("Kanvaso/Vere_dauxrigi").popup()
 
 func _on_Aldoni_Bombo_pressed():
 	if mono >= 1:
@@ -212,6 +218,8 @@ func _on_Aldoni_Bombo_pressed():
 		var Bombo_ = Bombo.instance()
 		Bombo_.set_global_pos(Vector2(650, 1100))
 		Pj.add_child(Bombo_)
+	if mono <= 0:
+		get_node("Kanvaso/Vere_dauxrigi").popup()
 
 func _je_malamiko_mortigxis(komenca_vivo):
 	mono += int(log(komenca_vivo)*50-170)
@@ -242,11 +250,12 @@ func _on_Sekva_ondo_pressed():
 		sekva_ondo_permesita = false
 
 func _on_Eliri_pressed():
-	get_tree().change_scene("res://Kontroloj/Niveloj.tscn")
+	Tutmonda.poentaro = ondo
+	get_tree().change_scene("res://Kontroloj/Malvenkigxi.tscn")
 
 func _on_Ludi_pressed():
 	get_node("Kanvaso/Vere_eliri").hide()
-
+	get_node("Kanvaso/Vere_dauxrigi").hide()
 
 func _on_Zomilo_value_changed( valoro ):
 	Kamero.set_zoom(Vector2(valoro, valoro))
@@ -256,22 +265,22 @@ func _on_Zomilo_value_changed( valoro ):
 
 func _on_vastigu_la_reton_pressed():
 	var prezoj = [1000, 4200, 9500, 17800]
-	if reto == 0 and mono > prezoj[0]:
+	if reto == 0 and mono >= prezoj[0]:
 		mono -= prezoj[0]
 		get_node("Reto/N1").show()
 		get_node("Kanvaso/vastigu_la_reton/Prezo").set_text(str(prezoj[1]))
 		reto = 1
-	elif reto == 1 and mono > prezoj[1]:
+	elif reto == 1 and mono >= prezoj[1]:
 		mono -= prezoj[1]
 		get_node("Reto/N2").show()
 		get_node("Kanvaso/vastigu_la_reton/Prezo").set_text(str(prezoj[2]))
 		reto = 2
-	elif reto == 2 and mono > prezoj[2]:
+	elif reto == 2 and mono >= prezoj[2]:
 		mono -= prezoj[2]
 		get_node("Reto/N3").show()
 		get_node("Kanvaso/vastigu_la_reton/Prezo").set_text(str(prezoj[3]))
 		reto = 3
-	elif reto == 3 and mono > prezoj[3]:
+	elif reto == 3 and mono >= prezoj[3]:
 		mono -= prezoj[3]
 		vastigu_la_reton.queue_free()
 		get_node("Reto/N4").show()

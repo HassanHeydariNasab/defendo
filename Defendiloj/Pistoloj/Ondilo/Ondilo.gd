@@ -34,9 +34,11 @@ func _process(delta):
 		Enreta.show()
 	else:
 		Enreta.hide()
-	if Malamikoj.size() > 0 and enreta:
+	if Malamikoj.size() > 0 and enreta and Radiko.mono >= 5:
 		if Ondo.get_scale() == Vector2(1, 1):
 			Radiko.mono -= 5
+			if Radiko.mono <= 0:
+				get_node("/root/Radiko/Kanvaso/Vere_dauxrigi").popup()
 			Fajro.play()
 		#se la malamiko liberigxis
 		for Malamiko in Malamikoj:
@@ -60,11 +62,11 @@ func _process(delta):
 		Ondo.set_opacity(1)
 	if Radiko.kaptitajxo == self:
 		set_global_pos(get_global_mouse_pos())
-		set_global_scale(Vector2(1.35, 1.35))
+		set_global_scale(Vector2(0.35, 0.35))
 		Elektumo.show()
 		Limo.show()
 	else:
-		set_global_scale(Vector2(1.3, 1.3))
+		set_global_scale(Vector2(0.3, 0.3))
 		Elektumo.hide()
 		Limo.hide()
 	

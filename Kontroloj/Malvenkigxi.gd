@@ -16,9 +16,9 @@ func _ready():
 		get_tree().reload_current_scene()
 
 	get_node("Poentaro").set_text(str(Tutmonda.poentaro))
-	if Tutmonda.epoko == "nova":
+	if Tutmonda.epoko == "nova" and Tutmonda.poentaro > Agordejo.get_value("Rekordoj", "nova_epoko", 0):
 		Agordejo.set_value("Rekordoj", "nova_epoko", Tutmonda.poentaro)
-	elif Tutmonda.epoko == "malnova":
+	elif Tutmonda.epoko == "malnova" and Tutmonda.poentaro > Agordejo.get_value("Rekordoj", "malnova_epoko", 0):
 		Agordejo.set_value("Rekordoj", "malnova_epoko", Tutmonda.poentaro)
 	Agordejo.save(agordejo)
 

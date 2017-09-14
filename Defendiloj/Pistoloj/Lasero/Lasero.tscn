@@ -27,7 +27,6 @@ var tipo = \"Lasero\""
 [node name="Lasero" type="Node2D"]
 
 transform/rot = -90.0
-transform/scale = Vector2( 0.3, 0.3 )
 script/script = ExtResource( 1 )
 
 [node name="Elektumo" type="Sprite" parent="."]

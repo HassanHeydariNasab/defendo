@@ -9,30 +9,29 @@
 [ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=7]
 [ext_resource path="res://Defendiloj/Pistoloj/Ondilo/fajro.ogg" type="AudioStream" id=8]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 661.054
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 133.333
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=3]
 
 script/source = "extends Area2D
 
 var tipo = \"Ondilo\""
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
 radius = 165.637
 
 [node name="Ondilo" type="Node2D"]
 
-transform/scale = Vector2( 0.3, 0.3 )
 script/script = ExtResource( 1 )
 
 [node name="Elektumo" type="Sprite" parent="."]
@@ -57,7 +56,7 @@ texture = ExtResource( 4 )
 editor/display_folded = true
 transform/rot = 8.14222e-13
 input/pickable = true
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 0 )
@@ -69,7 +68,7 @@ collision/mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0
 
@@ -83,7 +82,7 @@ texture = ExtResource( 5 )
 
 editor/display_folded = true
 input/pickable = true
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 0 )
@@ -92,11 +91,11 @@ linear_damp = 0.1
 angular_damp = 1.0
 collision/layers = 2
 collision/mask = 1024
-script/script = SubResource( 4 )
+script/script = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Reta"]
 
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
@@ -106,7 +105,7 @@ _update_shape_index = 0
 
 editor/display_folded = true
 input/pickable = true
-shapes/0/shape = SubResource( 5 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 0 )
@@ -122,7 +121,7 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ondo"]
 
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 

@@ -50,7 +50,7 @@ func _process(delta):
 			if not weakref(Malamiko).get_ref():
 				Malamikoj.erase(Malamiko)
 		#se ankoraux ni havas malamikojn
-		if Malamikoj.size() > 0 and enreta:
+		if Malamikoj.size() > 0 and enreta and Radiko.mono >= 1:
 			var Malamiko = Malamikoj[0]
 			if strategio == 'nova':
 				Malamiko = Malamikoj[-1]
@@ -73,6 +73,8 @@ func _process(delta):
 			if atendado_nova_K < 100 and atendado_nova_K % 10 == 0:
 				Fajro.play()
 				Radiko.mono -= 1
+				if Radiko.mono <= 0:
+					get_node("/root/Radiko/Kanvaso/Vere_dauxrigi").popup()
 				var K_ = K.instance()
 				K_.pistolo = self
 				K_.nivelo = nivelo
@@ -84,11 +86,11 @@ func _process(delta):
 				atendado_nova_K = 0
 	if Radiko.kaptitajxo == self:
 		set_global_pos(get_global_mouse_pos())
-		set_global_scale(Vector2(1.35, 1.35))
+		set_global_scale(Vector2(0.35, 0.35))
 		Elektumo.show()
 		Limo.show()
 	else:
-		set_global_scale(Vector2(1.3, 1.3))
+		set_global_scale(Vector2(0.3, 0.3))
 		Elektumo.hide()
 		Limo.hide()
 	
