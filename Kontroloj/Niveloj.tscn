@@ -29,6 +29,7 @@ playback/speed = 1.0
 
 [node name="Nova_epoko" type="Control" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -159,6 +160,7 @@ max_lines_visible = -1
 
 [node name="Malnova_epoko" type="Control" parent="."]
 
+editor/display_folded = true
 anchor/left = 1
 anchor/right = 1
 anchor/bottom = 1
@@ -382,7 +384,7 @@ margin/right = 550.0
 margin/bottom = -1267.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "v2.3.1"
+text = "v2.3.2"
 align = 1
 valign = 1
 percent_visible = 1.0

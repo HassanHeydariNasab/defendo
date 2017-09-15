@@ -38,6 +38,8 @@ texture = ExtResource( 2 )
 
 [node name="Kanono" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Sprite" type="Sprite" parent="Kanono"]
 
 texture = ExtResource( 3 )
@@ -52,7 +54,6 @@ texture = ExtResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
-editor/display_folded = true
 transform/rot = 8.14222e-13
 input/pickable = true
 shapes/0/shape = SubResource( 1 )

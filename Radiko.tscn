@@ -574,7 +574,6 @@ transform/pos = Vector2( 1125, -831 )
 
 [node name="Bazo" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 400, 1199 )
 transform/scale = Vector2( 0.7, 0.7 )
 
@@ -673,7 +672,7 @@ sort/enabled = true
 
 sort/enabled = true
 
-[node name="StreamPlayer" type="StreamPlayer" parent="."]
+[node name="Fonmuziko" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 6 )
 stream/play = false
@@ -713,6 +712,7 @@ drag_margin/bottom = 0.2
 
 [node name="Kanvaso" type="CanvasLayer" parent="."]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -807,6 +807,7 @@ playback/speed = 1.0
 
 [node name="Vere_eliri" type="WindowDialog" parent="Kanvaso"]
 
+editor/display_folded = true
 visibility/visible = false
 anchor/left = 3
 anchor/top = 3
@@ -891,6 +892,8 @@ max_lines_visible = -1
 
 [node name="Vere_dauxrigi" type="WindowDialog" parent="Kanvaso"]
 
+editor/display_folded = true
+visibility/visible = false
 anchor/left = 3
 anchor/top = 3
 anchor/right = 3
@@ -1163,6 +1166,7 @@ flat = false
 
 [node name="Zomilo" type="VScrollBar" parent="Kanvaso"]
 
+editor/display_folded = true
 anchor/left = 1
 anchor/top = 3
 anchor/right = 1
