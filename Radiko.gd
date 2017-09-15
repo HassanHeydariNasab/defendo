@@ -52,7 +52,7 @@ func _ready():
 		get_tree().reload_current_scene()
 
 	var epoko = Tutmonda.epoko
-	
+
 	if epoko == "nova":
 		tipoj = [
 		{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.2, 'unuarenkonto': 0},
@@ -165,6 +165,7 @@ func _process(delta):
 
 
 func _on_Area2D_area_enter( areo ):
+	print("en:",areo)
 	if areo.get_name() == "Reta":
 		Armiloj.append(areo)
 	if Armiloj.size() == 2:
@@ -182,6 +183,7 @@ func _on_Area2D_area_enter( areo ):
 			Armiloj[1].get_parent().queue_free()
 
 func _on_Area2D_area_exit( areo ):
+	print("el:",areo)
 	if areo.get_name() == "Reta":
 		Armiloj.erase(areo)
 
@@ -189,7 +191,13 @@ func _on_Aldoni_Kanonon_pressed():
 	if mono >= 10:
 		mono -= 10
 		var Kanono_ = Kanono.instance()
-		Kanono_.set_global_pos(Vector2(560, 1000))
+		if Armiloj.size() == 1:
+			if Armiloj[0].tipo == "Kanono":
+				Kanono_.set_global_pos(Vector2(400, 1150))
+			else:
+				Kanono_.set_global_pos(Vector2(300, 350))
+		else:
+			Kanono_.set_global_pos(Vector2(300, 350))
 		Pj.add_child(Kanono_)
 	if mono <= 0:
 		get_node("Kanvaso/Vere_dauxrigi").popup()
@@ -198,7 +206,13 @@ func _on_Aldoni_Ondilo_pressed():
 	if mono >= 20:
 		mono -= 20
 		var Ondilo_ = Ondilo.instance()
-		Ondilo_.set_global_pos(Vector2(270, 1000))
+		if Armiloj.size() == 1:
+			if Armiloj[0].tipo == "Ondilo":
+				Ondilo_.set_global_pos(Vector2(400, 1150))
+			else:
+				Ondilo_.set_global_pos(Vector2(500, 350))
+		else:
+			Ondilo_.set_global_pos(Vector2(500, 350))
 		Pj.add_child(Ondilo_)
 	if mono <= 0:
 		get_node("Kanvaso/Vere_dauxrigi").popup()
@@ -207,7 +221,13 @@ func _on_Aldoni_Lasero_pressed():
 	if mono >= 50:
 		mono -= 50
 		var Lasero_ = Lasero.instance()
-		Lasero_.set_global_pos(Vector2(490, 900))
+		if Armiloj.size() == 1:
+			if Armiloj[0].tipo == "Lasero":
+				Lasero_.set_global_pos(Vector2(400, 1150))
+			else:
+				Lasero_.set_global_pos(Vector2(100, 350))
+		else:
+			Lasero_.set_global_pos(Vector2(100, 350))
 		Pj.add_child(Lasero_)
 	if mono <= 0:
 		get_node("Kanvaso/Vere_dauxrigi").popup()
@@ -216,7 +236,13 @@ func _on_Aldoni_Bombo_pressed():
 	if mono >= 1:
 		mono -= 1
 		var Bombo_ = Bombo.instance()
-		Bombo_.set_global_pos(Vector2(650, 1100))
+		if Armiloj.size() == 1:
+			if Armiloj[0].tipo == "Bombo":
+				Bombo_.set_global_pos(Vector2(400, 1150))
+			else:
+				Bombo_.set_global_pos(Vector2(700, 350))
+		else:
+			Bombo_.set_global_pos(Vector2(700, 350))
 		Pj.add_child(Bombo_)
 	if mono <= 0:
 		get_node("Kanvaso/Vere_dauxrigi").popup()
