@@ -11,7 +11,7 @@ onready var Areo = get_node("Area2D")
 onready var Limo = get_node("Area2D/Limo")
 onready var K = preload("res://Defendiloj/Kugloj/Laserradio/Laserradio.tscn")
 onready var Strategio = get_node("Strategio")
-onready var DK = get_node("DuoblaKlako")
+onready var LongFrapeti = get_node("LongFrapeti")
 onready var Radiko = get_tree().get_root().get_node("Radiko")
 onready var Enreta = get_node("Lasero/Enreta")
 onready var Fajro = get_node("Fajro")
@@ -98,34 +98,31 @@ func _process(delta):
 	Areo.set_scale(Vector2(log(nivelo)/5.0+1,log(nivelo)/5.0+1))
 	
 func _on_Reta_input_event( viewport, event, shape_idx ):
-	if event.type == InputEvent.SCREEN_TOUCH:
+	if event.type == InputEvent.SCREEN_DRAG:
+		LongFrapeti.stop()
+	elif event.type == InputEvent.SCREEN_TOUCH:
 		if event.pressed:
-			nk += 1
-			DK.start()
+			Strategio.hide()
+			LongFrapeti.start()
 			Radiko.kaptitajxo = self
 		else:
-			Radiko.kaptitajxo = null
-		if nk >= 2:
-			if Strategio.is_hidden():
-				Strategio.show()
-			else:
-				Strategio.hide()
-			nk = 0
-			DK.stop()
-		
-	elif event.type == InputEvent.MOUSE_BUTTON:
-		if event.doubleclick:
-			if Strategio.is_hidden():
-				Strategio.show()
-			else:
-				Strategio.hide()
-		if event.button_mask == 0:
-			Radiko.kaptitajxo = self
-		else:
+			LongFrapeti.stop()
 			Radiko.kaptitajxo = null
 
-func _on_DuoblaKlako_timeout():
-	nk = 0
+	elif event.type == InputEvent.MOUSE_BUTTON:
+		if event.button_index == BUTTON_RIGHT and event.is_pressed():
+			if Strategio.is_hidden():
+				Strategio.show()
+			else:
+				Strategio.hide()
+		if event.button_index == BUTTON_LEFT:
+			if event.is_pressed():
+				Radiko.kaptitajxo = self
+			else:
+				Radiko.kaptitajxo = null
+
+func _on_LongFrapeti_timeout():
+	Strategio.show()
 
 func _on_MalForta_button_up():
 	Strategio.hide()

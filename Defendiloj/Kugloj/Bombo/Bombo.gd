@@ -54,10 +54,11 @@ func _on_Reta_input_event( viewport, event, shape_idx ):
 			Radiko.kaptitajxo = null
 
 	elif event.type == InputEvent.MOUSE_BUTTON:
-		if event.button_mask == 0:
-			Radiko.kaptitajxo = self
-		else:
-			Radiko.kaptitajxo = null
+		if event.button_index == BUTTON_LEFT:
+			if event.is_pressed():
+				Radiko.kaptitajxo = self
+			else:
+				Radiko.kaptitajxo = null
 
 func _on_Eksplodi_tween_complete( object, key ):
 	queue_free()

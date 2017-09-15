@@ -79,11 +79,13 @@ func _on_Reta_input_event( viewport, event, shape_idx ):
 			Radiko.kaptitajxo = self
 		else:
 			Radiko.kaptitajxo = null
+
 	elif event.type == InputEvent.MOUSE_BUTTON:
-		if event.button_mask == 0:
-			Radiko.kaptitajxo = self
-		else:
-			Radiko.kaptitajxo = null
+		if event.button_index == BUTTON_LEFT:
+			if event.is_pressed():
+				Radiko.kaptitajxo = self
+			else:
+				Radiko.kaptitajxo = null
 
 func _on_Ondo_body_enter( korpo ):
 	if korpo.get_name() == "Malamiko" and enreta:

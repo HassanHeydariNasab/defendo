@@ -193,7 +193,7 @@ shortcut = null
 text = "MalForta"
 flat = false
 
-[node name="DuoblaKlako" type="Timer" parent="."]
+[node name="LongFrapeti" type="Timer" parent="."]
 
 process_mode = 1
 wait_time = 0.3
@@ -225,6 +225,6 @@ stream/buffering_ms = 500
 
 [connection signal="button_up" from="Strategio/MalForta" to="." method="_on_MalForta_button_up"]
 
-[connection signal="timeout" from="DuoblaKlako" to="." method="_on_DuoblaKlako_timeout"]
+[connection signal="timeout" from="LongFrapeti" to="." method="_on_LongFrapeti_timeout"]
 
 
