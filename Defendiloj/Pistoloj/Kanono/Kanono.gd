@@ -15,6 +15,8 @@ onready var LongFrapeti = get_node("LongFrapeti")
 onready var Radiko = get_tree().get_root().get_node("Radiko")
 onready var Enreta = get_node("Kanono/Enreta")
 onready var Fajro = get_node("Fajro")
+onready var Agordejo = get_node("/root/Radiko").Agordejo
+
 
 var Kugloj
 
@@ -71,7 +73,7 @@ func _process(delta):
 			P.set_rot(angulo)
 			atendado_nova_K += 1
 			if atendado_nova_K < 100 and atendado_nova_K % 10 == 0:
-				Fajro.play()
+				Fajro.set("stream/play", Agordejo.get_value("Agordoj", "Sonoj", true))
 				Radiko.mono -= 1
 				if Radiko.mono <= 0:
 					get_node("/root/Radiko/Kanvaso/Vere_dauxrigi").popup()

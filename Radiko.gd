@@ -50,6 +50,8 @@ func _ready():
 	elif TranslationServer.get_locale() != lingvoj[lingvo_indekso]:
 		TranslationServer.set_locale(lingvoj[lingvo_indekso])
 		get_tree().reload_current_scene()
+	
+	get_node("Fonmuziko").set("stream/play", Agordejo.get_value("Agordoj", "Muzikoj", true))
 
 	var epoko = Tutmonda.epoko
 
@@ -249,7 +251,7 @@ func _je_malamiko_mortigxis(komenca_vivo):
 	mono += int(log(komenca_vivo)*50-170)
 
 func _je_malamiko_batis_bazon(komenca_vivo):
-	Batita.play()
+	Batita.set("stream/play", Agordejo.get_value("Agordoj", "Sonoj", true))
 	vivo -= int(log(komenca_vivo)*20-65)
 
 func _on_Atendado_subondoj_timeout():

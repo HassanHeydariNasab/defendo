@@ -49,3 +49,6 @@ func _on_Gvidilo_pressed():
 
 func _on_Pri_pressed():
 	get_tree().change_scene("res://Kontroloj/Pri.tscn")
+
+func _on_Agordoj_pressed():
+	get_tree().change_scene("res://Kontroloj/Agordoj.tscn")

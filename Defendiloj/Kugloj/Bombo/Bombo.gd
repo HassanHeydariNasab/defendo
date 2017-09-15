@@ -9,7 +9,7 @@ onready var Enreta = get_node("Enreta")
 onready var Eksplodi = get_node("Eksplodi")
 onready var Eksplodsono = get_node("Eksplodsono")
 onready var Tempilo = get_node("Tempilo")
-
+onready var Agordejo = get_node("/root/Radiko").Agordejo
 
 func _ready():
 	Eksplodi.interpolate_property(self, "transform/scale",
@@ -42,7 +42,7 @@ func _on_Reta_body_enter( korpo ):
 	if korpo.get_name() == "Malamiko":
 		if korpo.tipo == 0 or korpo.tipo == 1:
 			korpo.get_parent().vivo -= log(nivelo+10)*200-450
-			Eksplodsono.play()
+			Eksplodsono.set("stream/play", Agordejo.get_value("Agordoj", "Sonoj", true))
 			Eksplodi.start()
 
 

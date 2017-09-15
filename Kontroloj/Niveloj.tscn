@@ -317,6 +317,32 @@ shortcut = null
 text = "Language/Lingvo"
 flat = false
 
+[node name="Agordoj" type="Button" parent="."]
+
+anchor/top = 1
+anchor/bottom = 1
+rect/scale = Vector2( 0.7, 0.7 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = -1075.0
+margin/right = 643.0
+margin/bottom = -1218.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Agordoj"
+flat = false
+
 [node name="Gvidilo" type="Button" parent="."]
 
 anchor/left = 1
@@ -375,20 +401,18 @@ flat = false
 
 [node name="Versio" type="Label" parent="."]
 
-anchor/top = 1
-anchor/bottom = 1
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 50.0
-margin/top = -1100.0
-margin/right = 550.0
-margin/bottom = -1267.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 333.0
+margin/bottom = 84.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "v2.3.2"
+text = "v2.4.0"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -402,6 +426,8 @@ max_lines_visible = -1
 [connection signal="pressed" from="Malnova_epoko/Ludi" to="." method="_on_Ludi_malnova_pressed"]
 
 [connection signal="pressed" from="Lingvo" to="." method="_on_Lingvo_pressed"]
+
+[connection signal="pressed" from="Agordoj" to="." method="_on_Agordoj_pressed"]
 
 [connection signal="pressed" from="Gvidilo" to="." method="_on_Gvidilo_pressed"]
 

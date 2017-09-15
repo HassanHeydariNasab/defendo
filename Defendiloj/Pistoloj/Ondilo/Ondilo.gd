@@ -12,6 +12,7 @@ onready var Limo = get_node("Area2D/Limo")
 onready var Radiko = get_tree().get_root().get_node("Radiko")
 onready var Enreta = get_node("Ondilo/Enreta")
 onready var Fajro = get_node("Fajro")
+onready var Agordejo = get_node("/root/Radiko").Agordejo
 
 var atendado_nova_K = 0
 var nivelo = 1
@@ -39,7 +40,7 @@ func _process(delta):
 			Radiko.mono -= 5
 			if Radiko.mono <= 0:
 				get_node("/root/Radiko/Kanvaso/Vere_dauxrigi").popup()
-			Fajro.play()
+			Fajro.set("stream/play", Agordejo.get_value("Agordoj", "Sonoj", true))
 		#se la malamiko liberigxis
 		for Malamiko in Malamikoj:
 			if not weakref(Malamiko).get_ref():

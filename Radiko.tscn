@@ -594,7 +594,6 @@ transform/pos = Vector2( 1125, -831 )
 
 [node name="Bazo" type="Control" parent="."]
 
-editor/display_folded = true
 anchor/top = 3
 anchor/bottom = 3
 focus/ignore_mouse = false
@@ -707,7 +706,7 @@ stream/stream = ExtResource( 6 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0
-stream/autoplay = true
+stream/autoplay = false
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
@@ -741,6 +740,7 @@ drag_margin/bottom = 0.2
 
 [node name="Kanvaso" type="CanvasLayer" parent="."]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
