@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var kaptitajxo = null
 var vivo = 999
@@ -258,7 +258,7 @@ func _on_Atendado_subondoj_timeout():
 		subondo_kreita = false
 		#print("sekva subondo: ", subondo)
 
-func _on_Sekva_ondo_pressed():
+func _on_iru_al_sekva_ondo_pressed():
 	if sekva_ondo_permesita:
 		iru_al_sekva_ondo.hide()
 		if weakref(vastigu_la_reton).get_ref():
@@ -309,3 +309,4 @@ func _on_vastigu_la_reton_pressed():
 		vastigu_la_reton.queue_free()
 		get_node("Reto/N4").show()
 		reto = 4
+

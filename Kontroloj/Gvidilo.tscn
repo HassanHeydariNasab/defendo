@@ -21,32 +21,21 @@ margin/right = 800.0
 margin/bottom = 1200.0
 script/script = ExtResource( 1 )
 
-[node name="Control" type="Control" parent="."]
+[node name="Reen" type="Button" parent="."]
 
 anchor/left = 3
-anchor/top = 3
+anchor/top = 1
 anchor/right = 3
-anchor/bottom = 3
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 0.0
-margin/bottom = 0.0
-
-[node name="Reen" type="Button" parent="Control"]
-
+anchor/bottom = 1
 rect/scale = Vector2( 0.7, 0.7 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 150.0
-margin/top = 950.0
-margin/right = 865.0
-margin/bottom = 1164.0
+margin/left = -150.0
+margin/top = -950.0
+margin/right = -865.0
+margin/bottom = -1164.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
@@ -60,20 +49,22 @@ shortcut = null
 text = "Reen"
 flat = false
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 
+anchor/left = 3
+anchor/right = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 50.0
+margin/left = -50.0
 margin/top = 50.0
-margin/right = 800.0
+margin/right = -800.0
 margin/bottom = 900.0
 scroll/horizontal = false
 scroll/vertical = true
 
-[node name="Label" type="Label" parent="Control/ScrollContainer"]
+[node name="Label" type="Label" parent="ScrollContainer"]
 
 rect/min_size = Vector2( 700, 800 )
 focus/ignore_mouse = true
@@ -95,6 +86,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[connection signal="pressed" from="Control/Reen" to="." method="_on_Reen_pressed"]
+[connection signal="pressed" from="Reen" to="." method="_on_Reen_pressed"]
 
 

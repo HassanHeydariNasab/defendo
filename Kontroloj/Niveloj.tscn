@@ -163,7 +163,6 @@ max_lines_visible = -1
 editor/display_folded = true
 anchor/left = 1
 anchor/right = 1
-anchor/bottom = 1
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 1
@@ -171,7 +170,7 @@ size_flags/vertical = 3
 margin/left = 0.0
 margin/top = -150.0
 margin/right = 0.0
-margin/bottom = 150.0
+margin/bottom = -150.0
 
 [node name="Rektangulo" type="Polygon2D" parent="Malnova_epoko"]
 
@@ -294,15 +293,17 @@ max_lines_visible = -1
 
 [node name="Lingvo" type="Button" parent="."]
 
+anchor/top = 1
+anchor/bottom = 1
 rect/scale = Vector2( 0.7, 0.7 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 950.0
+margin/top = -950.0
 margin/right = 643.0
-margin/bottom = 1093.0
+margin/bottom = -1093.0
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 5 )
@@ -319,6 +320,7 @@ flat = false
 [node name="Gvidilo" type="Button" parent="."]
 
 anchor/left = 1
+anchor/top = 1
 anchor/right = 1
 anchor/bottom = 1
 rect/scale = Vector2( 0.7, 0.7 )
@@ -327,7 +329,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = -500.0
-margin/top = 1075.0
+margin/top = -1075.0
 margin/right = -929.0
 margin/bottom = -1218.0
 custom_styles/hover = ExtResource( 3 )
@@ -346,6 +348,7 @@ flat = false
 [node name="Pri" type="Button" parent="."]
 
 anchor/left = 1
+anchor/top = 1
 anchor/right = 1
 anchor/bottom = 1
 rect/scale = Vector2( 0.7, 0.7 )
@@ -354,7 +357,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = -500.0
-margin/top = 950.0
+margin/top = -950.0
 margin/right = -927.0
 margin/bottom = -1093.0
 custom_styles/hover = ExtResource( 3 )
@@ -372,6 +375,7 @@ flat = false
 
 [node name="Versio" type="Label" parent="."]
 
+anchor/top = 1
 anchor/bottom = 1
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
@@ -379,7 +383,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 50.0
-margin/top = 1100.0
+margin/top = -1100.0
 margin/right = 550.0
 margin/bottom = -1267.0
 custom_fonts/font = ExtResource( 2 )
