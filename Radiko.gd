@@ -165,7 +165,6 @@ func _process(delta):
 
 
 func _on_Area2D_area_enter( areo ):
-	print("en:",areo)
 	if areo.get_name() == "Reta":
 		Armiloj.append(areo)
 	if Armiloj.size() == 2:
@@ -183,7 +182,6 @@ func _on_Area2D_area_enter( areo ):
 			Armiloj[1].get_parent().queue_free()
 
 func _on_Area2D_area_exit( areo ):
-	print("el:",areo)
 	if areo.get_name() == "Reta":
 		Armiloj.erase(areo)
 
