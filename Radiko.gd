@@ -32,6 +32,7 @@ onready var Atendado_subondoj = get_node("Atendado_subondoj")
 onready var Bazo = get_node("Bazo")
 onready var Kanvaso = get_node("Kanvaso")
 onready var FPS = get_node("Kanvaso/FPS")
+onready var Zomilo = get_node("Kanvaso/Zomilo")
 
 var agordejo = "user://agordejo.cfg"
 onready var Agordejo = ConfigFile.new()
@@ -97,10 +98,17 @@ func _ready():
 #		for so in ondo:
 #			print(so)
 	set_process(true)
+	set_process_input(true)
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		get_node("Kanvaso/Vere_eliri").popup()
+
+func _input(event):
+	if event.is_action_pressed("enzomi"):
+		Zomilo.set_value(Zomilo.get_value()-0.1)
+	elif event.is_action_pressed("elzomi"):
+		Zomilo.set_value(Zomilo.get_value()+0.1)
 
 func reanimi_ondo_teksto():
 	Sekva_ondo.remove_all()
