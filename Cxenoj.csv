@@ -1,35 +1,41 @@
-id,en
+id,en,fr
 "Saluton homido,
 Ni bezonas komandanton por defendi la bazon kontraux malamikoj.
 Se antauxe vi helpis nin, mi ne memoras; Cxar nun estas iam antaux tiam!","Hello humankind,
 We need a commander to defend the base against enemies.
-If already you helped us, I don't remember; Because now is a time before that!"
-Mi akceptas la defion.,I accept the challenge.
+If already you helped us, I don't remember; Because now is a time before that!","Bonjour humain,
+Nous avons besoin d'un·e commandant·e pour défendre la base contre les ennemis.
+Si vous nous avez aider, je ne m'en souviens plus; Parce que maintenant est venu le moment pour cela !"
+Mi akceptas la defion.,I accept the challenge., J'accepte le défi.
 "Cxu vi sciias ke vi povas plibonigi la armilojn? kolektu samajn armilojn en la bazo aux enmetu armilon en la bazo kaj acxetu saman armilon.
 Dekstrklaku/Longfrapetu al kanono/lasero por sxangxi gxian strategion.
 Armiloj bezonas energion por pafi al malamikoj; metu ilin je la cirklumoj. (Vi povas plibonigi bombojn ankaux tiel.)
 Pafado per lasero kaj ondilo kostas 5 dolarojn kaj pafi per kanono kostas 1 dolaron.","Do you know that you can upgrade the weapons? Collect similar weapons in the base or put a weapon in the base and buy the same weapon.
 Right-Click/Long-Tap on cannon/laser to change its strategy.
 Weapons need energy for firing at enemies; put them on the circles.(Also you can upgrade bombs in this way)
-Shooting by laser and ondilo costs 5 dollars and shooting by cannon costs 1 dollar."
-Mi estas preta.,I'm ready.
-Ondo,Wave
-Nova,New
-MalNova,Old
-Forta,Strong
-MalForta,Weak
-Denove,Again
-Vi Venkigxis!,You Win!
-Vi Malvenkigxis!,You Lose!
-Ondoj,Waves
-Eliri,Exit
-Ludi,Play
-Cxu vere vi volas eliri?,Do you really want to exit?
+Shooting by laser and ondilo costs 5 dollars and shooting by cannon costs 1 dollar.","Sais tu que tu peux améliorer les armes ? Collecte des armes similaires dans la base oy met une arme dans la base et achète la même arme.
+Fait un clic droit ou un appui long sur un canon ou un laser pour changer sa stratégie.
+Les armes ont besoin d'énergie pour tirer sur les ennemis; met les sur les cercles. (Tu peux aussi améliorer les bombes de cette manière.)
+Tirer par laser ou ondilo coûte 5 et tirer par canon coûte 1."
+Mi estas preta.,I'm ready.,Je suis prêt·e.
+Ondo,Wave,Vague
+Nova,New,Nouveau
+MalNova,Old,Ancien
+Forta,Strong,Fort
+MalForta,Weak,Faible
+Denove,Again,Encore
+Vi Venkigxis!,You Win!, Vous avez gagné !
+Vi Malvenkigxis!,You Lose!, Vous avez perdu !
+Ondoj,Waves,Vagues
+Eliri,Exit,Quitter
+Ludi,Play,Jouer
+Cxu vere vi volas eliri?,Do you really want to exit?,Voulez vous vraiment quitter ?
 "Via mono tute konsumigxis.
 Cxu vi volas dauxrigi la ludon kun viaj bomboj?","Your money was completely consumed.
-Do you want to continue the game with your bombs?"
-Sekva ondo,Next wave
-Vastigu la reton,Extend the network
+Do you want to continue the game with your bombs?","Vous n'avez plus d'argent.
+Voulez vous continuer le jeu avec vos bombes ?"
+Sekva ondo,Next wave,Prochaine vague
+Vastigu la reton,Extend the network,Étendre le réseau
 "Cxi tio ludo eldonas sub GPLv3 permesilo.
 vi povas atingi la kodon je:
 https://github.com/HassanHeydariNasab/defendo
@@ -69,12 +75,12 @@ http://freesound.org/people/zippi1/sounds/21313
 
 #Musics
 Digital Soul (Utopia Mix) by Ars Sonor and Digital By Birth"
-Via Rekordo,Your Record
-Reen,Back
-Nova epoko,New era
-Malnova epoko,Old era
-Pri,About
-Gvidilo,Guide
-Agordoj,Settings
-Sonoj,Sounds
-Muzikoj,Musics
+Via Rekordo,Your Record,Votre record
+Reen,Back,Précédent
+Nova epoko,New era,Nouvelle ère
+Malnova epoko,Old era,Ancienne ère
+Pri,About,À propos
+Gvidilo,Guide,Guide
+Agordoj,Settings,Paramètres
+Sonoj,Sounds,Son
+Muzikoj,Musics,Musique
