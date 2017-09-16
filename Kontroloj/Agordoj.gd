@@ -2,7 +2,6 @@ extends Control
 
 var agordejo = "user://agordejo.cfg"
 onready var Agordejo = ConfigFile.new()
-const lingvoj = ["eo", "en"]
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)

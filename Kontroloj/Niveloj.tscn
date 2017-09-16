@@ -401,17 +401,19 @@ flat = false
 
 [node name="Versio" type="Label" parent="."]
 
+anchor/top = 1
+anchor/bottom = 1
 rect/scale = Vector2( 0.6, 0.6 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 0.0
-margin/top = 0.0
+margin/top = -850.0
 margin/right = 333.0
-margin/bottom = 84.0
+margin/bottom = -934.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.777344, 0.777344, 0.777344, 1 )
 text = "v2.4.0"
 align = 1
 valign = 1

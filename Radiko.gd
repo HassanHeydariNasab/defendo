@@ -35,22 +35,13 @@ onready var FPS = get_node("Kanvaso/FPS")
 
 var agordejo = "user://agordejo.cfg"
 onready var Agordejo = ConfigFile.new()
-const lingvoj = ["eo", "en"]
 
 var tipoj = []
 var ondoj = []
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
-
 	Agordejo.load(agordejo)
-	var lingvo_indekso = Agordejo.get_value("Lingvo", "lingvo")
-	if lingvo_indekso == null:
-		get_tree().change_scene("res://Kontroloj/Lingvo.tscn")
-	elif TranslationServer.get_locale() != lingvoj[lingvo_indekso]:
-		TranslationServer.set_locale(lingvoj[lingvo_indekso])
-		get_tree().reload_current_scene()
-	
 	get_node("Fonmuziko").set("stream/play", Agordejo.get_value("Agordoj", "Muzikoj", true))
 
 	var epoko = Tutmonda.epoko
