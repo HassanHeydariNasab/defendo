@@ -7,3 +7,6 @@ Bombo: http://freesound.org/people/zippi1/sounds/21313/
 
 #Muzikoj
 Digital Soul (Utopia Mix) by Ars Sonor and Digital By Birth
+
+#Cxenoj
+French: Nicola Spanti (RyDroid)
