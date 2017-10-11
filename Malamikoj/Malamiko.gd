@@ -11,21 +11,14 @@ var min_rapido = 2
 var angulo = 0
 
 onready var M = get_node("Malamiko")
-onready var Vivo = get_node("Malamiko/Vivo")
 onready var Vivo_P = get_node("Malamiko/Vivo_P")
 onready var Efekto = get_node("Malamiko/Efekto")
 onready var Radiko = get_tree().get_root().get_node("Radiko")
 onready var M0 = Radiko.M0
 onready var Mj = Radiko.Mj
-#var nomo = ""
 var tipo = null
 
 func _ready():
-#	var nomo_ = get_name().split("@")
-#	if nomo_.size() == 1:
-#		nomo = nomo_[0]
-#	else:
-#		nomo = nomo_[1]
 	tipo = M.tipo
 	connect('malamiko_mortigxis', Radiko, '_je_malamiko_mortigxis')
 	connect('malamiko_batis_bazon', Radiko, '_je_malamiko_batis_bazon')
@@ -41,7 +34,6 @@ func _ready():
 	set_fixed_process(true)
 
 func _process(delta):
-	Vivo.set_text(str(vivo))
 	Vivo_P.set_scale(Vector2(vivo/komenca_vivo, 1))
 	if tipo == 2:
 		M.get_node("Sprite").rotate(0.05)

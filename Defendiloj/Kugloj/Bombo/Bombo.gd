@@ -45,7 +45,6 @@ func _on_Reta_body_enter( korpo ):
 			Eksplodsono.set("stream/play", Agordejo.get_value("Agordoj", "Sonoj", true))
 			Eksplodi.start()
 
-
 func _on_Reta_input_event( viewport, event, shape_idx ):
 	if event.type == InputEvent.SCREEN_TOUCH:
 		if event.pressed:
@@ -63,7 +62,6 @@ func _on_Reta_input_event( viewport, event, shape_idx ):
 func _on_Eksplodi_tween_complete( object, key ):
 	queue_free()
 
-
 func _on_Tempilo_timeout():
-	if nivelo < 99:
+	if nivelo < 999:
 		nivelo += 1

@@ -25,7 +25,8 @@ onready var Pj = get_node("Pistoloj")
 onready var Kugloj = get_node("Kugloj")
 onready var Vivo = get_node("Bazo/Vivo")
 onready var Sekva_ondo = get_node("Kanvaso/Ondo/Sekva_ondo")
-onready var Batita = get_node("Bazo/Batita")
+onready var Bati_sono = get_node("Bazo/Bati_sono")
+onready var Morti_sono = get_node("Morti_sono")
 onready var iru_al_sekva_ondo = get_node("Kanvaso/iru_al_sekva_ondo")
 onready var vastigu_la_reton = get_node("Kanvaso/vastigu_la_reton")
 onready var Atendado_subondoj = get_node("Atendado_subondoj")
@@ -54,20 +55,22 @@ func _ready():
 		{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 4.5, 'unuarenkonto': 10},
 		{'sceno': M0, 'grando': 0.45, 'vivo': 300, 'rapido': 2.8, 'unuarenkonto': 1},
 		{'sceno': M0, 'grando': 0.45, 'vivo': 300, 'rapido': 3.5, 'unuarenkonto': 14},
-		{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 2.2, 'unuarenkonto': 3},
+		{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 2.2, 'unuarenkonto': 5},
 		{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 3, 'unuarenkonto': 18},
-		{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1.2, 'unuarenkonto': 5},
+		{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 5, 'unuarenkonto': 35},
+		{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 8, 'unuarenkonto': 32},
+		{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1.2, 'unuarenkonto': 8},
 		{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1.8, 'unuarenkonto': 22},
-		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 1, 'unuarenkonto': 10},
-		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 1.3, 'unuarenkonto': 26},
+		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 1, 'unuarenkonto': 18},
+		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 1.3, 'unuarenkonto': 28},
 		{'sceno': M2, 'grando': 0.45, 'vivo': 500, 'rapido': 1.7, 'unuarenkonto': 7},
 		{'sceno': M2, 'grando': 0.45, 'vivo': 500, 'rapido': 2.3, 'unuarenkonto': 16},
 		{'sceno': M2, 'grando': 0.8, 'vivo': 2500, 'rapido': 1, 'unuarenkonto': 12},
 		{'sceno': M2, 'grando': 0.8, 'vivo': 2500, 'rapido': 1.6, 'unuarenkonto': 30},
 		]
 	elif epoko == "malnova":
-		get_node("Kanvaso/Aldoni_Ondilo").hide()
-		get_node("Kanvaso/Aldoni_Lasero").hide()
+		get_node("Kanvaso/Aldoni_Ondilo").queue_free()
+		get_node("Kanvaso/Aldoni_Lasero").queue_free()
 		tipoj = [
 		{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3, 'unuarenkonto': 0},
 		{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 3.1, 'unuarenkonto': 0},
@@ -76,12 +79,19 @@ func _ready():
 		{'sceno': M0, 'grando': 0.45, 'vivo': 300, 'rapido': 3.5, 'unuarenkonto': 14},
 		{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 2, 'unuarenkonto': 5},
 		{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 3, 'unuarenkonto': 18},
-		{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1, 'unuarenkonto': 7},
-		{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1.8, 'unuarenkonto': 22},
-		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 0.8, 'unuarenkonto': 12},
-		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 1.3, 'unuarenkonto': 28},
+		{'sceno': M0, 'grando': 0.7, 'vivo': 800, 'rapido': 5, 'unuarenkonto': 28},
+		{'sceno': M0, 'grando': 0.3, 'vivo': 40, 'rapido': 8, 'unuarenkonto': 25},
+		{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 1.2, 'unuarenkonto': 7},
+		{'sceno': M1, 'grando': 0.8, 'vivo': 2000, 'rapido': 2.1, 'unuarenkonto': 20},
+		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 0.9, 'unuarenkonto': 12},
+		{'sceno': M1, 'grando': 1.3, 'vivo': 5000, 'rapido': 2.0, 'unuarenkonto': 26},
+		{'sceno': M1, 'grando': 1.6, 'vivo': 10000, 'rapido': 1.5, 'unuarenkonto': 30},
+		{'sceno': M1, 'grando': 1.6, 'vivo': 10000, 'rapido': 2.1, 'unuarenkonto': 33},
+		{'sceno': M1, 'grando': 2.1, 'vivo': 22000, 'rapido': 1.9, 'unuarenkonto': 36},
+		{'sceno': M1, 'grando': 2.1, 'vivo': 22000, 'rapido': 2.2, 'unuarenkonto': 39},
+		{'sceno': M1, 'grando': 2.6, 'vivo': 30000, 'rapido': 2.1, 'unuarenkonto': 43},
 		]
-#	ondoj = [[{'nombro': 8, 'tipo': 8, 'atendo': 99}]]
+#	ondoj = [[{'nombro': 4, 'tipo': 7, 'atendo': 99}]]
 	for o in range(50):
 		ondoj.append([])
 		while ondoj[-1].size() < 6:
@@ -163,7 +173,6 @@ func _process(delta):
 		#vastigu_la_reton forigxos je lasta vastigxado
 		if weakref(vastigu_la_reton).get_ref():
 			vastigu_la_reton.show()
-
 
 func _on_Area2D_area_enter( areo ):
 	if areo.get_name() == "Reta":
@@ -248,9 +257,10 @@ func _on_Aldoni_Bombo_pressed():
 
 func _je_malamiko_mortigxis(komenca_vivo):
 	mono += int(log(komenca_vivo)*50-170)
+	Morti_sono.set("stream/play", Agordejo.get_value("Agordoj", "Sonoj", true))
 
 func _je_malamiko_batis_bazon(komenca_vivo):
-	Batita.set("stream/play", Agordejo.get_value("Agordoj", "Sonoj", true))
+	Bati_sono.set("stream/play", Agordejo.get_value("Agordoj", "Sonoj", true))
 	vivo -= int(log(komenca_vivo)*20-65)
 
 func _on_Atendado_subondoj_timeout():
@@ -289,7 +299,7 @@ func _on_Zomilo_value_changed( valoro ):
 	))
 
 func _on_vastigu_la_reton_pressed():
-	var prezoj = [1000, 4200, 9500, 17800]
+	var prezoj = [1000, 8200, 26500, 65800]
 	if reto == 0 and mono >= prezoj[0]:
 		mono -= prezoj[0]
 		get_node("Reto/N1").show()

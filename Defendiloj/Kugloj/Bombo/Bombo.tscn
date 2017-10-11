@@ -3,7 +3,7 @@
 [ext_resource path="res://Defendiloj/Kugloj/Bombo/Bombo.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Kugloj/Bombo/bombo_enreta.png" type="Texture" id=2]
 [ext_resource path="res://Defendiloj/Kugloj/Bombo/bombo.png" type="Texture" id=3]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=4]
 [ext_resource path="res://Defendiloj/Kugloj/Bombo/eksplodi.ogg" type="AudioStream" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -54,18 +54,19 @@ _update_shape_index = 0
 
 anchor/right = 1
 anchor/bottom = 1
-rect/scale = Vector2( 2.4, 2.4 )
+rect/scale = Vector2( 1.8, 1.8 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -92.0
-margin/top = -86.0
-margin/right = 80.0
-margin/bottom = 73.0
+margin/left = -133.0
+margin/top = -133.0
+margin/right = 49.0
+margin/bottom = 49.0
 custom_fonts/font = ExtResource( 4 )
-text = "-1"
+text = "999"
 align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

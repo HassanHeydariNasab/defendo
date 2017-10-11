@@ -4,7 +4,7 @@
 [ext_resource path="res://Temoj/Butono_sxveba.tres" type="StyleBox" id=2]
 [ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=3]
 [ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=4]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=5]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,9 +17,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 750.0
+margin/top = 500.0
 margin/right = 550.0
-margin/bottom = 900.0
+margin/bottom = 650.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
@@ -73,9 +73,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 350.0
+margin/top = 150.0
 margin/right = 550.0
-margin/bottom = 500.0
+margin/bottom = 300.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 4 )
@@ -122,8 +122,66 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="FR" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 850.0
+margin/right = 550.0
+margin/bottom = 1000.0
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Choisissez-moi"
+flat = false
+
+[node name="Polygon2D" type="Polygon2D" parent="FR"]
+
+transform/pos = Vector2( 299.213, 131.545 )
+polygon = Vector2Array( 39.6666, -13.6667, -80.3334, -0.333374, -80.3334, 79.6666, 106.333, 106.333, 199.667, 79.6666, 222.333, 12.9999, 119.667, -13.6667 )
+uv = Vector2Array(  )
+color = Color( 0.917647, 0.917647, 0.917647, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="Label" type="Label" parent="FR/Polygon2D"]
+
+rect/scale = Vector2( 0.6, 0.6 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -2.0
+margin/top = 17.0
+margin/right = 285.0
+margin/bottom = 94.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "French"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [connection signal="pressed" from="EO" to="." method="_on_EO_pressed"]
 
 [connection signal="pressed" from="EN" to="." method="_on_EN_pressed"]
+
+[connection signal="pressed" from="FR" to="." method="_on_FR_pressed"]
 
 

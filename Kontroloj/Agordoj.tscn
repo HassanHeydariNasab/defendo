@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Kontroloj/Agordoj.gd" type="Script" id=1]
-[ext_resource path="res://Tiparoj/roboto30.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://Temoj/Butono_sxveba.tres" type="StyleBox" id=3]
 [ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=4]
 [ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=5]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=6]
 
 [node name="Agordoj" type="Control"]
 
@@ -30,7 +29,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 50.0
 margin/top = 250.0
-margin/right = 250.0
+margin/right = 400.0
 margin/bottom = 350.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -53,7 +52,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 50.0
 margin/top = 500.0
-margin/right = 250.0
+margin/right = 400.0
 margin/bottom = 600.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -84,8 +83,8 @@ margin/bottom = -1060.0
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 5 )
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.258824, 0.258824, 0.258824, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false

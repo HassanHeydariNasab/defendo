@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Kontroloj/Venkigxi.gd" type="Script" id=1]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://Temoj/Butono_sxveba.tres" type="StyleBox" id=3]
 [ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=4]
 [ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=5]
@@ -60,7 +60,7 @@ custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 5 )
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.258824, 0.258824, 0.258824, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 toggle_mode = false

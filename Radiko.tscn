@@ -1,18 +1,19 @@
-[gd_scene load_steps=18 format=1]
+[gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://Radiko.gd" type="Script" id=1]
 [ext_resource path="res://Defendiloj/Reto/Kontaktoskatolo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Defendiloj/Bazo/bazo.png" type="Texture" id=3]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://Tiparoj/jomhuria.fnt" type="BitmapFont" id=4]
 [ext_resource path="res://Defendiloj/Bazo/274404__sforsman__break-1.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Muzikoj/Ars_Sonor__Digital_By_Birth_-_01_-_Digital_Soul_Utopia_Mix.ogg" type="AudioStream" id=6]
-[ext_resource path="res://Temoj/Butono_sxveba.tres" type="StyleBox" id=7]
-[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=8]
-[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=9]
-[ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=10]
-[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=11]
-[ext_resource path="res://Defendiloj/Pistoloj/Lasero/lasero.png" type="Texture" id=12]
-[ext_resource path="res://Defendiloj/Kugloj/Bombo/bombo.png" type="Texture" id=13]
+[ext_resource path="res://Malamikoj/219101__huminaatio__plastic-bag-explode.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Temoj/Butono_sxveba.tres" type="StyleBox" id=8]
+[ext_resource path="res://Temoj/Butono_premita.tres" type="StyleBox" id=9]
+[ext_resource path="res://Temoj/Butono.tres" type="StyleBox" id=10]
+[ext_resource path="res://Defendiloj/Pistoloj/Kanono/kanono.png" type="Texture" id=11]
+[ext_resource path="res://Defendiloj/Pistoloj/Ondilo/ondilo.png" type="Texture" id=12]
+[ext_resource path="res://Defendiloj/Pistoloj/Lasero/lasero.png" type="Texture" id=13]
+[ext_resource path="res://Defendiloj/Kugloj/Bombo/bombo.png" type="Texture" id=14]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -666,18 +667,19 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -68.0
+margin/left = -150.0
 margin/top = -122.0
-margin/right = 31.0
-margin/bottom = 109.0
+margin/right = -50.0
+margin/bottom = 43.0
 custom_fonts/font = ExtResource( 4 )
-text = "-1"
+text = "999"
 align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Batita" type="StreamPlayer" parent="Bazo"]
+[node name="Bati_sono" type="StreamPlayer" parent="Bazo"]
 
 stream/stream = ExtResource( 5 )
 stream/play = false
@@ -718,6 +720,17 @@ wait_time = 7.0
 one_shot = false
 autostart = false
 
+[node name="Morti_sono" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 7 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 8.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
 [node name="Kamero" type="Camera2D" parent="."]
 
 transform/pos = Vector2( 400, 600 )
@@ -740,7 +753,6 @@ drag_margin/bottom = 0.2
 
 [node name="Kanvaso" type="CanvasLayer" parent="."]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -758,8 +770,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 100.0
 margin/top = 0.0
-margin/right = -152.0
-margin/bottom = 87.0
+margin/right = -192.0
+margin/bottom = 83.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1234567"
@@ -778,7 +790,7 @@ size_flags/vertical = 0
 margin/left = -24.0
 margin/top = 26.0
 margin/right = 16.0
-margin/bottom = 103.0
+margin/bottom = 105.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "$"
@@ -788,21 +800,21 @@ max_lines_visible = -1
 
 [node name="Ondo" type="Label" parent="Kanvaso"]
 
-editor/display_folded = true
 visibility/opacity = 0.53
 rect/scale = Vector2( 1.2, 1.2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 40.0
-margin/top = 12.0
-margin/right = 94.0
-margin/bottom = 89.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 167.0
+margin/bottom = 83.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"
 align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -814,13 +826,15 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -10.0
-margin/top = 66.0
-margin/right = 140.0
-margin/bottom = 143.0
+margin/left = 0.0
+margin/top = 83.0
+margin/right = 333.0
+margin/bottom = 166.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ondo"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -844,12 +858,12 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-margin/left = 250.0
+margin/left = 350.0
 margin/top = 300.0
-margin/right = -262.0
+margin/right = -350.0
 margin/bottom = 100.0
 popup/exclusive = true
-window/title = "Eliri?"
+window/title = ""
 
 [node name="Eliri" type="Button" parent="Kanvaso/Vere_eliri"]
 
@@ -858,13 +872,13 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 287.0
+margin/left = 450.0
 margin/top = 100.0
-margin/right = 554.0
+margin/right = 717.0
 margin/bottom = 217.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -886,9 +900,9 @@ margin/left = 67.0
 margin/top = 100.0
 margin/right = 334.0
 margin/bottom = 217.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -919,7 +933,6 @@ max_lines_visible = -1
 
 [node name="Vere_dauxrigi" type="WindowDialog" parent="Kanvaso"]
 
-editor/display_folded = true
 visibility/visible = false
 anchor/left = 3
 anchor/top = 3
@@ -930,11 +943,11 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 350.0
-margin/top = 250.0
-margin/right = -372.0
-margin/bottom = -50.0
+margin/top = 300.0
+margin/right = -350.0
+margin/bottom = 0.0
 popup/exclusive = false
-window/title = "Dauxrigi?"
+window/title = ""
 
 [node name="Eliri" type="Button" parent="Kanvaso/Vere_dauxrigi"]
 
@@ -943,13 +956,13 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 400.0
+margin/left = 450.0
 margin/top = 200.0
-margin/right = 667.0
+margin/right = 717.0
 margin/bottom = 317.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -967,13 +980,13 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 150.0
+margin/left = 100.0
 margin/top = 200.0
-margin/right = 417.0
+margin/right = 367.0
 margin/bottom = 317.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -1014,13 +1027,13 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 360.0
-margin/top = 160.0
-margin/right = -90.0
-margin/bottom = 360.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+margin/left = 450.0
+margin/top = 150.0
+margin/right = -113.0
+margin/bottom = 337.0
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -1042,13 +1055,13 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 360.0
-margin/top = 334.0
-margin/right = -243.0
-margin/bottom = 497.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+margin/left = 450.0
+margin/top = 350.0
+margin/right = -303.0
+margin/bottom = 517.0
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -1066,12 +1079,13 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 347.0
-margin/top = 137.0
-margin/right = 531.0
-margin/bottom = 214.0
+margin/top = 161.0
+margin/right = 583.0
+margin/bottom = 250.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1000"
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -1097,7 +1111,7 @@ max_lines_visible = -1
 [node name="Polygon2D" type="Polygon2D" parent="Kanvaso/vastigu_la_reton/Prezo"]
 
 visibility/behind_parent = true
-polygon = Vector2Array( 39.6666, -13.6667, -80.3334, -0.333374, -80.3334, 79.6666, 106.333, 106.333, 199.667, 79.6666, 222.333, 12.9999, 119.667, -13.6667 )
+polygon = Vector2Array( 39.6666, -13.6667, -80.3334, -0.333374, -80.3334, 79.6666, 106.333, 106.333, 229.667, 75.6667, 236.333, 5.66669, 119.667, -13.6667 )
 uv = Vector2Array(  )
 color = Color( 0.917647, 0.917647, 0.917647, 1 )
 vertex_colors = ColorArray(  )
@@ -1120,13 +1134,13 @@ margin/left = 0.0
 margin/top = 1008.0
 margin/right = 618.0
 margin/bottom = 1626.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 10 )
+icon = ExtResource( 11 )
 flat = false
 
 [node name="Aldoni_Ondilo" type="Button" parent="Kanvaso"]
@@ -1140,13 +1154,13 @@ margin/left = 0.0
 margin/top = 552.0
 margin/right = 618.0
 margin/bottom = 1170.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 11 )
+icon = ExtResource( 12 )
 flat = false
 
 [node name="Aldoni_Lasero" type="Button" parent="Kanvaso"]
@@ -1160,13 +1174,13 @@ margin/left = 0.0
 margin/top = 704.0
 margin/right = 618.0
 margin/bottom = 1322.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 12 )
+icon = ExtResource( 13 )
 flat = false
 
 [node name="Aldoni_Bombo" type="Button" parent="Kanvaso"]
@@ -1180,13 +1194,13 @@ margin/left = 0.0
 margin/top = 856.0
 margin/right = 618.0
 margin/bottom = 1474.0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 8 )
-custom_styles/normal = ExtResource( 9 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/normal = ExtResource( 10 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 13 )
+icon = ExtResource( 14 )
 flat = false
 
 [node name="Zomilo" type="VScrollBar" parent="Kanvaso"]
@@ -1206,7 +1220,7 @@ margin/right = 3.0
 margin/bottom = -506.0
 custom_styles/grabber_hilite = SubResource( 3 )
 custom_styles/grabber = SubResource( 4 )
-custom_styles/scroll = ExtResource( 9 )
+custom_styles/scroll = ExtResource( 10 )
 range/min = 0.8
 range/max = 2.2
 range/step = 0.1
@@ -1260,7 +1274,7 @@ margin/top = 0.0
 margin/right = -100.0
 margin/bottom = 100.0
 custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.741176, 0.741176, 0.741176, 1 )
 text = "123"
 align = 2
 valign = 1

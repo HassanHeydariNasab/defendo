@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Malamikoj/Malamiko.gd" type="Script" id=1]
 [ext_resource path="res://Malamikoj/malamiko_0.png" type="Texture" id=2]
-[ext_resource path="res://Tiparoj/roboto.fnt" type="BitmapFont" id=3]
-[ext_resource path="res://Malamikoj/partiklo.png" type="Texture" id=4]
+[ext_resource path="res://Malamikoj/partiklo.png" type="Texture" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -73,25 +72,6 @@ shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Vivo" type="Label" parent="Malamiko"]
-
-visibility/visible = false
-rect/rotation = 180.0
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 42.0
-margin/top = 67.0
-margin/right = 114.0
-margin/bottom = 144.0
-custom_fonts/font = ExtResource( 3 )
-text = "-1"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="Vivo_P" type="Polygon2D" parent="Malamiko"]
 
 transform/pos = Vector2( 2.27374e-13, 32.4999 )
@@ -123,7 +103,7 @@ config/amount = 16
 config/lifetime = 0.25
 config/process_mode = 1
 config/half_extents = Vector2( 2, 1 )
-config/texture = ExtResource( 4 )
+config/texture = ExtResource( 3 )
 params/direction = 0.0
 params/spread = 16.36
 params/linear_velocity = 900.0

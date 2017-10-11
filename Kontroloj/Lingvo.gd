@@ -22,3 +22,9 @@ func _on_EN_pressed():
 	Agordejo.save(agordejo)
 	Tutmonda.lingvo_elektita = true
 	get_tree().change_scene("res://Kontroloj/Niveloj.tscn")
+
+func _on_FR_pressed():
+	Agordejo.set_value("Lingvo", "lingvo", "fr")
+	Agordejo.save(agordejo)
+	Tutmonda.lingvo_elektita = true
+	get_tree().change_scene("res://Kontroloj/Niveloj.tscn")
