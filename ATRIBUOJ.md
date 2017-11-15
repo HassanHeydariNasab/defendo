@@ -21,3 +21,5 @@ Digital Soul (Utopia Mix) by Ars Sonor and Digital By Birth
 ## Cxenoj
 
 French: Nicola Spanti (RyDroid)
+
+Spanish: Gabriel Vargas (enkeli)

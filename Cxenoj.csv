@@ -1,4 +1,4 @@
-id,eo,en,fr
+id,eo,en,fr,es
 "Cxu vi sciias ke vi povas plibonigi la armilojn? kolektu samajn armilojn en la bazo aux enmetu armilon en la bazo kaj acxetu saman armilon.
 Dekstrklaku/Longfrapetu al kanono/lasero por sxangxi gxian strategion.
 Armiloj bezonas energion por pafi al malamikoj; metu ilin je la cirklumoj. (Vi povas plibonigi bombojn ankaux tiel.)
@@ -11,35 +11,39 @@ Weapons need energy for firing at enemies; put them on the circles.(Also you can
 Shooting by laser and ondilo costs 5 dollars and shooting by cannon costs 1 dollar.","Sais tu que tu peux améliorer les armes ? Collecte des armes similaires dans la base oy met une arme dans la base et achète la même arme.
 Fait un clic droit ou un appui long sur un canon ou un laser pour changer sa stratégie.
 Les armes ont besoin d'énergie pour tirer sur les ennemis; met les sur les cercles. (Tu peux aussi améliorer les bombes de cette manière.)
-Tirer par laser ou ondilo coûte 5 et tirer par canon coûte 1."
-Ondo,Ondo,Wave,Vague
-Nova,Nova,New,Nouveau
-MalNova,MalNova,Old,Ancien
-Forta,Forta,Strong,Fort
-MalForta,MalForta,Weak,Faible
-Denove,Denove,Again,Encore
-Vi Venkigxis!,Vi Venkiĝis!,You Win!,Vous avez gagné !
-Vi Malvenkigxis!,Vi Malvenkiĝis!,You Lose!,Vous avez perdu !
-Ondoj,Ondoj,Waves,Vagues
-Eliri,Eliri,Exit,Quitter
-Ludi,Ludi,Play,Jouer
-Cxu vere vi volas eliri?,Ĉu vere vi volas eliri?,Do you really want to exit?,Voulez vous vraiment quitter ?
+Tirer par laser ou ondilo coûte 5 et tirer par canon coûte 1.","¿Sabías que puedes mejorar las armas? Agrupa armas similares en la base o pon un arma en la base y compra una similar.
+Click-derecho/Pulsación-larga en un arma tipo cañón o láser para cambiar su estrategia.
+Las armas necesitan energía para disparar a los enemigos; Colócalas en los circulos. (También puedes mejorar las bombas de esta manera)
+Cáda disparo de láser u ondilo cuesta 5 dolares y el de cañón cuesta 1 dolar."
+Ondo,Ondo,Wave,Vague,Oleada
+Nova,Nova,New,Nouveau,Nueva
+MalNova,MalNova,Old,Ancien,Antigua
+Forta,Forta,Strong,Fort,Fuerte
+MalForta,MalForta,Weak,Faible,Débil
+Denove,Denove,Again,Encore,De nuevo
+Vi Venkigxis!,Vi Venkiĝis!,You Win!,Vous avez gagné !,¡Has ganado!
+Vi Malvenkigxis!,Vi Malvenkiĝis!,You Lose!,Vous avez perdu !,¡Perdiste!
+Ondoj,Ondoj,Waves,Vagues,Oleadas
+Eliri,Eliri,Exit,Quitter,Quitar
+Ludi,Ludi,Play,Jouer,Jugar
+Cxu vere vi volas eliri?,Ĉu vere vi volas eliri?,Do you really want to exit?,Voulez vous vraiment quitter ?,¿De verdad quieres quitar?
 "Via mono tute konsumigxis.
 Cxu vi volas dauxrigi la ludon kun viaj bomboj?","Via mono tute konsumiĝis.
 Ĉu vi volas daŭrigi la ludon kun viaj bomboj?","Your money was completely consumed.
 Do you want to continue the game with your bombs?","Vous n'avez plus d'argent.
-Voulez vous continuer le jeu avec vos bombes ?"
-Sekva ondo,Sekva ondo,Next wave,Prochaine vague
-Vastigu la reton,Vastigu la reton,Extend the network,Étendre le réseau
-Via Rekordo,Via Rekordo,Your Record,Votre record
-Reen,Reen,Back,Précédent
-Nova epoko,Nova epoko,New era,Nouvelle ère
-Malnova epoko,Malnova epoko,Old era,Ancienne ère
-Pri,Pri,About,À propos
-Gvidilo,Gvidilo,Guide,Guide
-Agordoj,Agordoj,Settings,Paramètres
-Sonoj,Sonoj,Sounds,Son
-Muzikoj,Muzikoj,Musics,Musique
-Atribuoj,Atribuoj,Attributions,Attributions
-Fontkodo,Fontkodo,Source code,Code source
-Donaci,Donaci,Donate,Donner
+Voulez vous continuer le jeu avec vos bombes ?","Tu dinero se ha consumido completamente.
+¿Quiéres seguir jugando sólo con tus bombas?"
+Sekva ondo,Sekva ondo,Next wave,Prochaine vague,Siguiente oleada
+Vastigu la reton,Vastigu la reton,Extend the network,Étendre le réseau,Extender la red
+Via Rekordo,Via Rekordo,Your Record,Votre record,Tu marca
+Reen,Reen,Back,Précédent,Atras
+Nova epoko,Nova epoko,New era,Nouvelle ère,Nueva época
+Malnova epoko,Malnova epoko,Old era,Ancienne ère,Antigua época
+Pri,Pri,About,À propos,Acerca de
+Gvidilo,Gvidilo,Guide,Guide,Guía
+Agordoj,Agordoj,Settings,Paramètres,Configuración
+Sonoj,Sonoj,Sounds,Son,Sonidos
+Muzikoj,Muzikoj,Musics,Musique,Música
+Atribuoj,Atribuoj,Attributions,Attributions,Atribuciónes
+Fontkodo,Fontkodo,Source code,Code source,Código fuente
+Donaci,Donaci,Donate,Donner,Donar
