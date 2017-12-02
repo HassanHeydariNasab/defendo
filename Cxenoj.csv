@@ -1,4 +1,4 @@
-id,eo,en,fr,es
+id,eo,en,fr,es,pl
 "Cxu vi sciias ke vi povas plibonigi la armilojn? kolektu samajn armilojn en la bazo aux enmetu armilon en la bazo kaj acxetu saman armilon.
 Dekstrklaku/Longfrapetu al kanono/lasero por sxangxi gxian strategion.
 Armiloj bezonas energion por pafi al malamikoj; metu ilin je la cirklumoj. (Vi povas plibonigi bombojn ankaux tiel.)
@@ -14,36 +14,40 @@ Les armes ont besoin d'énergie pour tirer sur les ennemis; met les sur les cerc
 Tirer par laser ou ondilo coûte 5 et tirer par canon coûte 1.","¿Sabías que puedes mejorar las armas? Agrupa armas similares en la base o pon un arma en la base y compra una similar.
 Click-derecho/Pulsación-larga en un arma tipo cañón o láser para cambiar su estrategia.
 Las armas necesitan energía para disparar a los enemigos; Colócalas en los circulos. (También puedes mejorar las bombas de esta manera)
-Cáda disparo de láser u ondilo cuesta 5 dolares y el de cañón cuesta 1 dolar."
-Ondo,Ondo,Wave,Vague,Oleada
-Nova,Nova,New,Nouveau,Nueva
-MalNova,MalNova,Old,Ancien,Antigua
-Forta,Forta,Strong,Fort,Fuerte
-MalForta,MalForta,Weak,Faible,Débil
-Denove,Denove,Again,Encore,De nuevo
-Vi Venkigxis!,Vi Venkiĝis!,You Win!,Vous avez gagné !,¡Has ganado!
-Vi Malvenkigxis!,Vi Malvenkiĝis!,You Lose!,Vous avez perdu !,¡Perdiste!
-Ondoj,Ondoj,Waves,Vagues,Oleadas
-Eliri,Eliri,Exit,Quitter,Quitar
-Ludi,Ludi,Play,Jouer,Jugar
-Cxu vere vi volas eliri?,Ĉu vere vi volas eliri?,Do you really want to exit?,Voulez vous vraiment quitter ?,¿De verdad quieres quitar?
+Cáda disparo de láser u ondilo cuesta 5 dolares y el de cañón cuesta 1 dolar.","Czy wiesz, że możesz ulepszać swoje bronie? Zbierz podobne lub umieść broń w bazie i kup tę samą.
+Prawy przycisk myszki/Długie naciśnięcie na wyrzutnię bądź laser powoduje zmianę ich strategii.
+Bronie potrzebują energii, aby atakować wrogów; umieść je w okręgach. (W ten sposób możesz ulepszać także bomby)
+Strzelanie laserem oraz ondilo kosztuje 5 dolarów; strzelanie wyrzutnią kosztuje 1 dolar."
+Ondo,Ondo,Wave,Vague,Oleada,Fala
+Nova,Nova,New,Nouveau,Nueva,Nowa
+MalNova,MalNova,Old,Ancien,Antigua,Stara
+Forta,Forta,Strong,Fort,Fuerte,Silna
+MalForta,MalForta,Weak,Faible,Débil,Słaba
+Denove,Denove,Again,Encore,De nuevo,Ponownie
+Vi Venkigxis!,Vi Venkiĝis!,You Win!,Vous avez gagné !,¡Has ganado!,Wygrałeś!
+Vi Malvenkigxis!,Vi Malvenkiĝis!,You Lose!,Vous avez perdu !,¡Perdiste!,Przegrałeś!
+Ondoj,Ondoj,Waves,Vagues,Oleadas,Fale/i
+Eliri,Eliri,Exit,Quitter,Quitar,Wyjdź
+Ludi,Ludi,Play,Jouer,Jugar,Graj
+Cxu vere vi volas eliri?,Ĉu vere vi volas eliri?,Do you really want to exit?,Voulez vous vraiment quitter ?,¿De verdad quieres quitar?,Czy naprawdę chcesz wyjść?
 "Via mono tute konsumigxis.
 Cxu vi volas dauxrigi la ludon kun viaj bomboj?","Via mono tute konsumiĝis.
 Ĉu vi volas daŭrigi la ludon kun viaj bomboj?","Your money was completely consumed.
 Do you want to continue the game with your bombs?","Vous n'avez plus d'argent.
 Voulez vous continuer le jeu avec vos bombes ?","Tu dinero se ha consumido completamente.
-¿Quiéres seguir jugando sólo con tus bombas?"
-Sekva ondo,Sekva ondo,Next wave,Prochaine vague,Siguiente oleada
-Vastigu la reton,Vastigu la reton,Extend the network,Étendre le réseau,Extender la red
-Via Rekordo,Via Rekordo,Your Record,Votre record,Tu marca
-Reen,Reen,Back,Précédent,Atras
-Nova epoko,Nova epoko,New era,Nouvelle ère,Nueva época
-Malnova epoko,Malnova epoko,Old era,Ancienne ère,Antigua época
-Pri,Pri,About,À propos,Acerca de
-Gvidilo,Gvidilo,Guide,Guide,Guía
-Agordoj,Agordoj,Settings,Paramètres,Configuración
-Sonoj,Sonoj,Sounds,Son,Sonidos
-Muzikoj,Muzikoj,Musics,Musique,Música
-Atribuoj,Atribuoj,Attributions,Attributions,Atribuciónes
-Fontkodo,Fontkodo,Source code,Code source,Código fuente
-Donaci,Donaci,Donate,Donner,Donar
+¿Quiéres seguir jugando sólo con tus bombas?","Twoje pieniądze się skończyły.
+Czy chcesz kontynuować rozgrywkę z bombami?"
+Sekva ondo,Sekva ondo,Next wave,Prochaine vague,Siguiente oleada,Następna fala
+Vastigu la reton,Vastigu la reton,Extend the network,Étendre le réseau,Extender la red,Rozszerz sieć
+Via Rekordo,Via Rekordo,Your Record,Votre record,Tu marca,Twój Rekord
+Reen,Reen,Back,Précédent,Atras,Wróć
+Nova epoko,Nova epoko,New era,Nouvelle ère,Nueva época,Nowa era
+Malnova epoko,Malnova epoko,Old era,Ancienne ère,Antigua época,Stara era
+Pri,Pri,About,À propos,Acerca de,O Defendo
+Gvidilo,Gvidilo,Guide,Guide,Guía,Poradnik
+Agordoj,Agordoj,Settings,Paramètres,Configuración,Ustawienia
+Sonoj,Sonoj,Sounds,Son,Sonidos,Dźwięki
+Muzikoj,Muzikoj,Musics,Musique,Música,Muzyka
+Atribuoj,Atribuoj,Attributions,Attributions,Atribuciónes,Przypisy
+Fontkodo,Fontkodo,Source code,Code source,Código fuente,Kod źródłowy
+Donaci,Donaci,Donate,Donner,Donar,Wesprzyj
