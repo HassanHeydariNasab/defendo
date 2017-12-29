@@ -45,8 +45,8 @@ func _ready():
 	get_tree().set_auto_accept_quit(false)
 	Agordejo.load(agordejo)
 	get_node("Fonmuziko").set("stream/play", Agordejo.get_value("Agordoj", "Muzikoj", true))
-	
-	show_hide_fps()
+
+	FPS.set("visibility/visible", Agordejo.get_value("Agordoj", "FPS", false))
 	
 	var epoko = Tutmonda.epoko
 
@@ -322,15 +322,3 @@ func _on_vastigu_la_reton_pressed():
 		vastigu_la_reton.queue_free()
 		get_node("Reto/N4").show()
 		reto = 4
-
-func show_hide_fps():
-	if Agordejo == null:
-		return
-	Agordejo.load(agordejo)
-	if Agordejo.get_value("Settings", "show_fps", false):
-		FPS.show()
-	else:
-		FPS.hide()
-		
-func _enter_tree():
-	show_hide_fps()
