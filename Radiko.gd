@@ -46,6 +46,8 @@ func _ready():
 	Agordejo.load(agordejo)
 	get_node("Fonmuziko").set("stream/play", Agordejo.get_value("Agordoj", "Muzikoj", true))
 
+	FPS.set("visibility/visible", Agordejo.get_value("Agordoj", "FPS", false))
+	
 	var epoko = Tutmonda.epoko
 
 	if epoko == "nova":
@@ -320,4 +322,3 @@ func _on_vastigu_la_reton_pressed():
 		vastigu_la_reton.queue_free()
 		get_node("Reto/N4").show()
 		reto = 4
-
