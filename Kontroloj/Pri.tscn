@@ -70,31 +70,6 @@ shortcut = null
 text = "Atribuoj"
 flat = false
 
-[node name="Donaci" type="Button" parent="."]
-
-anchor/left = 1
-anchor/right = 1
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -300.0
-margin/top = 650.0
-margin/right = -800.0
-margin/bottom = 800.0
-custom_styles/hover = ExtResource( 2 )
-custom_styles/pressed = ExtResource( 3 )
-custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0.258824, 0.258824, 0.258824, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Donaci"
-flat = false
-
 [node name="Reen" type="Button" parent="."]
 
 anchor/left = 3
@@ -122,12 +97,71 @@ shortcut = null
 text = "Reen"
 flat = false
 
+[node name="Donaci_etikedo" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 50.0
+margin/top = 650.0
+margin/right = 300.0
+margin/bottom = 750.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Doncai"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Litecoin" type="LinkButton" parent="."]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 50.0
+margin/top = 800.0
+margin/right = 1495.0
+margin/bottom = 879.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.458824, 0.458824, 0.458824, 1 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "litecoin:LXGhvqVGAs6rpxDPagF17QvPKDQJR1ngmj"
+underline = 1
+
+[node name="Bitcoin" type="LinkButton" parent="."]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 50.0
+margin/top = 850.0
+margin/right = 1505.0
+margin/bottom = 929.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.458824, 0.458824, 0.458824, 1 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+text = "bitcoin:16D7Nroenpx4QDNqfq3Js7sdAVhew2NzGp"
+underline = 1
+
 [connection signal="pressed" from="Fontkodo" to="." method="_on_Fontkodo_pressed"]
 
 [connection signal="pressed" from="Atribuoj" to="." method="_on_Atribuoj_pressed"]
 
-[connection signal="pressed" from="Donaci" to="." method="_on_Donaci_pressed"]
-
 [connection signal="pressed" from="Reen" to="." method="_on_Reen_pressed"]
+
+[connection signal="pressed" from="Litecoin" to="." method="_on_Litecoin_pressed"]
+
+[connection signal="pressed" from="Bitcoin" to="." method="_on_Bitcoin_pressed"]
 
 
