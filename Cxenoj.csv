@@ -18,16 +18,17 @@ Las armas necesitan energía para disparar a los enemigos; Colócalas en los cir
 Cáda disparo de láser u ondilo cuesta 5 dolares y el de cañón cuesta 1 dolar.","Czy wiesz, że możesz ulepszać swoje bronie? Zbierz podobne lub umieść broń w bazie i kup tę samą.
 Prawy przycisk myszki/Długie naciśnięcie na wyrzutnię bądź laser powoduje zmianę ich strategii.
 Bronie potrzebują energii, aby atakować wrogów; umieść je w okręgach. (W ten sposób możesz ulepszać także bomby)
-Strzelanie laserem oraz ondilo kosztuje 5 dolarów; strzelanie wyrzutnią kosztuje 1 dolar.","Wusstest Du, dass Du Deine Waffen verbessern kannst? Sammle mehrere identsiche Waffen in der Basis oder lege eine Waffen in die Basis und kaufe weitere vom selben Typ.
-Rechts-Klick/Langer-Halt auf einer Kanone/einem Laser zur Änderung der Strategie.
-Waffen benötigen Energy zum Schießen auf Feinde. Lege diese auf die Kreise. (Du kannst Bomben auf diesem Wege auch verbessern.)
-Das Abschießen von Laser und Ondilo kostet 5 Dollar, das Abschießen einer Kanone kostet einen Dollar."
+Strzelanie laserem oraz ondilo kosztuje 5 dolarów; strzelanie wyrzutnią kosztuje 1 dolar.","Schütze die Schaltkreis-Stadt vor den angreifenden Dreiecken!
+Schon gewusst, dass Du Deine Waffen verbessern kannst? Sammel identische Waffen in der Basis oder lege eine Waffe in die Basis und kaufe weitere selben Typs.
+Rechtsklicke auf eine Kanone oder einen Laser zur Strategieänderung oder halte sie gedrückt.
+Waffen benötigen Energie um Feinde zu beschießen, lege sie dazu auf die Kreise. (Bomben können so verbessert werden.)
+Laser und Ondilo kosten 5 Dollar pro Schuss, die Kanone kostet einen Dollar."
 Ondo,Ondo,Wave,Vague,Oleada,Fala,Welle
 Nova,Nova,New,Nouveau,Nueva,Nowa,Neu
 MalNova,MalNova,Old,Ancien,Antigua,Stara,Alt
 Forta,Forta,Strong,Fort,Fuerte,Silna,Stark
 MalForta,MalForta,Weak,Faible,Débil,Słaba,Schwach
-Denove,Denove,Again,Encore,De nuevo,Ponownie,Noch einmal
+Denove,Denove,Again,Encore,De nuevo,Ponownie,Nochmal
 Vi Venkigxis!,Vi Venkiĝis!,You Win!,Vous avez gagné !,¡Has ganado!,Wygrałeś!,Du gewinnst!
 Vi Malvenkigxis!,Vi Malvenkiĝis!,You Lose!,Vous avez perdu !,¡Perdiste!,Przegrałeś!,Du verlierst!
 Ondoj,Ondoj,Waves,Vagues,Oleadas,Fale/i,Wellen
@@ -40,19 +41,19 @@ Cxu vi volas dauxrigi la ludon kun viaj bomboj?","Via mono tute konsumiĝis.
 Do you want to continue the game with your bombs?","Vous n'avez plus d'argent.
 Voulez vous continuer le jeu avec vos bombes ?","Tu dinero se ha consumido completamente.
 ¿Quiéres seguir jugando sólo con tus bombas?","Twoje pieniądze się skończyły.
-Czy chcesz kontynuować rozgrywkę z bombami?","Du hast Dein gesammtes Geld aufgebraucht.
-Möchtest Du mit Deinen Bombem weiterspielen?"
-Sekva ondo,Sekva ondo,Next wave,Prochaine vague,Siguiente oleada,Następna fala,nächste Welle
+Czy chcesz kontynuować rozgrywkę z bombami?","Dein gesamtes Geld ist aufgebraucht.
+Willst Du mit Deinen Bomben weiterspielen?"
+Sekva ondo,Sekva ondo,Next wave,Prochaine vague,Siguiente oleada,Następna fala,Nächste Welle
 Vastigu la reton,Vastigu la reton,Extend the network,Étendre le réseau,Extender la red,Rozszerz sieć,Netzwerk erweitern
 Via Rekordo,Via Rekordo,Your Record,Votre record,Tu marca,Twój Rekord,Dein Rekord
 Reen,Reen,Back,Précédent,Atras,Wróć,Zurück
-Nova epoko,Nova epoko,New era,Nouvelle ère,Nueva época,Nowa era,neue Ärea
-Malnova epoko,Malnova epoko,Old era,Ancienne ère,Antigua época,Stara era,alte Ärea
-Pri,Pri,About,À propos,Acerca de,O Defendo,Über Defendo
+Nova epoko,Nova epoko,New era,Nouvelle ère,Nueva época,Nowa era,Neue Epoche
+Malnova epoko,Malnova epoko,Old era,Ancienne ère,Antigua época,Stara era,Alte Epoche
+Pri,Pri,About,À propos,Acerca de,O Defendo,Über
 Gvidilo,Gvidilo,Guide,Guide,Guía,Poradnik,Handbuch
 Agordoj,Agordoj,Settings,Paramètres,Configuración,Ustawienia,Einstellungen
-Sonoj,Sonoj,Sounds,Son,Sonidos,Dźwięki,Sound
+Sonoj,Sonoj,Sounds,Son,Sonidos,Dźwięki,Ton
 Muzikoj,Muzikoj,Musics,Musique,Música,Muzyka,Musik
-Atribuoj,Atribuoj,Attributions,Attributions,Atribuciónes,Przypisy,Zuordnungen
+Atribuoj,Atribuoj,Attributions,Attributions,Atribuciónes,Przypisy,Mitwirkende
 Fontkodo,Fontkodo,Source code,Code source,Código fuente,Kod źródłowy,Quellcode
-Donaci,Donaci,Donate,Donner,Donar,Wesprzyj,Spende
+Donaci,Donaci,Donate,Donner,Donar,Wesprzyj,Spenden
